@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
+            btnShowGrades = new Button();
             SuspendLayout();
             // 
             // ctrlBox
@@ -57,11 +58,22 @@
             ctrlBox.ThemeAuthor = "Narwin";
             ctrlBox.ThemeName = "MetroLite";
             // 
+            // btnShowGrades
+            // 
+            btnShowGrades.Font = new Font("Century Gothic", 13F);
+            btnShowGrades.Location = new Point(541, 341);
+            btnShowGrades.Name = "btnShowGrades";
+            btnShowGrades.Size = new Size(221, 40);
+            btnShowGrades.TabIndex = 24;
+            btnShowGrades.Text = "Show Grades";
+            btnShowGrades.UseVisualStyleBackColor = true;
+            // 
             // FormHomeStudent
             // 
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 433);
+            Controls.Add(btnShowGrades);
             Controls.Add(ctrlBox);
             Font = new Font("Century Gothic", 13F);
             Name = "FormHomeStudent";
@@ -75,5 +87,6 @@
         #endregion
 
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
+        private Button btnShowGrades;
     }
 }
