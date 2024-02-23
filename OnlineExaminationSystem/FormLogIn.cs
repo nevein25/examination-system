@@ -37,6 +37,7 @@ namespace OnlineExaminationSystem
                 {
                     using (FormHomeInstructor formHomeInstructor = new FormHomeInstructor())
                     {
+                        formHomeInstructor.StartPosition = FormStartPosition.CenterScreen;
 
                         Helper.HideFormSmoothly(this);
 
@@ -48,6 +49,18 @@ namespace OnlineExaminationSystem
             else
             {
                 MessageBox.Show("Wrong username or password");
+            }
+        }
+
+        private void lblGoSignUp_Click(object sender, EventArgs e)
+        {
+            using (FormSignUp frmSignup = new FormSignUp())
+            {
+                frmSignup.StartPosition = FormStartPosition.CenterScreen;
+
+                Helper.HideFormSmoothly(this);
+
+                frmSignup.ShowDialog();
             }
         }
     }

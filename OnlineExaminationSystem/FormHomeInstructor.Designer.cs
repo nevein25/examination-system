@@ -34,9 +34,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(554, 139);
+            button1.Font = new Font("Century Gothic", 13F);
+            button1.Location = new Point(27, 230);
             button1.Name = "button1";
-            button1.Size = new Size(221, 42);
+            button1.Size = new Size(221, 40);
             button1.TabIndex = 0;
             button1.Text = "Topics for courses";
             button1.UseVisualStyleBackColor = true;
@@ -49,7 +50,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(685, 17);
+            ctrlBox.Location = new Point(685, 16);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -69,12 +70,16 @@
             // 
             // FormHomeInstructor
             // 
-            AutoScaleDimensions = new SizeF(13F, 26F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 433);
             Controls.Add(ctrlBox);
             Controls.Add(button1);
+            Font = new Font("Century Gothic", 13F);
             Name = "FormHomeInstructor";
+            Padding = new Padding(12, 67, 12, 12);
+            SmallLineColor1 = Color.FromArgb(186, 32, 38);
+            SmallLineColor2 = Color.FromArgb(186, 32, 38);
             Text = "FormHomeInstructor";
             ResumeLayout(false);
         }

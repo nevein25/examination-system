@@ -34,14 +34,16 @@
             txtEmail = new TextBox();
             txtPassword = new TextBox();
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
+            lblGoSignUp = new Label();
             SuspendLayout();
             // 
             // btnLogIn
             // 
+            btnLogIn.Font = new Font("Century Gothic", 13F);
             btnLogIn.ForeColor = Color.Gray;
-            btnLogIn.Location = new Point(374, 259);
+            btnLogIn.Location = new Point(196, 285);
             btnLogIn.Name = "btnLogIn";
-            btnLogIn.Size = new Size(159, 47);
+            btnLogIn.Size = new Size(146, 38);
             btnLogIn.TabIndex = 20;
             btnLogIn.Text = "Login";
             btnLogIn.UseVisualStyleBackColor = true;
@@ -50,35 +52,40 @@
             // Email
             // 
             Email.AutoSize = true;
+            Email.BackColor = SystemColors.ButtonHighlight;
+            Email.Font = new Font("Century Gothic", 13F);
             Email.ForeColor = Color.Gray;
-            Email.Location = new Point(272, 148);
+            Email.Location = new Point(147, 85);
             Email.Name = "Email";
-            Email.Size = new Size(65, 26);
+            Email.Size = new Size(71, 25);
             Email.TabIndex = 19;
-            Email.Text = "email";
+            Email.Text = "Email";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = SystemColors.ButtonHighlight;
+            label4.Font = new Font("Century Gothic", 13F);
             label4.ForeColor = Color.Gray;
-            label4.Location = new Point(268, 199);
+            label4.Location = new Point(147, 186);
             label4.Name = "label4";
-            label4.Size = new Size(105, 26);
+            label4.Size = new Size(114, 25);
             label4.TabIndex = 18;
-            label4.Text = "password";
+            label4.Text = "Password";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(397, 145);
+            txtEmail.Location = new Point(147, 120);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(125, 32);
+            txtEmail.Size = new Size(254, 34);
             txtEmail.TabIndex = 17;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(397, 196);
+            txtPassword.Location = new Point(147, 222);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(125, 32);
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(254, 34);
             txtPassword.TabIndex = 16;
             // 
             // ctrlBox
@@ -89,7 +96,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(685, 18);
+            ctrlBox.Location = new Point(436, 17);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -107,19 +114,37 @@
             ctrlBox.ThemeAuthor = "Narwin";
             ctrlBox.ThemeName = "MetroLite";
             // 
+            // lblGoSignUp
+            // 
+            lblGoSignUp.AutoSize = true;
+            lblGoSignUp.BackColor = SystemColors.ButtonHighlight;
+            lblGoSignUp.Font = new Font("Century Gothic", 11F);
+            lblGoSignUp.ForeColor = Color.Gray;
+            lblGoSignUp.Location = new Point(106, 381);
+            lblGoSignUp.Name = "lblGoSignUp";
+            lblGoSignUp.Size = new Size(352, 22);
+            lblGoSignUp.TabIndex = 24;
+            lblGoSignUp.Text = "Don't have an account yet?  Sign Up";
+            lblGoSignUp.Click += lblGoSignUp_Click;
+            // 
             // FormLogIn
             // 
-            AutoScaleDimensions = new SizeF(13F, 26F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(551, 433);
+            Controls.Add(lblGoSignUp);
             Controls.Add(ctrlBox);
             Controls.Add(btnLogIn);
             Controls.Add(Email);
             Controls.Add(label4);
             Controls.Add(txtEmail);
             Controls.Add(txtPassword);
+            Font = new Font("Century Gothic", 13F);
             Name = "FormLogIn";
-            Text = "Form1";
+            Padding = new Padding(12, 67, 12, 12);
+            SmallLineColor1 = Color.FromArgb(186, 32, 38);
+            SmallLineColor2 = Color.FromArgb(186, 32, 38);
+            Text = "ITI";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,5 +157,6 @@
         private TextBox txtEmail;
         private TextBox txtPassword;
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
+        private Label lblGoSignUp;
     }
 }

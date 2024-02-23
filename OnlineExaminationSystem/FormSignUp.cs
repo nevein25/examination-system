@@ -51,11 +51,13 @@ namespace OnlineExaminationSystem
         {
             using (FormLogIn frmLogin = new FormLogIn())
             {
+                frmLogin.StartPosition = FormStartPosition.CenterScreen;
 
                 Helper.HideFormSmoothly(this);
 
                 frmLogin.ShowDialog();
             }
         }
+
     }
 }
