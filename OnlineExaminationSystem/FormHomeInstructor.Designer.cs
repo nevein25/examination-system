@@ -90,6 +90,7 @@
             btnExamCorrection.TabIndex = 24;
             btnExamCorrection.Text = "Exam Correction";
             btnExamCorrection.UseVisualStyleBackColor = true;
+            btnExamCorrection.Click += btnExamCorrection_Click;
             // 
             // FormHomeInstructor
             // 

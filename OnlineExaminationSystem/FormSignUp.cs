@@ -12,43 +12,59 @@ namespace OnlineExaminationSystem
         public FormSignUp()
         {
             InitializeComponent();
-            this.FormClosed += (sender, e) => _context?.Dispose();
+
+            FormClosed += (sender, e) => _context?.Dispose();
 
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            try
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+            string fname = txtFname.Text;
+            string lname = txtLname.Text;
+            string ssn = txtSsn.Text;
+
+            int flag = ValidateFields(email, password, fname, lname, ssn);
+
+            if (flag == 1)
             {
-                Student student = new Student()
+                try
                 {
-                    Fname = txtFname.Text,
-                    Lname = txtLname.Text,
-                    Email = txtEmail.Text,
-                    Password = Helper.Encrypt(txtPassword.Text),
-                    AccountState = "Active",
-                    Ssn = txtSsn.Text
-                };
-                _context.Students.Add(student);
-                _context.SaveChanges();
+                    Student student = new Student()
+                    {
+                        Fname = fname,
+                        Lname = txtLname.Text,
+                        Email = email,
+                        Password = Helper.Encrypt(txtPassword.Text),
+                        AccountState = "Active",
+                        Ssn = ssn
+                    };
+                    _context.Students.Add(student);
+                    _context.SaveChanges();
 
 
-                MessageBox.Show("Account created successfully");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Something Went Wrong");
+                    MessageBox.Show("Account created successfully");
+
+                    using (FormHomeStudent frmHomeStudent = new FormHomeStudent())
+                    {
+                        frmHomeStudent.StartPosition = FormStartPosition.CenterScreen;
+
+                        Helper.HideFormSmoothly(this);
+
+                        frmHomeStudent.ShowDialog();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Something Went Wrong");
+                }
             }
         }
 
         private void lblgologin_Click(object sender, EventArgs e)
         {
 
-            RedirectToLogIn();
-        }
-
-        private void RedirectToLogIn()
-        {
             using (FormLogIn frmLogin = new FormLogIn())
             {
                 frmLogin.StartPosition = FormStartPosition.CenterScreen;
@@ -58,6 +74,73 @@ namespace OnlineExaminationSystem
                 frmLogin.ShowDialog();
             }
         }
+        private int ValidateFields(string email, string password, string fname, string lname, string ssn)
+        {
+            int flag = 1;
 
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                lblReqEmail.Visible = true;
+                flag = 0;
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                lblReqPassword.Visible = true;
+                flag = 0;
+            }
+
+            if (string.IsNullOrWhiteSpace(fname))
+            {
+                lblReqFname.Visible = true;
+                flag = 0;
+            }
+            if (string.IsNullOrWhiteSpace(lname))
+            {
+                lblReqLname.Visible = true;
+                flag = 0;
+            }
+            if (string.IsNullOrWhiteSpace(ssn))
+            {
+                lblReqSSN.Visible = true;
+                flag = 0;
+            }
+            return flag;
+        }
+        private void txtFname_TextChanged(object sender, EventArgs e)
+        {
+            lblReqFname.Visible = false;
+
+        }
+
+        private void txtLname_TextChanged(object sender, EventArgs e)
+        {
+            lblReqLname.Visible = false;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            lblReqEmail.Visible = false;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            lblReqPassword.Visible = false;
+        }
+
+        private void txtSsn_TextChanged(object sender, EventArgs e)
+        {
+            lblReqSSN.Visible = false;
+        }
+
+        private void FormSignUp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

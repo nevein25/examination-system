@@ -29,64 +29,53 @@
         private void InitializeComponent()
         {
             btnLogIn = new Button();
-            Email = new Label();
-            label4 = new Label();
             txtEmail = new TextBox();
             txtPassword = new TextBox();
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
             lblGoSignUp = new Label();
+            Email = new Label();
+            label4 = new Label();
+            lblReqEmail = new Label();
+            lblReqPassword = new Label();
             SuspendLayout();
             // 
             // btnLogIn
             // 
+            btnLogIn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnLogIn.BackColor = Color.FromArgb(186, 32, 38);
+            btnLogIn.FlatAppearance.BorderColor = Color.FromArgb(186, 32, 38);
+            btnLogIn.FlatAppearance.BorderSize = 0;
+            btnLogIn.FlatAppearance.MouseDownBackColor = Color.FromArgb(186, 32, 38);
+            btnLogIn.FlatAppearance.MouseOverBackColor = Color.FromArgb(186, 32, 38);
+            btnLogIn.FlatStyle = FlatStyle.Flat;
             btnLogIn.Font = new Font("Century Gothic", 13F);
-            btnLogIn.ForeColor = Color.Gray;
-            btnLogIn.Location = new Point(196, 285);
+            btnLogIn.ForeColor = Color.White;
+            btnLogIn.Location = new Point(175, 342);
             btnLogIn.Name = "btnLogIn";
-            btnLogIn.Size = new Size(146, 38);
-            btnLogIn.TabIndex = 20;
+            btnLogIn.Size = new Size(136, 45);
+            btnLogIn.TabIndex = 2;
             btnLogIn.Text = "Login";
-            btnLogIn.UseVisualStyleBackColor = true;
+            btnLogIn.UseVisualStyleBackColor = false;
             btnLogIn.Click += btnLogIn_Click_1;
-            // 
-            // Email
-            // 
-            Email.AutoSize = true;
-            Email.BackColor = SystemColors.ButtonHighlight;
-            Email.Font = new Font("Century Gothic", 13F);
-            Email.ForeColor = Color.Gray;
-            Email.Location = new Point(147, 85);
-            Email.Name = "Email";
-            Email.Size = new Size(71, 25);
-            Email.TabIndex = 19;
-            Email.Text = "Email";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.ButtonHighlight;
-            label4.Font = new Font("Century Gothic", 13F);
-            label4.ForeColor = Color.Gray;
-            label4.Location = new Point(147, 186);
-            label4.Name = "label4";
-            label4.Size = new Size(114, 25);
-            label4.TabIndex = 18;
-            label4.Text = "Password";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(147, 120);
+            txtEmail.Anchor = AnchorStyles.Right;
+            txtEmail.Location = new Point(96, 138);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(254, 34);
-            txtEmail.TabIndex = 17;
+            txtEmail.Size = new Size(292, 34);
+            txtEmail.TabIndex = 0;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(147, 222);
+            txtPassword.Anchor = AnchorStyles.Right;
+            txtPassword.Location = new Point(96, 261);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(254, 34);
-            txtPassword.TabIndex = 16;
+            txtPassword.Size = new Size(292, 34);
+            txtPassword.TabIndex = 1;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // ctrlBox
             // 
@@ -96,7 +85,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(436, 17);
+            ctrlBox.Location = new Point(370, 17);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -120,18 +109,70 @@
             lblGoSignUp.BackColor = SystemColors.ButtonHighlight;
             lblGoSignUp.Font = new Font("Century Gothic", 11F);
             lblGoSignUp.ForeColor = Color.Gray;
-            lblGoSignUp.Location = new Point(106, 381);
+            lblGoSignUp.Location = new Point(72, 407);
             lblGoSignUp.Name = "lblGoSignUp";
             lblGoSignUp.Size = new Size(352, 22);
-            lblGoSignUp.TabIndex = 24;
+            lblGoSignUp.TabIndex = 3;
             lblGoSignUp.Text = "Don't have an account yet?  Sign Up";
             lblGoSignUp.Click += lblGoSignUp_Click;
+            // 
+            // Email
+            // 
+            Email.AutoSize = true;
+            Email.BackColor = SystemColors.ButtonHighlight;
+            Email.Font = new Font("Century Gothic", 13F);
+            Email.ForeColor = Color.Gray;
+            Email.Location = new Point(96, 97);
+            Email.Name = "Email";
+            Email.Size = new Size(71, 25);
+            Email.TabIndex = 19;
+            Email.Text = "Email";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.ButtonHighlight;
+            label4.Font = new Font("Century Gothic", 13F);
+            label4.ForeColor = Color.Gray;
+            label4.Location = new Point(96, 222);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 25);
+            label4.TabIndex = 18;
+            label4.Text = "Password";
+            // 
+            // lblReqEmail
+            // 
+            lblReqEmail.AutoSize = true;
+            lblReqEmail.BackColor = SystemColors.ButtonHighlight;
+            lblReqEmail.Font = new Font("Century Gothic", 10F);
+            lblReqEmail.ForeColor = Color.FromArgb(186, 32, 38);
+            lblReqEmail.Location = new Point(96, 175);
+            lblReqEmail.Name = "lblReqEmail";
+            lblReqEmail.Size = new Size(166, 21);
+            lblReqEmail.TabIndex = 22;
+            lblReqEmail.Text = "This field is required";
+            lblReqEmail.Visible = false;
+            // 
+            // lblReqPassword
+            // 
+            lblReqPassword.AutoSize = true;
+            lblReqPassword.BackColor = SystemColors.ButtonHighlight;
+            lblReqPassword.Font = new Font("Century Gothic", 10F);
+            lblReqPassword.ForeColor = Color.FromArgb(186, 32, 38);
+            lblReqPassword.Location = new Point(96, 298);
+            lblReqPassword.Name = "lblReqPassword";
+            lblReqPassword.Size = new Size(166, 21);
+            lblReqPassword.TabIndex = 23;
+            lblReqPassword.Text = "This field is required";
+            lblReqPassword.Visible = false;
             // 
             // FormLogIn
             // 
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(551, 433);
+            ClientSize = new Size(485, 476);
+            Controls.Add(lblReqPassword);
+            Controls.Add(lblReqEmail);
             Controls.Add(lblGoSignUp);
             Controls.Add(ctrlBox);
             Controls.Add(btnLogIn);
@@ -144,6 +185,7 @@
             Padding = new Padding(12, 67, 12, 12);
             SmallLineColor1 = Color.FromArgb(186, 32, 38);
             SmallLineColor2 = Color.FromArgb(186, 32, 38);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ITI";
             ResumeLayout(false);
             PerformLayout();
@@ -152,11 +194,13 @@
         #endregion
 
         private Button btnLogIn;
-        private Label Email;
-        private Label label4;
         private TextBox txtEmail;
         private TextBox txtPassword;
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
         private Label lblGoSignUp;
+        private Label Email;
+        private Label label4;
+        private Label lblReqEmail;
+        private Label lblReqPassword;
     }
 }
