@@ -80,6 +80,7 @@
             btnGenerateExam.TabIndex = 23;
             btnGenerateExam.Text = "Generate Exam";
             btnGenerateExam.UseVisualStyleBackColor = true;
+            btnGenerateExam.Click += btnGenerateExam_Click;
             // 
             // btnExamCorrection
             // 

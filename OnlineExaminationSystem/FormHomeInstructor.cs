@@ -21,5 +21,17 @@ namespace OnlineExaminationSystem
                 frmCourseTopic.ShowDialog();
             }
         }
+
+        private void btnGenerateExam_Click(object sender, EventArgs e)
+        {
+            using (FormGenerateExam frmGenerateExam = new FormGenerateExam())
+            {
+                frmGenerateExam.StartPosition = FormStartPosition.CenterScreen;
+
+                Helper.HideFormSmoothly(this);
+
+                frmGenerateExam.ShowDialog();
+            }
+        }
     }
 }
