@@ -1,13 +1,17 @@
 ﻿using MetroSet_UI.Forms;
+using Microsoft.EntityFrameworkCore;
+using OnlineExaminationSystem.Context;
 using OnlineExaminationSystem.Helpers;
 
 namespace OnlineExaminationSystem
 {
     public partial class FormHomeInstructor : MetroSetForm
     {
+        OnlineExaminationSystemContext _context = new OnlineExaminationSystemContext();
         public FormHomeInstructor()
         {
             InitializeComponent();
+            FormClosed += (sender, e) => _context?.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -22,6 +26,7 @@ namespace OnlineExaminationSystem
             }
         }
 
+
         private void btnGenerateExam_Click(object sender, EventArgs e)
         {
             using (FormGenerateExam frmGenerateExam = new FormGenerateExam())
@@ -32,6 +37,14 @@ namespace OnlineExaminationSystem
 
                 frmGenerateExam.ShowDialog();
             }
+        }
+        
+        private void btnExamCorrection_Click(object sender, EventArgs e)
+        {
+            // TEMP
+            //    @studentIdToCorrect , @examIdToCorrect
+            int numRowsAffected = _context.Database.ExecuteSql($"Exec [ExamCorrection] {1},{1}");
+
         }
     }
 }

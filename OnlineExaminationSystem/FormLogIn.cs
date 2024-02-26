@@ -1,3 +1,4 @@
+
 using MetroSet_UI.Forms;
 using Microsoft.EntityFrameworkCore;
 using OnlineExaminationSystem.Context;
@@ -13,42 +14,49 @@ namespace OnlineExaminationSystem
         {
             InitializeComponent();
             this.FormClosed += (sender, e) => _context?.Dispose();
-
+           
         }
 
 
         private void btnLogIn_Click_1(object sender, EventArgs e)
         {
-            var user = _context.People.Where(p => p.Email == txtEmail.Text && p.Password == Helper.Encrypt(txtPassword.Text)).FirstOrDefault();
-            if (user != null)
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+            int flag = ValidateFields(email, password);
+
+            if (flag == 1)
             {
-                var isStudent = _context.Students.Where(s => s.Id == user.Id).FirstOrDefault();
-                if (isStudent != null)
+                var user = _context.People.Where(p => p.Email == email && p.Password == Helper.Encrypt(password)).FirstOrDefault();
+                if (user != null)
                 {
-                    using (FormHomeStudent formHomeStudent = new FormHomeStudent())
+                    var isStudent = _context.Students.Where(s => s.Id == user.Id).FirstOrDefault();
+                    if (isStudent != null)
                     {
+                        using (FormHomeStudent formHomeStudent = new FormHomeStudent())
+                        {
 
-                        Helper.HideFormSmoothly(this);
+                            Helper.HideFormSmoothly(this);
 
-                        formHomeStudent.ShowDialog();
+                            formHomeStudent.ShowDialog();
+                        }
                     }
+                    else
+                    {
+                        using (FormHomeInstructor formHomeInstructor = new FormHomeInstructor())
+                        {
+                            formHomeInstructor.StartPosition = FormStartPosition.CenterScreen;
+
+                            Helper.HideFormSmoothly(this);
+
+                            formHomeInstructor.ShowDialog();
+                        }
+                    }
+
                 }
                 else
                 {
-                    using (FormHomeInstructor formHomeInstructor = new FormHomeInstructor())
-                    {
-                        formHomeInstructor.StartPosition = FormStartPosition.CenterScreen;
-
-                        Helper.HideFormSmoothly(this);
-
-                        formHomeInstructor.ShowDialog();
-                    }
+                    MessageBox.Show("Wrong username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("Wrong username or password");
             }
         }
 
@@ -64,13 +72,32 @@ namespace OnlineExaminationSystem
             }
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private int ValidateFields(string email, string password)
         {
+            int flag = 1;
 
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                lblReqEmail.Visible = true;
+                flag = 0;
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                lblReqPassword.Visible = true;
+                flag = 0;
+            }
+            return flag;
         }
 
-        private void ctrlBox_Click(object sender, EventArgs e)
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
+            lblReqEmail.Visible = false;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            lblReqPassword.Visible = false;
 
         }
     }
