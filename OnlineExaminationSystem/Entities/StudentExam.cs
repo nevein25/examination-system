@@ -13,6 +13,8 @@ public partial class StudentExam
 
     public int? ExamGrade { get; set; }
 
+    public int? IsTaken { get; set; }
+
     public virtual Exam EIdNavigation { get; set; }
 
     public virtual Student St { get; set; }

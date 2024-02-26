@@ -57,7 +57,7 @@
             Email.ForeColor = Color.Gray;
             Email.Location = new Point(147, 85);
             Email.Name = "Email";
-            Email.Size = new Size(71, 25);
+            Email.Size = new Size(55, 21);
             Email.TabIndex = 19;
             Email.Text = "Email";
             // 
@@ -69,7 +69,7 @@
             label4.ForeColor = Color.Gray;
             label4.Location = new Point(147, 186);
             label4.Name = "label4";
-            label4.Size = new Size(114, 25);
+            label4.Size = new Size(90, 21);
             label4.TabIndex = 18;
             label4.Text = "Password";
             // 
@@ -77,15 +77,16 @@
             // 
             txtEmail.Location = new Point(147, 120);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(254, 34);
+            txtEmail.Size = new Size(254, 29);
             txtEmail.TabIndex = 17;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword
             // 
             txtPassword.Location = new Point(147, 222);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(254, 34);
+            txtPassword.Size = new Size(254, 29);
             txtPassword.TabIndex = 16;
             // 
             // ctrlBox
@@ -113,6 +114,7 @@
             ctrlBox.Text = "metroSetControlBox1";
             ctrlBox.ThemeAuthor = "Narwin";
             ctrlBox.ThemeName = "MetroLite";
+            ctrlBox.Click += ctrlBox_Click;
             // 
             // lblGoSignUp
             // 
@@ -122,14 +124,14 @@
             lblGoSignUp.ForeColor = Color.Gray;
             lblGoSignUp.Location = new Point(106, 381);
             lblGoSignUp.Name = "lblGoSignUp";
-            lblGoSignUp.Size = new Size(352, 22);
+            lblGoSignUp.Size = new Size(278, 20);
             lblGoSignUp.TabIndex = 24;
             lblGoSignUp.Text = "Don't have an account yet?  Sign Up";
             lblGoSignUp.Click += lblGoSignUp_Click;
             // 
             // FormLogIn
             // 
-            AutoScaleDimensions = new SizeF(13F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(551, 433);
             Controls.Add(lblGoSignUp);

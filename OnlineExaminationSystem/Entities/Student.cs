@@ -5,10 +5,8 @@ using System.Collections.Generic;
 
 namespace OnlineExaminationSystem.Entities;
 
-// 5. INHERIT
-public partial class Student : Person
+public partial class Student : Person 
 {
-    // 6. COMMENT
     //public int Id { get; set; }
 
     public int? DeptId { get; set; }
@@ -16,8 +14,6 @@ public partial class Student : Person
     public string Ssn { get; set; }
 
     public virtual Department Dept { get; set; }
-
-    //7. COMMENT
 
     //public virtual Person IdNavigation { get; set; }
 
