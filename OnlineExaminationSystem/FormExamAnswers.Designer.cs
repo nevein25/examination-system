@@ -224,6 +224,7 @@
             PrevBtn.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
             PrevBtn.DisabledForeColor = Color.Gray;
             PrevBtn.Font = new Font("Microsoft Sans Serif", 10F);
+            PrevBtn.ForeColor = SystemColors.InactiveCaption;
             PrevBtn.HoverBorderColor = Color.FromArgb(95, 207, 255);
             PrevBtn.HoverColor = Color.FromArgb(95, 207, 255);
             PrevBtn.HoverTextColor = Color.White;
@@ -322,6 +323,8 @@
             Font = new Font("Century Gothic", 13F);
             Name = "FormExamAnswers";
             Padding = new Padding(12, 74, 12, 13);
+            SmallLineColor1 = Color.FromArgb(186, 32, 38);
+            SmallLineColor2 = Color.FromArgb(186, 32, 38);
             Text = "ITI";
             FormClosed += FormExamAnswers_FormClosed;
             Load += FormExamAnswers_Load;
