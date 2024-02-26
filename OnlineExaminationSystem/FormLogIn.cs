@@ -63,5 +63,15 @@ namespace OnlineExaminationSystem
                 frmSignup.ShowDialog();
             }
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrlBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
