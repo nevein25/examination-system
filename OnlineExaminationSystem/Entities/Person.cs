@@ -19,10 +19,7 @@ public partial class Person
 
     public string AccountState { get; set; }
 
-    /// 1. COMMENT THOSE
-
     //public virtual Instructor Instructor { get; set; }
 
     //public virtual Student Student { get; set; }
-    ///
 }

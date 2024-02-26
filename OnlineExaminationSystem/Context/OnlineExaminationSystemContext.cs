@@ -62,6 +62,10 @@ public partial class OnlineExaminationSystemContext : DbContext
             entity.Property(e => e.Name)
                 .IsRequired()
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.Mgr).WithMany(p => p.Departments)
+                .HasForeignKey(d => d.MgrId)
+                .HasConstraintName("FK_Ins");
         });
 
         modelBuilder.Entity<Exam>(entity =>
@@ -105,7 +109,7 @@ public partial class OnlineExaminationSystemContext : DbContext
         {
             entity.ToTable("Instructor");
 
-         //   entity.Property(e => e.Id).ValueGeneratedNever();
+           // entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.Dept).WithMany(p => p.Instructors)
                 .HasForeignKey(d => d.DeptId)
@@ -194,7 +198,7 @@ public partial class OnlineExaminationSystemContext : DbContext
         {
             entity.ToTable("Student");
 
-          //  entity.Property(e => e.Id).ValueGeneratedNever();
+            // entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Ssn)
                 .IsRequired()
                 .HasMaxLength(14)
@@ -262,6 +266,7 @@ public partial class OnlineExaminationSystemContext : DbContext
 
             entity.Property(e => e.StId).HasColumnName("St_Id");
             entity.Property(e => e.EId).HasColumnName("E_Id");
+            entity.Property(e => e.IsTaken).HasDefaultValue(0);
 
             entity.HasOne(d => d.EIdNavigation).WithMany(p => p.StudentExams)
                 .HasForeignKey(d => d.EId)
