@@ -41,7 +41,6 @@
             lb_Duration = new Label();
             lb_date = new Label();
             btn_back = new Button();
-            metroSetComboBox1 = new MetroSet_UI.Controls.MetroSetComboBox();
             ((System.ComponentModel.ISupportInitialize)numeric_TFQuestions).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numeric_MCQ_Questions).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numeric_Duration).BeginInit();
@@ -49,29 +48,31 @@
             // 
             // btn_generateExam
             // 
-            btn_generateExam.Location = new Point(627, 618);
+            btn_generateExam.BackColor = Color.FromArgb(186, 32, 38);
+            btn_generateExam.ForeColor = Color.White;
+            btn_generateExam.Location = new Point(627, 594);
             btn_generateExam.Name = "btn_generateExam";
-            btn_generateExam.Size = new Size(228, 61);
+            btn_generateExam.Size = new Size(228, 59);
             btn_generateExam.TabIndex = 0;
             btn_generateExam.Text = "Generate";
-            btn_generateExam.UseVisualStyleBackColor = true;
+            btn_generateExam.UseVisualStyleBackColor = false;
             btn_generateExam.Click += btn_generateExam_Click;
             // 
             // lbCourses
             // 
             lbCourses.AutoSize = true;
-            lbCourses.Location = new Point(89, 112);
+            lbCourses.Location = new Point(89, 108);
             lbCourses.Name = "lbCourses";
-            lbCourses.Size = new Size(228, 26);
+            lbCourses.Size = new Size(248, 25);
             lbCourses.TabIndex = 2;
             lbCourses.Text = "Choose Course Name";
             // 
             // cmb_Courses
             // 
             cmb_Courses.FormattingEnabled = true;
-            cmb_Courses.Location = new Point(704, 104);
+            cmb_Courses.Location = new Point(704, 100);
             cmb_Courses.Name = "cmb_Courses";
-            cmb_Courses.Size = new Size(151, 34);
+            cmb_Courses.Size = new Size(151, 33);
             cmb_Courses.TabIndex = 3;
             // 
             // ctrlBox
@@ -82,7 +83,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(828, 22);
+            ctrlBox.Location = new Point(828, 21);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -103,111 +104,84 @@
             // lb_numOfTFQuestions
             // 
             lb_numOfTFQuestions.AutoSize = true;
-            lb_numOfTFQuestions.Location = new Point(89, 178);
+            lb_numOfTFQuestions.Location = new Point(89, 171);
             lb_numOfTFQuestions.Name = "lb_numOfTFQuestions";
-            lb_numOfTFQuestions.Size = new Size(519, 26);
+            lb_numOfTFQuestions.Size = new Size(560, 25);
             lb_numOfTFQuestions.TabIndex = 24;
             lb_numOfTFQuestions.Text = "Choose Number of T/F Questions (3 Questions Max)";
             // 
             // numeric_TFQuestions
             // 
-            numeric_TFQuestions.Location = new Point(705, 178);
+            numeric_TFQuestions.Location = new Point(705, 171);
             numeric_TFQuestions.Name = "numeric_TFQuestions";
-            numeric_TFQuestions.Size = new Size(150, 32);
+            numeric_TFQuestions.Size = new Size(150, 34);
             numeric_TFQuestions.TabIndex = 25;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(89, 246);
+            label1.Location = new Point(89, 237);
             label1.Name = "label1";
-            label1.Size = new Size(539, 26);
+            label1.Size = new Size(588, 25);
             label1.TabIndex = 26;
             label1.Text = "Choose Number of MCQ Questions (7 Questions Max)";
             // 
             // numeric_MCQ_Questions
             // 
-            numeric_MCQ_Questions.Location = new Point(705, 246);
+            numeric_MCQ_Questions.Location = new Point(705, 237);
             numeric_MCQ_Questions.Name = "numeric_MCQ_Questions";
-            numeric_MCQ_Questions.Size = new Size(150, 32);
+            numeric_MCQ_Questions.Size = new Size(150, 34);
             numeric_MCQ_Questions.TabIndex = 27;
             // 
             // DateTimeForExam
             // 
-            DateTimeForExam.Location = new Point(593, 379);
+            DateTimeForExam.Location = new Point(593, 364);
             DateTimeForExam.Name = "DateTimeForExam";
             DateTimeForExam.TabIndex = 28;
             // 
             // numeric_Duration
             // 
-            numeric_Duration.Location = new Point(705, 309);
+            numeric_Duration.Location = new Point(705, 297);
             numeric_Duration.Name = "numeric_Duration";
-            numeric_Duration.Size = new Size(150, 32);
+            numeric_Duration.Size = new Size(150, 34);
             numeric_Duration.TabIndex = 29;
             // 
             // lb_Duration
             // 
             lb_Duration.AutoSize = true;
-            lb_Duration.Location = new Point(89, 315);
+            lb_Duration.Location = new Point(89, 303);
             lb_Duration.Name = "lb_Duration";
-            lb_Duration.Size = new Size(238, 26);
+            lb_Duration.Size = new Size(256, 25);
             lb_Duration.TabIndex = 30;
             lb_Duration.Text = "Choose Exam Duration";
             // 
             // lb_date
             // 
             lb_date.AutoSize = true;
-            lb_date.Location = new Point(89, 379);
+            lb_date.Location = new Point(89, 364);
             lb_date.Name = "lb_date";
-            lb_date.Size = new Size(202, 26);
+            lb_date.Size = new Size(219, 25);
             lb_date.TabIndex = 31;
             lb_date.Text = "Choose Exam Date";
             // 
             // btn_back
             // 
-            btn_back.Location = new Point(75, 618);
+            btn_back.BackColor = Color.FromArgb(37, 37, 37);
+            btn_back.ForeColor = Color.White;
+            btn_back.Location = new Point(75, 594);
             btn_back.Name = "btn_back";
-            btn_back.Size = new Size(228, 61);
+            btn_back.Size = new Size(228, 59);
             btn_back.TabIndex = 32;
             btn_back.Text = "Back";
-            btn_back.UseVisualStyleBackColor = true;
+            btn_back.UseVisualStyleBackColor = false;
             btn_back.Click += btn_back_Click;
-            // 
-            // metroSetComboBox1
-            // 
-            metroSetComboBox1.AllowDrop = true;
-            metroSetComboBox1.ArrowColor = Color.FromArgb(150, 150, 150);
-            metroSetComboBox1.BackColor = Color.Transparent;
-            metroSetComboBox1.BackgroundColor = Color.FromArgb(238, 238, 238);
-            metroSetComboBox1.BorderColor = Color.FromArgb(150, 150, 150);
-            metroSetComboBox1.CausesValidation = false;
-            metroSetComboBox1.DisabledBackColor = Color.FromArgb(204, 204, 204);
-            metroSetComboBox1.DisabledBorderColor = Color.FromArgb(155, 155, 155);
-            metroSetComboBox1.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            metroSetComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            metroSetComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            metroSetComboBox1.Font = new Font("Microsoft Sans Serif", 11F);
-            metroSetComboBox1.FormattingEnabled = true;
-            metroSetComboBox1.IsDerivedStyle = true;
-            metroSetComboBox1.ItemHeight = 20;
-            metroSetComboBox1.Location = new Point(402, 384);
-            metroSetComboBox1.Name = "metroSetComboBox1";
-            metroSetComboBox1.SelectedItemBackColor = Color.FromArgb(65, 177, 225);
-            metroSetComboBox1.SelectedItemForeColor = Color.White;
-            metroSetComboBox1.Size = new Size(151, 26);
-            metroSetComboBox1.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetComboBox1.StyleManager = null;
-            metroSetComboBox1.TabIndex = 33;
-            metroSetComboBox1.ThemeAuthor = "Narwin";
-            metroSetComboBox1.ThemeName = "MetroLite";
             // 
             // FormGenerateExam
             // 
-            AutoScaleDimensions = new SizeF(13F, 26F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(963, 736);
-            Controls.Add(metroSetComboBox1);
+            ClientSize = new Size(963, 708);
             Controls.Add(btn_back);
             Controls.Add(lb_date);
             Controls.Add(lb_Duration);
@@ -221,9 +195,10 @@
             Controls.Add(cmb_Courses);
             Controls.Add(lbCourses);
             Controls.Add(btn_generateExam);
-            Font = new Font("Microsoft Sans Serif", 13F);
+            Font = new Font("Century Gothic", 13F);
             Margin = new Padding(5, 4, 5, 4);
             Name = "FormGenerateExam";
+            Padding = new Padding(12, 67, 12, 12);
             SmallLineColor1 = Color.FromArgb(186, 32, 38);
             SmallLineColor2 = Color.FromArgb(186, 32, 38);
             Text = "GenerateExam";
@@ -250,6 +225,5 @@
         private Label lb_Duration;
         private Label lb_date;
         private Button btn_back;
-        private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox1;
     }
 }

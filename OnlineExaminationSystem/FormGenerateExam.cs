@@ -19,8 +19,6 @@ namespace OnlineExaminationSystem
     public partial class FormGenerateExam : MetroSetForm
     {
         OnlineExaminationSystemContext _context = new OnlineExaminationSystemContext();
-        BindingSource CoursePindingSource;
-        string CourseName;
         int NumOfTFQuestions, NumOfMCQ_Questions;
         public FormGenerateExam()
         {
@@ -33,27 +31,10 @@ namespace OnlineExaminationSystem
         private void FormGenerateExam_Load(object sender, EventArgs e)
         {
             _context.Courses.Load();
-
-            CoursePindingSource = new BindingSource(_context.Courses.Local.ToBindingList(), "");
-
-
             List<Course> courses = _context.Courses.ToList();
             cmb_Courses.DataSource = courses;
             cmb_Courses.DisplayMember = "Name";
             cmb_Courses.ValueMember = "Name";
-
-
-
-
-
-
-            /*this.cmb_Courses.DataSource = _context.Courses.ToList();
-            this.cmb_Courses.DisplayMember = "Name";
-            this.cmb_Courses.ValueMember = "Name";
-            this.cmb_Courses.DataBindings.Add("SelectedValue", CoursePindingSource, "Name");*/
-
-
-
         }
 
 
