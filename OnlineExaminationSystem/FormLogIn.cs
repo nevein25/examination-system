@@ -54,7 +54,7 @@ namespace OnlineExaminationSystem
                 }
                 else
                 {
-                    MessageBox.Show("Wrong username or password");
+                    MessageBox.Show("Wrong username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

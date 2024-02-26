@@ -31,33 +31,43 @@ namespace OnlineExaminationSystem
             {
                 try
                 {
-                    Student student = new Student()
+                    Student existStudent = _context.Students.Where(s => s.Ssn == ssn || s.Email == email).FirstOrDefault();
+
+                    if (existStudent == null)
                     {
-                        Fname = fname,
-                        Lname = txtLname.Text,
-                        Email = email,
-                        Password = Helper.Encrypt(txtPassword.Text),
-                        AccountState = "Active",
-                        Ssn = ssn
-                    };
-                    _context.Students.Add(student);
-                    _context.SaveChanges();
+                        Student student = new Student()
+                        {
+                            Fname = fname,
+                            Lname = txtLname.Text,
+                            Email = email,
+                            Password = Helper.Encrypt(txtPassword.Text),
+                            AccountState = "Active",
+                            Ssn = ssn
+                        };
+                        _context.Students.Add(student);
+                        _context.SaveChanges();
 
 
-                    MessageBox.Show("Account created successfully");
+                        MessageBox.Show("Account created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    using (FormHomeStudent frmHomeStudent = new FormHomeStudent())
+                        using (FormHomeStudent frmHomeStudent = new FormHomeStudent())
+                        {
+                            frmHomeStudent.StartPosition = FormStartPosition.CenterScreen;
+
+                            Helper.HideFormSmoothly(this);
+
+                            frmHomeStudent.ShowDialog();
+                        }
+                    }
+                    else
                     {
-                        frmHomeStudent.StartPosition = FormStartPosition.CenterScreen;
+                        MessageBox.Show("Student with the same SSN or email already exist", "Student already exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        Helper.HideFormSmoothly(this);
-
-                        frmHomeStudent.ShowDialog();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Something Went Wrong");
+                    MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
