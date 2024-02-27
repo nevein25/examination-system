@@ -27,7 +27,7 @@ namespace OnlineExaminationSystem.Helpers
                 await Task.Delay(50);
             }
 
-            form.Hide();
+           form.Hide();         
         }
 
         // Showing form in appealing way
