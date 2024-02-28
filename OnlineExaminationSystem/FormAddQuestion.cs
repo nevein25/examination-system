@@ -92,6 +92,7 @@ namespace OnlineExaminationSystem
                     if (result > 0)
                     {
                         MessageBox.Show("Question is added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Rh_QuestionText.Text = string.Empty;
                         int QuestionIDRes = _context.Questions.OrderBy(P => P.Id).Select(P => P.Id).Last();
                         for (int i = 0; i < QuestionAnswers.Count; i++)
                         {

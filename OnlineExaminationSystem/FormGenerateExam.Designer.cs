@@ -151,9 +151,9 @@
             lb_Duration.AutoSize = true;
             lb_Duration.Location = new Point(89, 303);
             lb_Duration.Name = "lb_Duration";
-            lb_Duration.Size = new Size(256, 25);
+            lb_Duration.Size = new Size(342, 25);
             lb_Duration.TabIndex = 30;
-            lb_Duration.Text = "Choose Exam Duration";
+            lb_Duration.Text = "Choose Exam Duration in (Min)";
             // 
             // lb_date
             // 
