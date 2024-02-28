@@ -48,18 +48,68 @@
             label4 = new Label();
             comboDepartment = new ComboBox();
             tabPage3 = new TabPage();
+            btn_AddQuestionSave = new Button();
+            lb_Answer3 = new Label();
+            lb_Answer2 = new Label();
+            lb_Answer1 = new Label();
+            txt_MCQ_Answer1 = new TextBox();
+            txt_MCQ_Answer3 = new TextBox();
+            txt_MCQ_Answer2 = new TextBox();
+            lb_ModelAnswer = new Label();
+            cmb_ModelAnswer = new ComboBox();
+            Rh_QuestionText = new RichTextBox();
+            lb_QuestionText = new Label();
+            lb_Mark = new Label();
+            numMark = new NumericUpDown();
+            cmbComplexity = new ComboBox();
+            lb_Complexity = new Label();
+            cmbType = new ComboBox();
+            lb_Type = new Label();
+            cmbCourses = new ComboBox();
+            lb_Course = new Label();
             tabPage4 = new TabPage();
+            btn_generateExam = new Button();
+            lb_date = new Label();
+            lb_Duration = new Label();
+            numeric_Duration = new NumericUpDown();
+            DateTimeForExam = new MonthCalendar();
+            numeric_MCQ_Questions = new NumericUpDown();
+            label3 = new Label();
+            numeric_TFQuestions = new NumericUpDown();
+            lb_numOfTFQuestions = new Label();
+            cmb_Courses = new ComboBox();
+            lbCourses = new Label();
             tabPage5 = new TabPage();
             lstTopics = new MetroSet_UI.Controls.MetroSetListBox();
             btnNewCourse = new Button();
             button1 = new Button();
             label2 = new Label();
             comboCorsesesForTopics = new ComboBox();
+            tabPage6 = new TabPage();
+            btn_Search_Grades = new Button();
+            grd_StudentsGrades = new DataGridView();
+            cmb_Course_Grades = new ComboBox();
+            label5 = new Label();
+            tabPage7 = new TabPage();
+            btn_Save_Dept = new Button();
+            cmb_Mgr = new ComboBox();
+            label6 = new Label();
+            lb_DeptName = new Label();
+            txt_DeptName = new TextBox();
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
             lblAssignCourseStudentD.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numMark).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numeric_Duration).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numeric_MCQ_Questions).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numeric_TFQuestions).BeginInit();
             tabPage5.SuspendLayout();
+            tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grd_StudentsGrades).BeginInit();
+            tabPage7.SuspendLayout();
             SuspendLayout();
             // 
             // lblAssignCourseStudentD
@@ -69,10 +119,12 @@
             lblAssignCourseStudentD.Controls.Add(tabPage3);
             lblAssignCourseStudentD.Controls.Add(tabPage4);
             lblAssignCourseStudentD.Controls.Add(tabPage5);
-            lblAssignCourseStudentD.Location = new Point(15, 37);
+            lblAssignCourseStudentD.Controls.Add(tabPage6);
+            lblAssignCourseStudentD.Controls.Add(tabPage7);
+            lblAssignCourseStudentD.Location = new Point(15, 47);
             lblAssignCourseStudentD.Name = "lblAssignCourseStudentD";
             lblAssignCourseStudentD.SelectedIndex = 0;
-            lblAssignCourseStudentD.Size = new Size(948, 382);
+            lblAssignCourseStudentD.Size = new Size(1001, 602);
             lblAssignCourseStudentD.TabIndex = 1;
             // 
             // tabPage1
@@ -88,7 +140,7 @@
             tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(940, 344);
+            tabPage1.Size = new Size(993, 558);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Assign Course";
             tabPage1.UseVisualStyleBackColor = true;
@@ -191,7 +243,7 @@
             tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(940, 344);
+            tabPage2.Size = new Size(993, 564);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Assign Department";
             tabPage2.UseVisualStyleBackColor = true;
@@ -282,23 +334,335 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(btn_AddQuestionSave);
+            tabPage3.Controls.Add(lb_Answer3);
+            tabPage3.Controls.Add(lb_Answer2);
+            tabPage3.Controls.Add(lb_Answer1);
+            tabPage3.Controls.Add(txt_MCQ_Answer1);
+            tabPage3.Controls.Add(txt_MCQ_Answer3);
+            tabPage3.Controls.Add(txt_MCQ_Answer2);
+            tabPage3.Controls.Add(lb_ModelAnswer);
+            tabPage3.Controls.Add(cmb_ModelAnswer);
+            tabPage3.Controls.Add(Rh_QuestionText);
+            tabPage3.Controls.Add(lb_QuestionText);
+            tabPage3.Controls.Add(lb_Mark);
+            tabPage3.Controls.Add(numMark);
+            tabPage3.Controls.Add(cmbComplexity);
+            tabPage3.Controls.Add(lb_Complexity);
+            tabPage3.Controls.Add(cmbType);
+            tabPage3.Controls.Add(lb_Type);
+            tabPage3.Controls.Add(cmbCourses);
+            tabPage3.Controls.Add(lb_Course);
             tabPage3.Location = new Point(4, 34);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(940, 344);
+            tabPage3.Size = new Size(993, 564);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Add Questions";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btn_AddQuestionSave
+            // 
+            btn_AddQuestionSave.BackColor = Color.FromArgb(186, 32, 38);
+            btn_AddQuestionSave.ForeColor = Color.White;
+            btn_AddQuestionSave.Location = new Point(719, 434);
+            btn_AddQuestionSave.Name = "btn_AddQuestionSave";
+            btn_AddQuestionSave.Size = new Size(228, 59);
+            btn_AddQuestionSave.TabIndex = 54;
+            btn_AddQuestionSave.Text = "Save";
+            btn_AddQuestionSave.UseVisualStyleBackColor = false;
+            btn_AddQuestionSave.Click += btn_AddQuestionSave_Click;
+            // 
+            // lb_Answer3
+            // 
+            lb_Answer3.AutoSize = true;
+            lb_Answer3.BackColor = SystemColors.ButtonHighlight;
+            lb_Answer3.Font = new Font("Century Gothic", 13F);
+            lb_Answer3.ForeColor = Color.Gray;
+            lb_Answer3.Location = new Point(733, 327);
+            lb_Answer3.Name = "lb_Answer3";
+            lb_Answer3.Size = new Size(176, 25);
+            lb_Answer3.TabIndex = 53;
+            lb_Answer3.Text = "MCQ Answer 3";
+            // 
+            // lb_Answer2
+            // 
+            lb_Answer2.AutoSize = true;
+            lb_Answer2.BackColor = SystemColors.ButtonHighlight;
+            lb_Answer2.Font = new Font("Century Gothic", 13F);
+            lb_Answer2.ForeColor = Color.Gray;
+            lb_Answer2.Location = new Point(409, 327);
+            lb_Answer2.Name = "lb_Answer2";
+            lb_Answer2.Size = new Size(176, 25);
+            lb_Answer2.TabIndex = 52;
+            lb_Answer2.Text = "MCQ Answer 2";
+            // 
+            // lb_Answer1
+            // 
+            lb_Answer1.AutoSize = true;
+            lb_Answer1.BackColor = SystemColors.ButtonHighlight;
+            lb_Answer1.Font = new Font("Century Gothic", 13F);
+            lb_Answer1.ForeColor = Color.Gray;
+            lb_Answer1.Location = new Point(99, 327);
+            lb_Answer1.Name = "lb_Answer1";
+            lb_Answer1.Size = new Size(176, 25);
+            lb_Answer1.TabIndex = 51;
+            lb_Answer1.Text = "MCQ Answer 1";
+            // 
+            // txt_MCQ_Answer1
+            // 
+            txt_MCQ_Answer1.Location = new Point(58, 368);
+            txt_MCQ_Answer1.Name = "txt_MCQ_Answer1";
+            txt_MCQ_Answer1.Size = new Size(252, 34);
+            txt_MCQ_Answer1.TabIndex = 50;
+            // 
+            // txt_MCQ_Answer3
+            // 
+            txt_MCQ_Answer3.Location = new Point(695, 368);
+            txt_MCQ_Answer3.Name = "txt_MCQ_Answer3";
+            txt_MCQ_Answer3.Size = new Size(252, 34);
+            txt_MCQ_Answer3.TabIndex = 49;
+            // 
+            // txt_MCQ_Answer2
+            // 
+            txt_MCQ_Answer2.Location = new Point(370, 368);
+            txt_MCQ_Answer2.Name = "txt_MCQ_Answer2";
+            txt_MCQ_Answer2.Size = new Size(252, 34);
+            txt_MCQ_Answer2.TabIndex = 48;
+            // 
+            // lb_ModelAnswer
+            // 
+            lb_ModelAnswer.AutoSize = true;
+            lb_ModelAnswer.BackColor = SystemColors.ButtonHighlight;
+            lb_ModelAnswer.Font = new Font("Century Gothic", 13F);
+            lb_ModelAnswer.ForeColor = Color.Gray;
+            lb_ModelAnswer.Location = new Point(75, 451);
+            lb_ModelAnswer.Name = "lb_ModelAnswer";
+            lb_ModelAnswer.Size = new Size(170, 25);
+            lb_ModelAnswer.TabIndex = 47;
+            lb_ModelAnswer.Text = "Model Answer";
+            // 
+            // cmb_ModelAnswer
+            // 
+            cmb_ModelAnswer.FormattingEnabled = true;
+            cmb_ModelAnswer.Location = new Point(284, 451);
+            cmb_ModelAnswer.Name = "cmb_ModelAnswer";
+            cmb_ModelAnswer.Size = new Size(363, 33);
+            cmb_ModelAnswer.TabIndex = 46;
+            // 
+            // Rh_QuestionText
+            // 
+            Rh_QuestionText.BackColor = Color.White;
+            Rh_QuestionText.Location = new Point(511, 84);
+            Rh_QuestionText.Name = "Rh_QuestionText";
+            Rh_QuestionText.Size = new Size(457, 175);
+            Rh_QuestionText.TabIndex = 45;
+            Rh_QuestionText.Text = "";
+            // 
+            // lb_QuestionText
+            // 
+            lb_QuestionText.AutoSize = true;
+            lb_QuestionText.BackColor = SystemColors.ButtonHighlight;
+            lb_QuestionText.Font = new Font("Century Gothic", 13F);
+            lb_QuestionText.ForeColor = Color.Gray;
+            lb_QuestionText.Location = new Point(511, 39);
+            lb_QuestionText.Name = "lb_QuestionText";
+            lb_QuestionText.Size = new Size(156, 25);
+            lb_QuestionText.TabIndex = 44;
+            lb_QuestionText.Text = "Question Text";
+            // 
+            // lb_Mark
+            // 
+            lb_Mark.AutoSize = true;
+            lb_Mark.BackColor = SystemColors.ButtonHighlight;
+            lb_Mark.Font = new Font("Century Gothic", 13F);
+            lb_Mark.ForeColor = Color.Gray;
+            lb_Mark.Location = new Point(41, 275);
+            lb_Mark.Name = "lb_Mark";
+            lb_Mark.Size = new Size(168, 25);
+            lb_Mark.TabIndex = 43;
+            lb_Mark.Text = "Question Mark";
+            // 
+            // numMark
+            // 
+            numMark.Location = new Point(285, 268);
+            numMark.Name = "numMark";
+            numMark.Size = new Size(150, 34);
+            numMark.TabIndex = 42;
+            // 
+            // cmbComplexity
+            // 
+            cmbComplexity.FormattingEnabled = true;
+            cmbComplexity.Location = new Point(284, 197);
+            cmbComplexity.Name = "cmbComplexity";
+            cmbComplexity.Size = new Size(151, 33);
+            cmbComplexity.TabIndex = 41;
+            // 
+            // lb_Complexity
+            // 
+            lb_Complexity.AutoSize = true;
+            lb_Complexity.BackColor = SystemColors.ButtonHighlight;
+            lb_Complexity.Font = new Font("Century Gothic", 13F);
+            lb_Complexity.ForeColor = Color.Gray;
+            lb_Complexity.Location = new Point(41, 200);
+            lb_Complexity.Name = "lb_Complexity";
+            lb_Complexity.Size = new Size(237, 25);
+            lb_Complexity.TabIndex = 40;
+            lb_Complexity.Text = "Question Complexity";
+            // 
+            // cmbType
+            // 
+            cmbType.FormattingEnabled = true;
+            cmbType.Location = new Point(284, 115);
+            cmbType.Name = "cmbType";
+            cmbType.Size = new Size(151, 33);
+            cmbType.TabIndex = 39;
+            cmbType.SelectedIndexChanged += cmbType_SelectedIndexChanged;
+            // 
+            // lb_Type
+            // 
+            lb_Type.AutoSize = true;
+            lb_Type.BackColor = SystemColors.ButtonHighlight;
+            lb_Type.Font = new Font("Century Gothic", 13F);
+            lb_Type.ForeColor = Color.Gray;
+            lb_Type.Location = new Point(41, 118);
+            lb_Type.Name = "lb_Type";
+            lb_Type.Size = new Size(165, 25);
+            lb_Type.TabIndex = 38;
+            lb_Type.Text = "Question Type";
+            // 
+            // cmbCourses
+            // 
+            cmbCourses.FormattingEnabled = true;
+            cmbCourses.Location = new Point(284, 39);
+            cmbCourses.Name = "cmbCourses";
+            cmbCourses.Size = new Size(151, 33);
+            cmbCourses.TabIndex = 37;
+            // 
+            // lb_Course
+            // 
+            lb_Course.AutoSize = true;
+            lb_Course.BackColor = SystemColors.ButtonHighlight;
+            lb_Course.Font = new Font("Century Gothic", 13F);
+            lb_Course.ForeColor = Color.Gray;
+            lb_Course.Location = new Point(41, 39);
+            lb_Course.Name = "lb_Course";
+            lb_Course.Size = new Size(87, 25);
+            lb_Course.TabIndex = 36;
+            lb_Course.Text = "Course";
+            // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(btn_generateExam);
+            tabPage4.Controls.Add(lb_date);
+            tabPage4.Controls.Add(lb_Duration);
+            tabPage4.Controls.Add(numeric_Duration);
+            tabPage4.Controls.Add(DateTimeForExam);
+            tabPage4.Controls.Add(numeric_MCQ_Questions);
+            tabPage4.Controls.Add(label3);
+            tabPage4.Controls.Add(numeric_TFQuestions);
+            tabPage4.Controls.Add(lb_numOfTFQuestions);
+            tabPage4.Controls.Add(cmb_Courses);
+            tabPage4.Controls.Add(lbCourses);
             tabPage4.Location = new Point(4, 34);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(940, 344);
+            tabPage4.Size = new Size(993, 564);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Generate Exam";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btn_generateExam
+            // 
+            btn_generateExam.BackColor = Color.FromArgb(186, 32, 38);
+            btn_generateExam.ForeColor = Color.White;
+            btn_generateExam.Location = new Point(36, 420);
+            btn_generateExam.Name = "btn_generateExam";
+            btn_generateExam.Size = new Size(228, 59);
+            btn_generateExam.TabIndex = 42;
+            btn_generateExam.Text = "Generate";
+            btn_generateExam.UseVisualStyleBackColor = false;
+            btn_generateExam.Click += btn_generateExam_Click;
+            // 
+            // lb_date
+            // 
+            lb_date.AutoSize = true;
+            lb_date.Location = new Point(36, 300);
+            lb_date.Name = "lb_date";
+            lb_date.Size = new Size(219, 25);
+            lb_date.TabIndex = 41;
+            lb_date.Text = "Choose Exam Date";
+            // 
+            // lb_Duration
+            // 
+            lb_Duration.AutoSize = true;
+            lb_Duration.Location = new Point(36, 229);
+            lb_Duration.Name = "lb_Duration";
+            lb_Duration.Size = new Size(342, 25);
+            lb_Duration.TabIndex = 40;
+            lb_Duration.Text = "Choose Exam Duration in (Min)";
+            // 
+            // numeric_Duration
+            // 
+            numeric_Duration.Location = new Point(715, 220);
+            numeric_Duration.Name = "numeric_Duration";
+            numeric_Duration.Size = new Size(203, 34);
+            numeric_Duration.TabIndex = 39;
+            // 
+            // DateTimeForExam
+            // 
+            DateTimeForExam.Location = new Point(656, 272);
+            DateTimeForExam.Name = "DateTimeForExam";
+            DateTimeForExam.TabIndex = 38;
+            // 
+            // numeric_MCQ_Questions
+            // 
+            numeric_MCQ_Questions.Location = new Point(715, 160);
+            numeric_MCQ_Questions.Name = "numeric_MCQ_Questions";
+            numeric_MCQ_Questions.Size = new Size(203, 34);
+            numeric_MCQ_Questions.TabIndex = 37;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(36, 162);
+            label3.Name = "label3";
+            label3.Size = new Size(588, 25);
+            label3.TabIndex = 36;
+            label3.Text = "Choose Number of MCQ Questions (7 Questions Max)";
+            // 
+            // numeric_TFQuestions
+            // 
+            numeric_TFQuestions.Location = new Point(715, 93);
+            numeric_TFQuestions.Name = "numeric_TFQuestions";
+            numeric_TFQuestions.Size = new Size(203, 34);
+            numeric_TFQuestions.TabIndex = 35;
+            // 
+            // lb_numOfTFQuestions
+            // 
+            lb_numOfTFQuestions.AutoSize = true;
+            lb_numOfTFQuestions.Location = new Point(36, 102);
+            lb_numOfTFQuestions.Name = "lb_numOfTFQuestions";
+            lb_numOfTFQuestions.Size = new Size(560, 25);
+            lb_numOfTFQuestions.TabIndex = 34;
+            lb_numOfTFQuestions.Text = "Choose Number of T/F Questions (3 Questions Max)";
+            // 
+            // cmb_Courses
+            // 
+            cmb_Courses.FormattingEnabled = true;
+            cmb_Courses.Location = new Point(715, 33);
+            cmb_Courses.Name = "cmb_Courses";
+            cmb_Courses.Size = new Size(203, 33);
+            cmb_Courses.TabIndex = 33;
+            // 
+            // lbCourses
+            // 
+            lbCourses.AutoSize = true;
+            lbCourses.Location = new Point(36, 41);
+            lbCourses.Name = "lbCourses";
+            lbCourses.Size = new Size(248, 25);
+            lbCourses.TabIndex = 32;
+            lbCourses.Text = "Choose Course Name";
             // 
             // tabPage5
             // 
@@ -310,7 +674,7 @@
             tabPage5.Location = new Point(4, 34);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(940, 344);
+            tabPage5.Size = new Size(993, 564);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Show Courses";
             tabPage5.UseVisualStyleBackColor = true;
@@ -388,6 +752,128 @@
             comboCorsesesForTopics.Size = new Size(197, 33);
             comboCorsesesForTopics.TabIndex = 26;
             // 
+            // tabPage6
+            // 
+            tabPage6.Controls.Add(btn_Search_Grades);
+            tabPage6.Controls.Add(grd_StudentsGrades);
+            tabPage6.Controls.Add(cmb_Course_Grades);
+            tabPage6.Controls.Add(label5);
+            tabPage6.Location = new Point(4, 34);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(993, 564);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "Students Grades";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btn_Search_Grades
+            // 
+            btn_Search_Grades.BackColor = Color.FromArgb(186, 32, 38);
+            btn_Search_Grades.ForeColor = Color.White;
+            btn_Search_Grades.Location = new Point(693, 493);
+            btn_Search_Grades.Name = "btn_Search_Grades";
+            btn_Search_Grades.Size = new Size(228, 59);
+            btn_Search_Grades.TabIndex = 30;
+            btn_Search_Grades.Text = "Search";
+            btn_Search_Grades.UseVisualStyleBackColor = false;
+            btn_Search_Grades.Click += btn_Search_Grades_Click;
+            // 
+            // grd_StudentsGrades
+            // 
+            grd_StudentsGrades.AllowUserToAddRows = false;
+            grd_StudentsGrades.AllowUserToDeleteRows = false;
+            grd_StudentsGrades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grd_StudentsGrades.Location = new Point(44, 85);
+            grd_StudentsGrades.Name = "grd_StudentsGrades";
+            grd_StudentsGrades.ReadOnly = true;
+            grd_StudentsGrades.RowHeadersWidth = 51;
+            grd_StudentsGrades.Size = new Size(877, 400);
+            grd_StudentsGrades.TabIndex = 29;
+            // 
+            // cmb_Course_Grades
+            // 
+            cmb_Course_Grades.FormattingEnabled = true;
+            cmb_Course_Grades.Location = new Point(587, 32);
+            cmb_Course_Grades.Name = "cmb_Course_Grades";
+            cmb_Course_Grades.Size = new Size(334, 33);
+            cmb_Course_Grades.TabIndex = 28;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.White;
+            label5.Location = new Point(75, 35);
+            label5.Name = "label5";
+            label5.Size = new Size(248, 25);
+            label5.TabIndex = 27;
+            label5.Text = "Choose Course Name";
+            // 
+            // tabPage7
+            // 
+            tabPage7.Controls.Add(btn_Save_Dept);
+            tabPage7.Controls.Add(cmb_Mgr);
+            tabPage7.Controls.Add(label6);
+            tabPage7.Controls.Add(lb_DeptName);
+            tabPage7.Controls.Add(txt_DeptName);
+            tabPage7.Location = new Point(4, 34);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Padding = new Padding(3);
+            tabPage7.Size = new Size(993, 564);
+            tabPage7.TabIndex = 6;
+            tabPage7.Text = "Add Department";
+            tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // btn_Save_Dept
+            // 
+            btn_Save_Dept.BackColor = Color.FromArgb(186, 32, 38);
+            btn_Save_Dept.ForeColor = Color.White;
+            btn_Save_Dept.Location = new Point(321, 258);
+            btn_Save_Dept.Name = "btn_Save_Dept";
+            btn_Save_Dept.Size = new Size(228, 59);
+            btn_Save_Dept.TabIndex = 52;
+            btn_Save_Dept.Text = "Save";
+            btn_Save_Dept.UseVisualStyleBackColor = false;
+            btn_Save_Dept.Click += btn_Save_Dept_Click;
+            // 
+            // cmb_Mgr
+            // 
+            cmb_Mgr.FormattingEnabled = true;
+            cmb_Mgr.Location = new Point(525, 165);
+            cmb_Mgr.Name = "cmb_Mgr";
+            cmb_Mgr.Size = new Size(363, 33);
+            cmb_Mgr.TabIndex = 51;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.ButtonHighlight;
+            label6.Font = new Font("Century Gothic", 13F);
+            label6.ForeColor = Color.Gray;
+            label6.Location = new Point(116, 168);
+            label6.Name = "label6";
+            label6.Size = new Size(252, 25);
+            label6.TabIndex = 50;
+            label6.Text = "Department Manager";
+            // 
+            // lb_DeptName
+            // 
+            lb_DeptName.AutoSize = true;
+            lb_DeptName.BackColor = SystemColors.ButtonHighlight;
+            lb_DeptName.Font = new Font("Century Gothic", 13F);
+            lb_DeptName.ForeColor = Color.Gray;
+            lb_DeptName.Location = new Point(116, 90);
+            lb_DeptName.Name = "lb_DeptName";
+            lb_DeptName.Size = new Size(217, 25);
+            lb_DeptName.TabIndex = 49;
+            lb_DeptName.Text = "Department Name";
+            // 
+            // txt_DeptName
+            // 
+            txt_DeptName.Location = new Point(525, 90);
+            txt_DeptName.Name = "txt_DeptName";
+            txt_DeptName.Size = new Size(363, 34);
+            txt_DeptName.TabIndex = 48;
+            // 
             // ctrlBox
             // 
             ctrlBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -396,7 +882,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(868, 7);
+            ctrlBox.Location = new Point(916, 7);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -418,7 +904,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(983, 433);
+            ClientSize = new Size(1031, 657);
             Controls.Add(ctrlBox);
             Controls.Add(lblAssignCourseStudentD);
             Font = new Font("Century Gothic", 13F);
@@ -432,8 +918,21 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numMark).EndInit();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numeric_Duration).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numeric_MCQ_Questions).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numeric_TFQuestions).EndInit();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)grd_StudentsGrades).EndInit();
+            tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -467,5 +966,47 @@
         private Button button1;
         private Label label2;
         private ComboBox comboCorsesesForTopics;
+        private RichTextBox Rh_QuestionText;
+        private Label lb_QuestionText;
+        private Label lb_Mark;
+        private NumericUpDown numMark;
+        private ComboBox cmbComplexity;
+        private Label lb_Complexity;
+        private ComboBox cmbType;
+        private Label lb_Type;
+        private ComboBox cmbCourses;
+        private Label lb_Course;
+        private Label lb_Answer3;
+        private Label lb_Answer2;
+        private Label lb_Answer1;
+        private TextBox txt_MCQ_Answer1;
+        private TextBox txt_MCQ_Answer3;
+        private TextBox txt_MCQ_Answer2;
+        private Label lb_ModelAnswer;
+        private ComboBox cmb_ModelAnswer;
+        private Button btn_Back;
+        private Button btn_AddQuestionSave;
+        private Label lb_date;
+        private Label lb_Duration;
+        private NumericUpDown numeric_Duration;
+        private MonthCalendar DateTimeForExam;
+        private NumericUpDown numeric_MCQ_Questions;
+        private Label label3;
+        private NumericUpDown numeric_TFQuestions;
+        private Label lb_numOfTFQuestions;
+        private ComboBox cmb_Courses;
+        private Label lbCourses;
+        private Button btn_generateExam;
+        private TabPage tabPage6;
+        private ComboBox cmb_Course_Grades;
+        private Label label5;
+        private DataGridView grd_StudentsGrades;
+        private Button btn_Search_Grades;
+        private TabPage tabPage7;
+        private ComboBox cmb_Mgr;
+        private Label label6;
+        private Label lb_DeptName;
+        private TextBox txt_DeptName;
+        private Button btn_Save_Dept;
     }
 }
