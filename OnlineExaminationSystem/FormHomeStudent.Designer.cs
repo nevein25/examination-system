@@ -1,4 +1,4 @@
-﻿namespace OnlineExaminationSystem
+namespace OnlineExaminationSystem
 {
     partial class FormHomeStudent
     {
@@ -61,17 +61,17 @@
             // btnShowGrades
             // 
             btnShowGrades.Font = new Font("Century Gothic", 13F);
-            btnShowGrades.Location = new Point(270, 207);
+            btnShowGrades.Location = new Point(541, 341);
             btnShowGrades.Name = "btnShowGrades";
             btnShowGrades.Size = new Size(221, 40);
             btnShowGrades.TabIndex = 24;
-            btnShowGrades.Text = "Take Exam";
+            btnShowGrades.Text = "Show Grades";
             btnShowGrades.UseVisualStyleBackColor = true;
-          //  btnShowGrades.Click += btnShowGrades_Click;
+            btnShowGrades.Click += btnShowGrades_Click;
             // 
             // FormHomeStudent
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 433);
             Controls.Add(btnShowGrades);
@@ -79,9 +79,9 @@
             Font = new Font("Century Gothic", 13F);
             Name = "FormHomeStudent";
             Padding = new Padding(12, 67, 12, 12);
-          //  SmallLineColor1 = Color.FromArgb(186, 32, 38);
-          //  SmallLineColor2 = Color.FromArgb(186, 32, 38);
-           // Text = "FormHomeStudent";
+            SmallLineColor1 = Color.FromArgb(186, 32, 38);
+            SmallLineColor2 = Color.FromArgb(186, 32, 38);
+            Text = "FormHomeStudent";
             ResumeLayout(false);
         }
 

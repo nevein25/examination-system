@@ -1,9 +1,5 @@
-﻿using OnlineExaminationSystem.Helpers;
-using OnlineExaminationSystem;
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using MetroSet_UI.Forms;
+﻿using MetroSet_UI.Forms;
+using OnlineExaminationSystem.Helpers;
 
 namespace OnlineExaminationSystem
 {
@@ -16,7 +12,13 @@ namespace OnlineExaminationSystem
 
         private void btnShowGrades_Click(object sender, EventArgs e)
         {
-            
+            using (FormStudentOwnGrade formStudentOwnGrade = new FormStudentOwnGrade())
+            {
+
+                Helper.HideFormSmoothly(this);
+
+                formStudentOwnGrade.ShowDialog();
+            }
         }
     }
 }

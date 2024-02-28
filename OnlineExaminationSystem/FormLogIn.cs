@@ -14,7 +14,7 @@ namespace OnlineExaminationSystem
         {
             InitializeComponent();
             this.FormClosed += (sender, e) => _context?.Dispose();
-           
+
         }
 
 
@@ -32,8 +32,8 @@ namespace OnlineExaminationSystem
                     var isStudent = _context.Students.Where(s => s.Id == user.Id).FirstOrDefault();
                     if (isStudent != null)
                     {
-                        using (FormStudentHome formHomeStudent = new FormStudentHome (//isStudent.Id
-                                                                                      ))
+                        Helper.StudentId = user.Id;
+                        using (FormHomeStudent formHomeStudent = new FormHomeStudent())
                         {
 
                             Helper.HideFormSmoothly(this);
@@ -43,6 +43,8 @@ namespace OnlineExaminationSystem
                     }
                     else
                     {
+                        // here
+                        Helper.InstructorId = user.Id;
                         using (FormHomeInstructor formHomeInstructor = new FormHomeInstructor())
                         {
                             formHomeInstructor.StartPosition = FormStartPosition.CenterScreen;

@@ -30,19 +30,18 @@
         {
             comboCourses = new ComboBox();
             label1 = new Label();
-            button1 = new Button();
+            btnShowTopics = new Button();
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
-            grdTopics = new DataGridView();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)grdTopics).BeginInit();
+            btnNewCourse = new Button();
+            lstTopics = new MetroSet_UI.Controls.MetroSetListBox();
             SuspendLayout();
             // 
             // comboCourses
             // 
             comboCourses.FormattingEnabled = true;
-            comboCourses.Location = new Point(211, 104);
+            comboCourses.Location = new Point(33, 169);
             comboCourses.Name = "comboCourses";
-            comboCourses.Size = new Size(151, 33);
+            comboCourses.Size = new Size(197, 33);
             comboCourses.TabIndex = 0;
             // 
             // label1
@@ -55,15 +54,18 @@
             label1.TabIndex = 1;
             label1.Text = "Select Course";
             // 
-            // button1
+            // btnShowTopics
             // 
-            button1.Location = new Point(59, 175);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 42);
-            button1.TabIndex = 2;
-            button1.Text = "Show topics";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnShowTopics.BackColor = Color.FromArgb(186, 32, 38);
+            btnShowTopics.FlatStyle = FlatStyle.Flat;
+            btnShowTopics.ForeColor = Color.White;
+            btnShowTopics.Location = new Point(30, 251);
+            btnShowTopics.Name = "btnShowTopics";
+            btnShowTopics.Size = new Size(200, 42);
+            btnShowTopics.TabIndex = 2;
+            btnShowTopics.Text = "Show topics";
+            btnShowTopics.UseVisualStyleBackColor = false;
+            btnShowTopics.Click += btnShowTopics_Click;
             // 
             // ctrlBox
             // 
@@ -73,7 +75,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(685, 24);
+            ctrlBox.Location = new Point(440, 24);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -91,33 +93,57 @@
             ctrlBox.ThemeAuthor = "Narwin";
             ctrlBox.ThemeName = "MetroLite";
             // 
-            // grdTopics
+            // btnNewCourse
             // 
-            grdTopics.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grdTopics.Location = new Point(59, 237);
-            grdTopics.Name = "grdTopics";
-            grdTopics.RowHeadersWidth = 51;
-            grdTopics.Size = new Size(300, 181);
-            grdTopics.TabIndex = 23;
+            btnNewCourse.BackColor = Color.FromArgb(186, 32, 38);
+            btnNewCourse.FlatStyle = FlatStyle.Flat;
+            btnNewCourse.ForeColor = Color.White;
+            btnNewCourse.Location = new Point(303, 251);
+            btnNewCourse.Name = "btnNewCourse";
+            btnNewCourse.Size = new Size(206, 42);
+            btnNewCourse.TabIndex = 24;
+            btnNewCourse.Text = "Add New Course";
+            btnNewCourse.UseVisualStyleBackColor = false;
+            btnNewCourse.Click += btnNewCourse_Click;
             // 
-            // button2
+            // lstTopics
             // 
-            button2.Location = new Point(568, 87);
-            button2.Name = "button2";
-            button2.Size = new Size(206, 42);
-            button2.TabIndex = 24;
-            button2.Text = "Add New Course";
-            button2.UseVisualStyleBackColor = true;
+            lstTopics.BackColor = Color.White;
+            lstTopics.BorderColor = Color.LightGray;
+            lstTopics.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            lstTopics.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            lstTopics.Font = new Font("Microsoft Sans Serif", 10F);
+            lstTopics.HoveredItemBackColor = Color.LightGray;
+            lstTopics.HoveredItemColor = Color.DimGray;
+            lstTopics.IsDerivedStyle = true;
+            lstTopics.ItemHeight = 30;
+            lstTopics.Location = new Point(303, 104);
+            lstTopics.MultiSelect = false;
+            lstTopics.Name = "lstTopics";
+            lstTopics.SelectedIndex = -1;
+            lstTopics.SelectedItem = null;
+            lstTopics.SelectedItemBackColor = Color.FromArgb(65, 177, 225);
+            lstTopics.SelectedItemColor = Color.White;
+            lstTopics.SelectedText = null;
+            lstTopics.SelectedValue = null;
+            lstTopics.ShowBorder = false;
+            lstTopics.ShowScrollBar = false;
+            lstTopics.Size = new Size(206, 98);
+            lstTopics.Style = MetroSet_UI.Enums.Style.Light;
+            lstTopics.StyleManager = null;
+            lstTopics.TabIndex = 25;
+            lstTopics.ThemeAuthor = "Narwin";
+            lstTopics.ThemeName = "MetroLite";
             // 
             // FormCourseTopics
             // 
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 433);
-            Controls.Add(button2);
-            Controls.Add(grdTopics);
+            ClientSize = new Size(555, 337);
+            Controls.Add(lstTopics);
+            Controls.Add(btnNewCourse);
             Controls.Add(ctrlBox);
-            Controls.Add(button1);
+            Controls.Add(btnShowTopics);
             Controls.Add(label1);
             Controls.Add(comboCourses);
             Font = new Font("Century Gothic", 13F);
@@ -127,7 +153,6 @@
             SmallLineColor2 = Color.FromArgb(186, 32, 38);
             Text = "FormCourseTopics";
             Load += FormCourseTopics_Load;
-            ((System.ComponentModel.ISupportInitialize)grdTopics).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,9 +161,10 @@
 
         private ComboBox comboCourses;
         private Label label1;
-        private Button button1;
+        private Button btnShowTopics;
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
+        private Button btnNewCourse;
+        private MetroSet_UI.Controls.MetroSetListBox lstTopics;
         private DataGridView grdTopics;
-        private Button button2;
     }
 }

@@ -6,6 +6,9 @@ namespace OnlineExaminationSystem.Helpers
 {
     public class Helper
     {
+        public static int StudentId = 0;
+        public static int InstructorId = 0;
+
         // For encrypting password
         public static string Encrypt(string password)
         {
@@ -27,7 +30,7 @@ namespace OnlineExaminationSystem.Helpers
                 await Task.Delay(50);
             }
 
-            form.Hide();
+           form.Hide();         
         }
 
         // Showing form in appealing way
@@ -46,9 +49,5 @@ namespace OnlineExaminationSystem.Helpers
             form.Opacity = 1.0;
         }
 
-        internal static void HideFromSmoothly(FormExamAnswers formExamAnswers)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
