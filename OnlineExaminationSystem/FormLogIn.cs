@@ -32,7 +32,8 @@ namespace OnlineExaminationSystem
                     var isStudent = _context.Students.Where(s => s.Id == user.Id).FirstOrDefault();
                     if (isStudent != null)
                     {
-                        using (FormHomeStudent formHomeStudent = new FormHomeStudent())
+                        using (FormStudentHome formHomeStudent = new FormStudentHome (//isStudent.Id
+                                                                                      ))
                         {
 
                             Helper.HideFormSmoothly(this);

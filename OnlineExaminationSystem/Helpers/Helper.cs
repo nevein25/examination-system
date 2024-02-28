@@ -46,5 +46,9 @@ namespace OnlineExaminationSystem.Helpers
             form.Opacity = 1.0;
         }
 
+        internal static void HideFromSmoothly(FormExamAnswers formExamAnswers)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,9 @@
-﻿using MetroSet_UI.Forms;
+﻿using OnlineExaminationSystem.Helpers;
+using OnlineExaminationSystem;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using MetroSet_UI.Forms;
 
 namespace OnlineExaminationSystem
 {
@@ -9,6 +14,9 @@ namespace OnlineExaminationSystem
             InitializeComponent();
         }
 
-
+        private void btnShowGrades_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
