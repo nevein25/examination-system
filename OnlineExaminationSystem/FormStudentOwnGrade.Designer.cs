@@ -71,7 +71,7 @@
             lstCourses.HoveredItemColor = Color.DimGray;
             lstCourses.IsDerivedStyle = true;
             lstCourses.ItemHeight = 30;
-            lstCourses.Location = new Point(54, 155);
+            lstCourses.Location = new Point(54, 132);
             lstCourses.MultiSelect = false;
             lstCourses.Name = "lstCourses";
             lstCourses.SelectedIndex = -1;
@@ -95,7 +95,7 @@
             label1.BackColor = SystemColors.ButtonHighlight;
             label1.Font = new Font("Century Gothic", 13F);
             label1.ForeColor = Color.Gray;
-            label1.Location = new Point(129, 102);
+            label1.Location = new Point(129, 97);
             label1.Name = "label1";
             label1.Size = new Size(72, 21);
             label1.TabIndex = 35;
@@ -105,7 +105,7 @@
             // 
             btn_back.BackColor = Color.FromArgb(37, 37, 37);
             btn_back.ForeColor = Color.White;
-            btn_back.Location = new Point(97, 260);
+            btn_back.Location = new Point(97, 242);
             btn_back.Name = "btn_back";
             btn_back.Size = new Size(125, 39);
             btn_back.TabIndex = 36;

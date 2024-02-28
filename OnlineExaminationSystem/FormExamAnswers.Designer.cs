@@ -281,7 +281,7 @@
             BackBtn.FlatAppearance.BorderSize = 0;
             BackBtn.FlatStyle = FlatStyle.Flat;
             BackBtn.Font = new Font("Century Gothic", 12F);
-            BackBtn.ForeColor = Color.DarkGray;
+            BackBtn.ForeColor = Color.FromArgb(186, 32, 38);
             BackBtn.Location = new Point(-2, 6);
             BackBtn.Name = "BackBtn";
             BackBtn.Size = new Size(40, 34);
@@ -314,9 +314,8 @@
             Font = new Font("Century Gothic", 13F);
             Name = "FormExamAnswers";
             Padding = new Padding(12, 74, 12, 13);
-            SmallLineColor1 = Color.FromArgb(186, 32, 38);
-            SmallLineColor2 = Color.FromArgb(186, 32, 38);
-            Text = "ITI";
+            SmallLineColor1 = Color.Transparent;
+            SmallLineColor2 = Color.White;
             Load += FormExamAnswers_Load_1;
             ResumeLayout(false);
         }
