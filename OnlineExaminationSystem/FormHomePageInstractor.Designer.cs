@@ -97,10 +97,11 @@
             // 
             lblAssignCourseStudentQ.AutoSize = true;
             lblAssignCourseStudentQ.BackColor = SystemColors.ButtonHighlight;
-            lblAssignCourseStudentQ.ForeColor = Color.Gray;
-            lblAssignCourseStudentQ.Location = new Point(499, 311);
+            lblAssignCourseStudentQ.Font = new Font("Century Gothic", 15F);
+            lblAssignCourseStudentQ.ForeColor = Color.Black;
+            lblAssignCourseStudentQ.Location = new Point(527, 301);
             lblAssignCourseStudentQ.Name = "lblAssignCourseStudentQ";
-            lblAssignCourseStudentQ.Size = new Size(295, 25);
+            lblAssignCourseStudentQ.Size = new Size(335, 31);
             lblAssignCourseStudentQ.TabIndex = 10;
             lblAssignCourseStudentQ.Text = "Assign Course for Student?";
             lblAssignCourseStudentQ.Click += lblAssignCourse_Click;
