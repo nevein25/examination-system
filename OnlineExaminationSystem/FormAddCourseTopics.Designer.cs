@@ -38,6 +38,7 @@
             lblReqHours = new Label();
             lblTopic = new Label();
             btnAddTopic = new Button();
+            ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
             SuspendLayout();
             // 
             // lblReqCourse
@@ -180,11 +181,38 @@
             btnAddTopic.UseVisualStyleBackColor = false;
             btnAddTopic.Click += btnAddTopic_Click;
             // 
+            // ctrlBox
+            // 
+            ctrlBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ctrlBox.CloseHoverBackColor = Color.FromArgb(183, 40, 40);
+            ctrlBox.CloseHoverForeColor = Color.White;
+            ctrlBox.CloseNormalForeColor = Color.Gray;
+            ctrlBox.DisabledForeColor = Color.DimGray;
+            ctrlBox.IsDerivedStyle = true;
+            ctrlBox.Location = new Point(765, 22);
+            ctrlBox.MaximizeBox = true;
+            ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
+            ctrlBox.MaximizeHoverForeColor = Color.Gray;
+            ctrlBox.MaximizeNormalForeColor = Color.Gray;
+            ctrlBox.MinimizeBox = true;
+            ctrlBox.MinimizeHoverBackColor = Color.FromArgb(238, 238, 238);
+            ctrlBox.MinimizeHoverForeColor = Color.Gray;
+            ctrlBox.MinimizeNormalForeColor = Color.Gray;
+            ctrlBox.Name = "ctrlBox";
+            ctrlBox.Size = new Size(100, 25);
+            ctrlBox.Style = MetroSet_UI.Enums.Style.Light;
+            ctrlBox.StyleManager = null;
+            ctrlBox.TabIndex = 34;
+            ctrlBox.Text = "metroSetControlBox1";
+            ctrlBox.ThemeAuthor = "Narwin";
+            ctrlBox.ThemeName = "MetroLite";
+            // 
             // FormAddCourseTopics
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(887, 368);
+            Controls.Add(ctrlBox);
             Controls.Add(btnAddTopic);
             Controls.Add(lblTopic);
             Controls.Add(lblReqHours);
@@ -215,5 +243,6 @@
         private Label lblReqHours;
         private Label lblTopic;
         private Button btnAddTopic;
+        private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
     }
 }

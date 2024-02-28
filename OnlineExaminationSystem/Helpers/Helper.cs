@@ -6,6 +6,9 @@ namespace OnlineExaminationSystem.Helpers
 {
     public class Helper
     {
+        public static int StudentId = 0;
+        public static int InstructorId = 0;
+
         // For encrypting password
         public static string Encrypt(string password)
         {

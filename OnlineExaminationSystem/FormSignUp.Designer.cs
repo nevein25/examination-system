@@ -57,7 +57,7 @@
             btnSignUp.FlatStyle = FlatStyle.Flat;
             btnSignUp.Font = new Font("Century Gothic", 13F);
             btnSignUp.ForeColor = Color.White;
-            btnSignUp.Location = new Point(257, 557);
+            btnSignUp.Location = new Point(251, 557);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.Size = new Size(159, 47);
             btnSignUp.TabIndex = 21;
@@ -70,7 +70,7 @@
             txtSsn.Anchor = AnchorStyles.None;
             txtSsn.Font = new Font("Century Gothic", 13F);
             txtSsn.ForeColor = Color.Gray;
-            txtSsn.Location = new Point(200, 479);
+            txtSsn.Location = new Point(196, 479);
             txtSsn.Name = "txtSsn";
             txtSsn.PlaceholderText = "SSN";
             txtSsn.Size = new Size(289, 34);
@@ -82,7 +82,7 @@
             txtPassword.Anchor = AnchorStyles.None;
             txtPassword.Font = new Font("Century Gothic", 13F);
             txtPassword.ForeColor = Color.Gray;
-            txtPassword.Location = new Point(200, 405);
+            txtPassword.Location = new Point(196, 405);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Password";
@@ -95,7 +95,7 @@
             txtEmail.Anchor = AnchorStyles.None;
             txtEmail.Font = new Font("Century Gothic", 13F);
             txtEmail.ForeColor = Color.Gray;
-            txtEmail.Location = new Point(200, 331);
+            txtEmail.Location = new Point(196, 331);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(289, 34);
@@ -107,7 +107,7 @@
             txtLname.Anchor = AnchorStyles.None;
             txtLname.Font = new Font("Century Gothic", 13F);
             txtLname.ForeColor = Color.Gray;
-            txtLname.Location = new Point(200, 257);
+            txtLname.Location = new Point(196, 257);
             txtLname.Name = "txtLname";
             txtLname.PlaceholderText = "Last Name";
             txtLname.Size = new Size(289, 34);
@@ -119,7 +119,7 @@
             txtFname.Anchor = AnchorStyles.None;
             txtFname.Font = new Font("Century Gothic", 13F);
             txtFname.ForeColor = Color.Gray;
-            txtFname.Location = new Point(200, 183);
+            txtFname.Location = new Point(196, 183);
             txtFname.Name = "txtFname";
             txtFname.PlaceholderText = "First Name";
             txtFname.Size = new Size(289, 34);
@@ -133,7 +133,7 @@
             lblgologin.BackColor = SystemColors.ButtonHighlight;
             lblgologin.Font = new Font("Century Gothic", 11F);
             lblgologin.ForeColor = Color.Gray;
-            lblgologin.Location = new Point(177, 636);
+            lblgologin.Location = new Point(147, 636);
             lblgologin.Name = "lblgologin";
             lblgologin.Size = new Size(363, 22);
             lblgologin.TabIndex = 23;
@@ -158,7 +158,7 @@
             lblReqFname.BackColor = SystemColors.ButtonHighlight;
             lblReqFname.Font = new Font("Century Gothic", 10F);
             lblReqFname.ForeColor = Color.FromArgb(186, 32, 38);
-            lblReqFname.Location = new Point(200, 220);
+            lblReqFname.Location = new Point(196, 220);
             lblReqFname.Name = "lblReqFname";
             lblReqFname.Size = new Size(166, 21);
             lblReqFname.TabIndex = 28;
@@ -172,7 +172,7 @@
             lblReqLname.BackColor = SystemColors.ButtonHighlight;
             lblReqLname.Font = new Font("Century Gothic", 10F);
             lblReqLname.ForeColor = Color.FromArgb(186, 32, 38);
-            lblReqLname.Location = new Point(200, 294);
+            lblReqLname.Location = new Point(196, 294);
             lblReqLname.Name = "lblReqLname";
             lblReqLname.Size = new Size(166, 21);
             lblReqLname.TabIndex = 29;
@@ -186,7 +186,7 @@
             lblReqEmail.BackColor = SystemColors.ButtonHighlight;
             lblReqEmail.Font = new Font("Century Gothic", 10F);
             lblReqEmail.ForeColor = Color.FromArgb(186, 32, 38);
-            lblReqEmail.Location = new Point(200, 368);
+            lblReqEmail.Location = new Point(196, 368);
             lblReqEmail.Name = "lblReqEmail";
             lblReqEmail.Size = new Size(166, 21);
             lblReqEmail.TabIndex = 30;
@@ -200,7 +200,7 @@
             lblReqPassword.BackColor = SystemColors.ButtonHighlight;
             lblReqPassword.Font = new Font("Century Gothic", 10F);
             lblReqPassword.ForeColor = Color.FromArgb(186, 32, 38);
-            lblReqPassword.Location = new Point(200, 442);
+            lblReqPassword.Location = new Point(196, 442);
             lblReqPassword.Name = "lblReqPassword";
             lblReqPassword.Size = new Size(166, 21);
             lblReqPassword.TabIndex = 31;
@@ -214,7 +214,7 @@
             lblReqSSN.BackColor = SystemColors.ButtonHighlight;
             lblReqSSN.Font = new Font("Century Gothic", 10F);
             lblReqSSN.ForeColor = Color.FromArgb(186, 32, 38);
-            lblReqSSN.Location = new Point(200, 516);
+            lblReqSSN.Location = new Point(196, 516);
             lblReqSSN.Name = "lblReqSSN";
             lblReqSSN.Size = new Size(166, 21);
             lblReqSSN.TabIndex = 32;
@@ -285,7 +285,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 670);
+            ClientSize = new Size(525, 670);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);

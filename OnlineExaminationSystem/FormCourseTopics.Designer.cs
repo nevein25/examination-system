@@ -30,7 +30,7 @@
         {
             comboCourses = new ComboBox();
             label1 = new Label();
-            button1 = new Button();
+            btnShowTopics = new Button();
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
             btnNewCourse = new Button();
             lstTopics = new MetroSet_UI.Controls.MetroSetListBox();
@@ -54,18 +54,18 @@
             label1.TabIndex = 1;
             label1.Text = "Select Course";
             // 
-            // button1
+            // btnShowTopics
             // 
-            button1.BackColor = Color.FromArgb(186, 32, 38);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(30, 251);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 42);
-            button1.TabIndex = 2;
-            button1.Text = "Show topics";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnShowTopics.BackColor = Color.FromArgb(186, 32, 38);
+            btnShowTopics.FlatStyle = FlatStyle.Flat;
+            btnShowTopics.ForeColor = Color.White;
+            btnShowTopics.Location = new Point(30, 251);
+            btnShowTopics.Name = "btnShowTopics";
+            btnShowTopics.Size = new Size(200, 42);
+            btnShowTopics.TabIndex = 2;
+            btnShowTopics.Text = "Show topics";
+            btnShowTopics.UseVisualStyleBackColor = false;
+            btnShowTopics.Click += btnShowTopics_Click;
             // 
             // ctrlBox
             // 
@@ -143,7 +143,7 @@
             Controls.Add(lstTopics);
             Controls.Add(btnNewCourse);
             Controls.Add(ctrlBox);
-            Controls.Add(button1);
+            Controls.Add(btnShowTopics);
             Controls.Add(label1);
             Controls.Add(comboCourses);
             Font = new Font("Century Gothic", 13F);
@@ -161,7 +161,7 @@
 
         private ComboBox comboCourses;
         private Label label1;
-        private Button button1;
+        private Button btnShowTopics;
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
         private Button btnNewCourse;
         private MetroSet_UI.Controls.MetroSetListBox lstTopics;
