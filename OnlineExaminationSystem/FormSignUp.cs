@@ -50,7 +50,7 @@ namespace OnlineExaminationSystem
 
                         MessageBox.Show("Account created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        using (FormHomeStudent frmHomeStudent = new FormHomeStudent())
+                        using (FormStudentHome frmHomeStudent = new FormStudentHome())
                         {
                             frmHomeStudent.StartPosition = FormStartPosition.CenterScreen;
 

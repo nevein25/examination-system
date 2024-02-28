@@ -35,11 +35,11 @@ namespace OnlineExaminationSystem
             //  this.formStudentHome = _formStudentHome;// Assign the reference passed from outside
         }
 
-        private void FormExamAnswers_Load(object sender, EventArgs e)
+        private void FormExamAnswers_Load_1(object sender, EventArgs e)
         {
             context = new OnlineExaminationSystemContext();
             examTimer = new System.Windows.Forms.Timer();
-            examDurationInSeconds = context.Exams.FirstOrDefault(e => e.Id == 1)?.Duration * 60 - 80?? 3;
+            examDurationInSeconds = context.Exams.FirstOrDefault(e => e.Id == 1)?.Duration * 60 - 80 ?? 3;
             examTimer.Interval = 1000; // 1 second
             examTimer.Tick += new EventHandler(examTimer_Tick);
             examTimer.Start();
@@ -52,7 +52,7 @@ namespace OnlineExaminationSystem
             int CrsID = context.Exams?.FirstOrDefault(e => e.Id == 1)?.CId ?? 0;
             CourseName.Text = context.Courses.FirstOrDefault(c => c.Id == CrsID)?.Name;
 
-            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == 1)?.Duration * 60 - 80  ?? 180)).ToString(@"hh\:mm\:ss");
+            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == 1)?.Duration * 60 - 80 ?? 180)).ToString(@"hh\:mm\:ss");
             var exam = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == 1);
 
             int totalMarks = exam.QIds.Sum(q => q.Mark);
@@ -175,7 +175,7 @@ namespace OnlineExaminationSystem
         {
             if (count > 0)
             {
-               
+
                 if (Ch1.Checked) StudentAnswers[answerCount] = Ch1.Text;
                 else if (Ch2.Checked) StudentAnswers[answerCount] = Ch2.Text;
                 else if (Ch3.Checked) StudentAnswers[answerCount] = Ch3.Text;
@@ -211,6 +211,7 @@ namespace OnlineExaminationSystem
             this.Hide();
         }
 
+       
     }
 }
 

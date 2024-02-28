@@ -28,65 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SIDTxt = new MetroSet_UI.Controls.MetroSetTextBox();
+            showGradesBtn = new Button();
             TakeExamBtn = new Button();
             SuspendLayout();
             // 
-            // SIDTxt
+            // showGradesBtn
             // 
-            SIDTxt.AutoCompleteCustomSource = null;
-            SIDTxt.AutoCompleteMode = AutoCompleteMode.None;
-            SIDTxt.AutoCompleteSource = AutoCompleteSource.None;
-            SIDTxt.BorderColor = Color.FromArgb(155, 155, 155);
-            SIDTxt.DisabledBackColor = Color.FromArgb(204, 204, 204);
-            SIDTxt.DisabledBorderColor = Color.FromArgb(155, 155, 155);
-            SIDTxt.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            SIDTxt.Font = new Font("Microsoft Sans Serif", 10F);
-            SIDTxt.HoverColor = Color.FromArgb(102, 102, 102);
-            SIDTxt.Image = null;
-            SIDTxt.IsDerivedStyle = true;
-            SIDTxt.Lines = null;
-            SIDTxt.Location = new Point(351, 94);
-            SIDTxt.MaxLength = 32767;
-            SIDTxt.Multiline = false;
-            SIDTxt.Name = "SIDTxt";
-            SIDTxt.ReadOnly = false;
-            SIDTxt.Size = new Size(135, 30);
-            SIDTxt.Style = MetroSet_UI.Enums.Style.Light;
-            SIDTxt.StyleManager = null;
-            SIDTxt.TabIndex = 1;
-            SIDTxt.Text = "metroSetTextBox1";
-            SIDTxt.TextAlign = HorizontalAlignment.Left;
-            SIDTxt.ThemeAuthor = "Narwin";
-            SIDTxt.ThemeName = "MetroLite";
-            SIDTxt.UseSystemPasswordChar = false;
-            SIDTxt.WatermarkText = "";
+            showGradesBtn.BackColor = Color.FromArgb(186, 32, 38);
+            showGradesBtn.FlatStyle = FlatStyle.Flat;
+            showGradesBtn.Font = new Font("Century Gothic", 15F);
+            showGradesBtn.ForeColor = Color.White;
+            showGradesBtn.Location = new Point(93, 101);
+            showGradesBtn.Name = "showGradesBtn";
+            showGradesBtn.Size = new Size(169, 32);
+            showGradesBtn.TabIndex = 54;
+            showGradesBtn.Text = "Show Grades";
+            showGradesBtn.UseVisualStyleBackColor = false;
+            showGradesBtn.Click += showGradesBtn_Click;
             // 
             // TakeExamBtn
             // 
-            TakeExamBtn.Font = new Font("Century Gothic", 13F);
-            TakeExamBtn.Location = new Point(280, 190);
+            TakeExamBtn.BackColor = Color.FromArgb(186, 32, 38);
+            TakeExamBtn.FlatStyle = FlatStyle.Flat;
+            TakeExamBtn.Font = new Font("Century Gothic", 15F);
+            TakeExamBtn.ForeColor = Color.White;
+            TakeExamBtn.Location = new Point(93, 167);
             TakeExamBtn.Name = "TakeExamBtn";
-            TakeExamBtn.Size = new Size(221, 40);
-            TakeExamBtn.TabIndex = 25;
+            TakeExamBtn.Size = new Size(169, 32);
+            TakeExamBtn.TabIndex = 55;
             TakeExamBtn.Text = "Take Exam";
-            TakeExamBtn.UseVisualStyleBackColor = true;
-            TakeExamBtn.Click += TakeExamBtn_Click;
+            TakeExamBtn.UseVisualStyleBackColor = false;
+            TakeExamBtn.Click += TakeExamBtn_Click_2;
             // 
             // FormStudentHome
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BorderColor = Color.FromArgb(186, 32, 38);
+            ClientSize = new Size(372, 293);
             Controls.Add(TakeExamBtn);
-            Controls.Add(SIDTxt);
+            Controls.Add(showGradesBtn);
             Name = "FormStudentHome";
-            Text = "FormStudentHome";
+            SmallLineColor1 = Color.FromArgb(186, 32, 38);
+            SmallLineColor2 = Color.FromArgb(186, 32, 38);
+            Text = "ITI";
             ResumeLayout(false);
         }
 
         #endregion
-        private MetroSet_UI.Controls.MetroSetTextBox SIDTxt;
+
+        private Button showGradesBtn;
         private Button TakeExamBtn;
     }
 }

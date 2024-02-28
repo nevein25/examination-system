@@ -31,6 +31,7 @@
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
             lstCourses = new MetroSet_UI.Controls.MetroSetListBox();
             label1 = new Label();
+            btn_back = new Button();
             SuspendLayout();
             // 
             // ctrlBox
@@ -41,7 +42,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(224, 15);
+            ctrlBox.Location = new Point(243, 15);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -94,17 +95,29 @@
             label1.BackColor = SystemColors.ButtonHighlight;
             label1.Font = new Font("Century Gothic", 13F);
             label1.ForeColor = Color.Gray;
-            label1.Location = new Point(107, 102);
+            label1.Location = new Point(129, 102);
             label1.Name = "label1";
-            label1.Size = new Size(87, 25);
+            label1.Size = new Size(72, 21);
             label1.TabIndex = 35;
             label1.Text = "Course";
             // 
+            // btn_back
+            // 
+            btn_back.BackColor = Color.FromArgb(37, 37, 37);
+            btn_back.ForeColor = Color.White;
+            btn_back.Location = new Point(97, 260);
+            btn_back.Name = "btn_back";
+            btn_back.Size = new Size(125, 39);
+            btn_back.TabIndex = 36;
+            btn_back.Text = "Back";
+            btn_back.UseVisualStyleBackColor = false;
+            // 
             // FormStudentOwnGrade
             // 
-            AutoScaleDimensions = new SizeF(13F, 26F);
+            AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(339, 300);
+            ClientSize = new Size(358, 318);
+            Controls.Add(btn_back);
             Controls.Add(label1);
             Controls.Add(lstCourses);
             Controls.Add(ctrlBox);
@@ -121,5 +134,6 @@
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
         private MetroSet_UI.Controls.MetroSetListBox lstCourses;
         private Label label1;
+        private Button btn_back;
     }
 }

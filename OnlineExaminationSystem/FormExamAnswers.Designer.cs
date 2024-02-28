@@ -278,14 +278,16 @@
             // BackBtn
             // 
             BackBtn.BackColor = Color.White;
+            BackBtn.FlatAppearance.BorderSize = 0;
             BackBtn.FlatStyle = FlatStyle.Flat;
             BackBtn.Font = new Font("Century Gothic", 12F);
             BackBtn.ForeColor = Color.DarkGray;
-            BackBtn.Location = new Point(3, 2);
+            BackBtn.Location = new Point(-2, 6);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(52, 34);
+            BackBtn.Size = new Size(40, 34);
             BackBtn.TabIndex = 55;
             BackBtn.Text = "<<";
+            BackBtn.TextAlign = ContentAlignment.MiddleRight;
             BackBtn.UseVisualStyleBackColor = false;
             BackBtn.Click += BackBtn_Click_1;
             // 
@@ -315,8 +317,7 @@
             SmallLineColor1 = Color.FromArgb(186, 32, 38);
             SmallLineColor2 = Color.FromArgb(186, 32, 38);
             Text = "ITI";
-            FormClosed += FormExamAnswers_FormClosed;
-            Load += FormExamAnswers_Load;
+            Load += FormExamAnswers_Load_1;
             ResumeLayout(false);
         }
 

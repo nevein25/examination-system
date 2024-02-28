@@ -33,7 +33,7 @@ namespace OnlineExaminationSystem
                     if (isStudent != null)
                     {
                         Helper.StudentId = user.Id;
-                        using (FormHomeStudent formHomeStudent = new FormHomeStudent())
+                        using (FormStudentHome formHomeStudent = new FormStudentHome ())
                         {
 
                             Helper.HideFormSmoothly(this);
