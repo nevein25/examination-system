@@ -45,7 +45,7 @@ namespace OnlineExaminationSystem
                     {
                         // here
                         Helper.InstructorId = user.Id;
-                        using (FormHomeInstructor formHomeInstructor = new FormHomeInstructor())
+                        using (FormHomePageInstractor formHomeInstructor = new FormHomePageInstractor())
                         {
                             formHomeInstructor.StartPosition = FormStartPosition.CenterScreen;
 

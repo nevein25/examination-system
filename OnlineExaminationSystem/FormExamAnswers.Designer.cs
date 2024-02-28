@@ -36,15 +36,15 @@
             Marks = new MetroSet_UI.Controls.MetroSetLabel();
             QuestionNumber = new MetroSet_UI.Controls.MetroSetLabel();
             QuesText = new MetroSet_UI.Controls.MetroSetLabel();
-            Ch1 = new MetroSet_UI.Controls.MetroSetRadioButton();
-            Ch2 = new MetroSet_UI.Controls.MetroSetRadioButton();
-            Ch3 = new MetroSet_UI.Controls.MetroSetRadioButton();
             time = new MetroSet_UI.Controls.MetroSetLabel();
             drt = new MetroSet_UI.Controls.MetroSetLabel();
             timerExam = new System.Windows.Forms.Timer(components);
             PrevBtn = new Button();
             NextBtn = new Button();
             BackBtn = new Button();
+            Ch1 = new RadioButton();
+            Ch2 = new RadioButton();
+            Ch3 = new RadioButton();
             SuspendLayout();
             // 
             // ctrlBox
@@ -55,7 +55,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(685, 9);
+            ctrlBox.Location = new Point(803, 9);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -77,9 +77,9 @@
             // 
             CrsName.Font = new Font("Century Gothic", 15F);
             CrsName.IsDerivedStyle = true;
-            CrsName.Location = new Point(61, 76);
+            CrsName.Location = new Point(61, 81);
             CrsName.Name = "CrsName";
-            CrsName.Size = new Size(150, 28);
+            CrsName.Size = new Size(107, 28);
             CrsName.Style = MetroSet_UI.Enums.Style.Light;
             CrsName.StyleManager = null;
             CrsName.TabIndex = 36;
@@ -91,7 +91,7 @@
             // 
             CourseName.Font = new Font("Century Gothic", 15F);
             CourseName.IsDerivedStyle = true;
-            CourseName.Location = new Point(206, 77);
+            CourseName.Location = new Point(183, 81);
             CourseName.Name = "CourseName";
             CourseName.Size = new Size(90, 29);
             CourseName.Style = MetroSet_UI.Enums.Style.Light;
@@ -105,21 +105,22 @@
             // 
             metroSetLabel4.Font = new Font("Century Gothic", 15F);
             metroSetLabel4.IsDerivedStyle = true;
-            metroSetLabel4.Location = new Point(573, 79);
+            metroSetLabel4.Location = new Point(627, 81);
             metroSetLabel4.Name = "metroSetLabel4";
-            metroSetLabel4.Size = new Size(73, 27);
+            metroSetLabel4.Size = new Size(98, 37);
             metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
             metroSetLabel4.StyleManager = null;
             metroSetLabel4.TabIndex = 40;
             metroSetLabel4.Text = "Marks:";
             metroSetLabel4.ThemeAuthor = "Narwin";
             metroSetLabel4.ThemeName = "MetroLite";
+            metroSetLabel4.Click += this.metroSetLabel4_Click;
             // 
             // Marks
             // 
             Marks.Font = new Font("Century Gothic", 15F);
             Marks.IsDerivedStyle = true;
-            Marks.Location = new Point(642, 80);
+            Marks.Location = new Point(748, 81);
             Marks.Name = "Marks";
             Marks.Size = new Size(98, 27);
             Marks.Style = MetroSet_UI.Enums.Style.Light;
@@ -157,76 +158,13 @@
             QuesText.ThemeAuthor = "Narwin";
             QuesText.ThemeName = "MetroLite";
             // 
-            // Ch1
-            // 
-            Ch1.BackgroundColor = Color.White;
-            Ch1.BorderColor = Color.FromArgb(155, 155, 155);
-            Ch1.Checked = false;
-            Ch1.CheckSignColor = Color.FromArgb(65, 177, 225);
-            Ch1.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
-            Ch1.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            Ch1.Font = new Font("Microsoft Sans Serif", 13F);
-            Ch1.Group = 0;
-            Ch1.IsDerivedStyle = true;
-            Ch1.Location = new Point(81, 269);
-            Ch1.Name = "Ch1";
-            Ch1.Size = new Size(215, 17);
-            Ch1.Style = MetroSet_UI.Enums.Style.Light;
-            Ch1.StyleManager = null;
-            Ch1.TabIndex = 44;
-            Ch1.Text = "metroSetRadioButton1";
-            Ch1.ThemeAuthor = "Narwin";
-            Ch1.ThemeName = "MetroLite";
-            // 
-            // Ch2
-            // 
-            Ch2.BackgroundColor = Color.White;
-            Ch2.BorderColor = Color.FromArgb(155, 155, 155);
-            Ch2.Checked = false;
-            Ch2.CheckSignColor = Color.FromArgb(65, 177, 225);
-            Ch2.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
-            Ch2.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            Ch2.Font = new Font("Microsoft Sans Serif", 13F);
-            Ch2.Group = 0;
-            Ch2.IsDerivedStyle = true;
-            Ch2.Location = new Point(315, 269);
-            Ch2.Name = "Ch2";
-            Ch2.Size = new Size(222, 17);
-            Ch2.Style = MetroSet_UI.Enums.Style.Light;
-            Ch2.StyleManager = null;
-            Ch2.TabIndex = 45;
-            Ch2.Text = "metroSetRadioButton2";
-            Ch2.ThemeAuthor = "Narwin";
-            Ch2.ThemeName = "MetroLite";
-            // 
-            // Ch3
-            // 
-            Ch3.BackgroundColor = Color.White;
-            Ch3.BorderColor = Color.FromArgb(155, 155, 155);
-            Ch3.Checked = false;
-            Ch3.CheckSignColor = Color.FromArgb(65, 177, 225);
-            Ch3.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
-            Ch3.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            Ch3.Font = new Font("Microsoft Sans Serif", 13F);
-            Ch3.Group = 0;
-            Ch3.IsDerivedStyle = true;
-            Ch3.Location = new Point(565, 269);
-            Ch3.Name = "Ch3";
-            Ch3.Size = new Size(210, 17);
-            Ch3.Style = MetroSet_UI.Enums.Style.Light;
-            Ch3.StyleManager = null;
-            Ch3.TabIndex = 46;
-            Ch3.Text = "metroSetRadioButton3";
-            Ch3.ThemeAuthor = "Narwin";
-            Ch3.ThemeName = "MetroLite";
-            // 
             // time
             // 
             time.Font = new Font("Century Gothic", 15F);
             time.IsDerivedStyle = true;
-            time.Location = new Point(338, 77);
+            time.Location = new Point(327, 81);
             time.Name = "time";
-            time.Size = new Size(100, 27);
+            time.Size = new Size(143, 27);
             time.Style = MetroSet_UI.Enums.Style.Light;
             time.StyleManager = null;
             time.TabIndex = 50;
@@ -238,7 +176,7 @@
             // 
             drt.Font = new Font("Century Gothic", 15F);
             drt.IsDerivedStyle = true;
-            drt.Location = new Point(436, 79);
+            drt.Location = new Point(487, 81);
             drt.Name = "drt";
             drt.Size = new Size(116, 25);
             drt.Style = MetroSet_UI.Enums.Style.Light;
@@ -246,6 +184,7 @@
             drt.TabIndex = 51;
             drt.ThemeAuthor = "Narwin";
             drt.ThemeName = "MetroLite";
+            drt.Click += drt_Click;
             // 
             // PrevBtn
             // 
@@ -253,9 +192,9 @@
             PrevBtn.FlatStyle = FlatStyle.Flat;
             PrevBtn.Font = new Font("Century Gothic", 15F);
             PrevBtn.ForeColor = Color.White;
-            PrevBtn.Location = new Point(175, 390);
+            PrevBtn.Location = new Point(192, 390);
             PrevBtn.Name = "PrevBtn";
-            PrevBtn.Size = new Size(135, 32);
+            PrevBtn.Size = new Size(131, 53);
             PrevBtn.TabIndex = 53;
             PrevBtn.Text = "Previous";
             PrevBtn.UseVisualStyleBackColor = false;
@@ -267,9 +206,9 @@
             NextBtn.FlatStyle = FlatStyle.Flat;
             NextBtn.Font = new Font("Century Gothic", 15F);
             NextBtn.ForeColor = Color.White;
-            NextBtn.Location = new Point(500, 390);
+            NextBtn.Location = new Point(493, 390);
             NextBtn.Name = "NextBtn";
-            NextBtn.Size = new Size(131, 32);
+            NextBtn.Size = new Size(131, 53);
             NextBtn.TabIndex = 54;
             NextBtn.Text = "Next";
             NextBtn.UseVisualStyleBackColor = false;
@@ -291,19 +230,57 @@
             BackBtn.UseVisualStyleBackColor = false;
             BackBtn.Click += BackBtn_Click_1;
             // 
+            // Ch1
+            // 
+            Ch1.AutoSize = true;
+            Ch1.BackColor = Color.White;
+            Ch1.Location = new Point(77, 303);
+            Ch1.Name = "Ch1";
+            Ch1.Size = new Size(169, 29);
+            Ch1.TabIndex = 56;
+            Ch1.TabStop = true;
+            Ch1.Text = "radioButton1";
+            Ch1.UseVisualStyleBackColor = false;
+            // 
+            // Ch2
+            // 
+            Ch2.AutoSize = true;
+            Ch2.BackColor = Color.White;
+            Ch2.Location = new Point(366, 303);
+            Ch2.Name = "Ch2";
+            Ch2.Size = new Size(169, 29);
+            Ch2.TabIndex = 57;
+            Ch2.TabStop = true;
+            Ch2.Text = "radioButton1";
+            Ch2.UseVisualStyleBackColor = false;
+            // 
+            // Ch3
+            // 
+            Ch3.AutoSize = true;
+            Ch3.BackColor = Color.White;
+            Ch3.ForeColor = Color.Gray;
+            Ch3.Location = new Point(630, 303);
+            Ch3.Name = "Ch3";
+            Ch3.Size = new Size(169, 29);
+            Ch3.TabIndex = 58;
+            Ch3.TabStop = true;
+            Ch3.Text = "radioButton1";
+            Ch3.UseVisualStyleBackColor = false;
+            // 
             // FormExamAnswers
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 500);
+            BackColor = Color.White;
+            ClientSize = new Size(918, 500);
+            Controls.Add(Ch3);
+            Controls.Add(Ch2);
+            Controls.Add(Ch1);
             Controls.Add(BackBtn);
             Controls.Add(NextBtn);
             Controls.Add(PrevBtn);
             Controls.Add(drt);
             Controls.Add(time);
-            Controls.Add(Ch3);
-            Controls.Add(Ch2);
-            Controls.Add(Ch1);
             Controls.Add(QuesText);
             Controls.Add(QuestionNumber);
             Controls.Add(Marks);
@@ -318,6 +295,7 @@
             SmallLineColor2 = Color.White;
             Load += FormExamAnswers_Load_1;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -333,9 +311,6 @@
         private MetroSet_UI.Controls.MetroSetLabel Marks;
         private MetroSet_UI.Controls.MetroSetLabel QuestionNumber;
         private MetroSet_UI.Controls.MetroSetLabel QuesText;
-        private MetroSet_UI.Controls.MetroSetRadioButton Ch1;
-        private MetroSet_UI.Controls.MetroSetRadioButton Ch2;
-        private MetroSet_UI.Controls.MetroSetRadioButton Ch3;
         private MetroSet_UI.Controls.MetroSetLabel time;
         private MetroSet_UI.Controls.MetroSetLabel drt;
         private MetroSet_UI.Controls.MetroSetLabel CrsName;
@@ -343,5 +318,8 @@
         private Button PrevBtn;
         private Button NextBtn;
         private Button BackBtn;
+        private RadioButton Ch1;
+        private RadioButton Ch2;
+        private RadioButton Ch3;
     }
 }
