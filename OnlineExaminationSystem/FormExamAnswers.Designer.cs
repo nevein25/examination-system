@@ -114,7 +114,7 @@
             metroSetLabel4.Text = "Marks:";
             metroSetLabel4.ThemeAuthor = "Narwin";
             metroSetLabel4.ThemeName = "MetroLite";
-            metroSetLabel4.Click += this.metroSetLabel4_Click;
+
             // 
             // Marks
             // 
@@ -184,7 +184,6 @@
             drt.TabIndex = 51;
             drt.ThemeAuthor = "Narwin";
             drt.ThemeName = "MetroLite";
-            drt.Click += drt_Click;
             // 
             // PrevBtn
             // 

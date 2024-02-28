@@ -211,10 +211,7 @@ namespace OnlineExaminationSystem
             this.Hide();
         }
 
-        private void drt_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
 
