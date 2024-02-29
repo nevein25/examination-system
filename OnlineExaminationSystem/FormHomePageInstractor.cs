@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using OnlineExaminationSystem.Context;
 using OnlineExaminationSystem.Entities;
 using OnlineExaminationSystem.Helpers;
+using OnlineExaminationSystem.Records;
 using System.Data;
+using System.Windows.Forms;
 
 namespace OnlineExaminationSystem
 {
@@ -11,6 +13,18 @@ namespace OnlineExaminationSystem
     {
         OnlineExaminationSystemContext _context = new OnlineExaminationSystemContext();
         int NumOfTFQuestions, NumOfMCQ_Questions;
+
+
+        /// add course topics
+
+        private List<TextBox> topicTextBoxes = new List<TextBox>();
+        int topicCount = 0;
+
+        int xLocation = 95;
+        int yLocation = 490;
+
+        /// 
+
         public FormHomePageInstractor()
         {
             InitializeComponent();
@@ -24,7 +38,10 @@ namespace OnlineExaminationSystem
             List<Student> students = _context.Students.ToList();
 
             List<Department> departments = _context.Departments.ToList();
-
+            var coursesInsturctor = _context.Courses
+                    .Where(c => c.Ins.Any(i => i.Id == Helper.InstructorId))
+                    .Select(c => new { CourseId = c.Id, CourseName = c.Name })
+                    .ToList();
             /// assign course
             comboCourses.DataSource = courses;
             comboCourses.DisplayMember = "Name";
@@ -72,9 +89,9 @@ namespace OnlineExaminationSystem
             List<string> Complexity = new List<string>() { "E", "M", "H" };
             cmbComplexity.DataSource = Complexity;
 
-            cmb_Courses.DataSource = courses;
-            cmb_Courses.DisplayMember = "Name";
-            cmb_Courses.ValueMember = "Name";
+            cmb_Courses.DataSource = coursesInsturctor;
+            cmb_Courses.DisplayMember = "CourseName";
+            cmb_Courses.ValueMember = "CourseName";
 
             cmb_Course_Grades.DataSource = courses;
             cmb_Course_Grades.DisplayMember = "Name";
@@ -407,16 +424,10 @@ namespace OnlineExaminationSystem
                     errorMessage = "num of questions must not be zero";
                     flag = false;
                 }
-
-                if (NumOfTFQuestions > 3)
-                {
-                    errorMessage = "num of TF questions must not exceed 3";
-                    flag = false;
-                }
-                if (NumOfMCQ_Questions > 7)
+                if (NumOfTFQuestions + NumOfMCQ_Questions != 10)
                 {
                     flag = false;
-                    errorMessage = "num of MCQ questions must not exceed 7";
+                    errorMessage = "num of exam questions must be 10";
                 }
 
                 if (DateTime.Now.Date > DateTimeForExam.SelectionStart.Date)
@@ -431,11 +442,15 @@ namespace OnlineExaminationSystem
                 }
 
 
-                var result = _context.Database.ExecuteSql($"SP_GenerateExam {CourseNamee},{NumOfTFQuestions},{NumOfMCQ_Questions},{year},{month},{day},{duration}");
+                var result = _context.Database.ExecuteSql($"SP_GenerateExam {CourseNamee},{NumOfTFQuestions},{NumOfMCQ_Questions},{year},{month},{day},{duration},{Helper.InstructorId}");
 
                 if (result > 0 && flag == true)
                 {
                     MessageBox.Show("Exam is generated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    int courseId = _context.Courses.Where(c => c.Name == CourseNamee).Select(c => c.Id).FirstOrDefault();
+                    int examId = _context.Exams.Where(e => e.Date == new DateOnly(year, month, day) && e.CId == courseId && e.Duration == duration).Select(e => e.Id).FirstOrDefault();
+                    AssignExam(CourseNamee, examId);
                 }
                 else if (flag == false)
                 {
@@ -511,7 +526,138 @@ namespace OnlineExaminationSystem
             {
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+        private void AssignExam(string courseName, int examId)
+        {
+            List<int> studentIds = _context.Database.SqlQuery<int>($"GetStudentsByCourseName {courseName}").ToList();
+            foreach (int studentId in studentIds)
+            {
+                var result = _context.Database.ExecuteSql($"SP_InsertIntoStudentExam {studentId},{examId}");
+            }
         }
 
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Helper.SignOut();
+        }
+
+        private void lstTopics_SelectedIndexChanged(object sender)
+        {
+
+        }
+        /// add course topics
+        //private void CloseAddCorseTopicForm()
+        //{
+
+
+        //    using (FormCourseTopics formCourseTopics = new FormCourseTopics())
+        //    {
+        //        formCourseTopics.StartPosition = FormStartPosition.CenterScreen;
+
+        //        Helper.HideFormSmoothly(this);
+
+        //        formCourseTopics.ShowDialog();
+        //    }
+        //}
+
+        //private void btnAddAdd_Click(object sender, EventArgs e)
+        //{
+        //    string courseName = txtCourseAdd.Text;
+        //    string hours = txtHoursAdd.Text;
+        //    // string topic = txtTopic.Text;
+        //    //  bool h = int.TryParse(txtHours.Text, out int hours);
+        //    int flag = ValidateFields(courseName, hours);
+
+        //    if (flag == 1)
+        //    {
+        //        try
+        //        {
+        //            bool courseExist = _context.Courses.Any(c => c.Name == courseName);
+        //            if (courseExist)
+        //            {
+        //                MessageBox.Show("Course Already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        //            }
+        //            else
+        //            {
+        //                _context.Database.ExecuteSql($"Exec [SP_addCourse] {courseName}, {hours}");
+        //                ///
+        //                foreach (TextBox topicTextBox in topicTextBoxes)
+        //                {
+        //                    string topic = topicTextBox.Text.Trim();
+
+        //                    if (!string.IsNullOrWhiteSpace(topic))
+        //                    {
+        //                        int courseId = _context.Courses.Where(c => c.Name == courseName).Select(c => c.Id).FirstOrDefault();
+        //                        _context.Database.ExecuteSqlInterpolated($"Exec [SP_addTopic] {courseId}, {topic}");
+        //                    }
+        //                }
+        //                ///
+
+        //                MessageBox.Show("Course added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //              //  CloseAddCorseTopicForm();
+        //            }
+
+        //        }
+        //        catch
+        //        {
+        //            MessageBox.Show("Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        //        }
+
+        //    }
+        //}
+
+
+        //private int ValidateFields(string courseName, string hours)
+        //{
+        //    int flag = 1;
+
+        //    if (string.IsNullOrWhiteSpace(courseName))
+        //    {
+        //        lblReqCourseAdd.Visible = true;
+        //        flag = 0;
+        //    }
+
+        //    if (string.IsNullOrWhiteSpace(hours))
+        //    {
+        //        lblReqHoursAdd.Visible = true;
+        //        flag = 0;
+        //    }
+        //    return flag;
+        //}
+
+        //private void btnAddTopicAdd_Click(object sender, EventArgs e)
+        //{
+        //    TextBox newTopicTextBox = new TextBox();
+        //    newTopicTextBox.Width = 200;
+        //    newTopicTextBox.Height = 32;
+        //    newTopicTextBox.Location = new Point(600, 700);
+        //    newTopicTextBox.BringToFront();
+        //    topicTextBoxes.Add(newTopicTextBox);
+        //    Controls.Add(newTopicTextBox);
+
+        //    lblTopicAdd.Visible = true;
+        //    topicCount++;
+
+        //    if (topicCount >= 3)
+        //    {
+        //        btnAddTopicAdd.Visible = false;
+        //    }
+        //}
+
+        //private void txtCourseAdd_TextChanged(object sender, EventArgs e)
+        //{
+        //    lblReqCourseAdd.Visible = false;
+
+        //}
+
+        //private void txtHoursAdd_TextChanged(object sender, EventArgs e)
+        //{
+        //    lblReqHoursAdd.Visible = false;
+        //}
+
+        /// 
     }
 }

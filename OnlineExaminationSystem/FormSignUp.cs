@@ -1,4 +1,5 @@
 using MetroSet_UI.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using OnlineExaminationSystem.Context;
 using OnlineExaminationSystem.Entities;
 using OnlineExaminationSystem.Helpers;
@@ -49,6 +50,7 @@ namespace OnlineExaminationSystem
 
 
                         MessageBox.Show("Account created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Helper.StudentId = student.Id;
 
                         using (FormStudentHome frmHomeStudent = new FormStudentHome())
                         {

@@ -97,6 +97,7 @@
             lb_DeptName = new Label();
             txt_DeptName = new TextBox();
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
+            btnSignOut = new Button();
             lblAssignCourseStudentD.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -121,10 +122,10 @@
             lblAssignCourseStudentD.Controls.Add(tabPage5);
             lblAssignCourseStudentD.Controls.Add(tabPage6);
             lblAssignCourseStudentD.Controls.Add(tabPage7);
-            lblAssignCourseStudentD.Location = new Point(15, 47);
+            lblAssignCourseStudentD.Location = new Point(15, 70);
             lblAssignCourseStudentD.Name = "lblAssignCourseStudentD";
             lblAssignCourseStudentD.SelectedIndex = 0;
-            lblAssignCourseStudentD.Size = new Size(1001, 602);
+            lblAssignCourseStudentD.Size = new Size(1045, 530);
             lblAssignCourseStudentD.TabIndex = 1;
             // 
             // tabPage1
@@ -140,7 +141,7 @@
             tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(993, 558);
+            tabPage1.Size = new Size(1037, 492);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Assign Course";
             tabPage1.UseVisualStyleBackColor = true;
@@ -151,7 +152,7 @@
             lblAssignCourseStudentQ.BackColor = SystemColors.ButtonHighlight;
             lblAssignCourseStudentQ.Font = new Font("Century Gothic", 15F);
             lblAssignCourseStudentQ.ForeColor = Color.Black;
-            lblAssignCourseStudentQ.Location = new Point(527, 301);
+            lblAssignCourseStudentQ.Location = new Point(640, 445);
             lblAssignCourseStudentQ.Name = "lblAssignCourseStudentQ";
             lblAssignCourseStudentQ.Size = new Size(335, 31);
             lblAssignCourseStudentQ.TabIndex = 10;
@@ -163,7 +164,7 @@
             lblStudentC.AutoSize = true;
             lblStudentC.BackColor = SystemColors.ButtonHighlight;
             lblStudentC.ForeColor = Color.Gray;
-            lblStudentC.Location = new Point(543, 74);
+            lblStudentC.Location = new Point(413, 84);
             lblStudentC.Name = "lblStudentC";
             lblStudentC.Size = new Size(167, 25);
             lblStudentC.TabIndex = 9;
@@ -173,9 +174,9 @@
             // comboStudentC
             // 
             comboStudentC.FormattingEnabled = true;
-            comboStudentC.Location = new Point(504, 127);
+            comboStudentC.Location = new Point(256, 137);
             comboStudentC.Name = "comboStudentC";
-            comboStudentC.Size = new Size(246, 33);
+            comboStudentC.Size = new Size(479, 33);
             comboStudentC.TabIndex = 8;
             comboStudentC.Visible = false;
             // 
@@ -184,7 +185,7 @@
             lblInstructorC.AutoSize = true;
             lblInstructorC.BackColor = SystemColors.ButtonHighlight;
             lblInstructorC.ForeColor = Color.Gray;
-            lblInstructorC.Location = new Point(543, 74);
+            lblInstructorC.Location = new Point(413, 84);
             lblInstructorC.Name = "lblInstructorC";
             lblInstructorC.Size = new Size(184, 25);
             lblInstructorC.TabIndex = 7;
@@ -193,9 +194,9 @@
             // comboInstructorC
             // 
             comboInstructorC.FormattingEnabled = true;
-            comboInstructorC.Location = new Point(504, 127);
+            comboInstructorC.Location = new Point(266, 137);
             comboInstructorC.Name = "comboInstructorC";
-            comboInstructorC.Size = new Size(246, 33);
+            comboInstructorC.Size = new Size(469, 33);
             comboInstructorC.TabIndex = 6;
             // 
             // btnAssignCourse
@@ -203,9 +204,9 @@
             btnAssignCourse.BackColor = Color.FromArgb(186, 32, 38);
             btnAssignCourse.FlatStyle = FlatStyle.Flat;
             btnAssignCourse.ForeColor = Color.White;
-            btnAssignCourse.Location = new Point(355, 221);
+            btnAssignCourse.Location = new Point(398, 370);
             btnAssignCourse.Name = "btnAssignCourse";
-            btnAssignCourse.Size = new Size(200, 40);
+            btnAssignCourse.Size = new Size(225, 50);
             btnAssignCourse.TabIndex = 5;
             btnAssignCourse.Text = "Assign Course";
             btnAssignCourse.UseVisualStyleBackColor = false;
@@ -216,7 +217,7 @@
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonHighlight;
             label1.ForeColor = Color.Gray;
-            label1.Location = new Point(206, 74);
+            label1.Location = new Point(420, 242);
             label1.Name = "label1";
             label1.Size = new Size(160, 25);
             label1.TabIndex = 4;
@@ -225,9 +226,9 @@
             // comboCourses
             // 
             comboCourses.FormattingEnabled = true;
-            comboCourses.Location = new Point(192, 127);
+            comboCourses.Location = new Point(256, 287);
             comboCourses.Name = "comboCourses";
-            comboCourses.Size = new Size(246, 33);
+            comboCourses.Size = new Size(479, 33);
             comboCourses.TabIndex = 3;
             // 
             // tabPage2
@@ -243,7 +244,7 @@
             tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(993, 564);
+            tabPage2.Size = new Size(1037, 492);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Assign Department";
             tabPage2.UseVisualStyleBackColor = true;
@@ -252,10 +253,11 @@
             // 
             lblAssignDepartmentStudentQ.AutoSize = true;
             lblAssignDepartmentStudentQ.BackColor = SystemColors.ButtonHighlight;
-            lblAssignDepartmentStudentQ.ForeColor = Color.Gray;
-            lblAssignDepartmentStudentQ.Location = new Point(434, 316);
+            lblAssignDepartmentStudentQ.Font = new Font("Century Gothic", 15F);
+            lblAssignDepartmentStudentQ.ForeColor = Color.Black;
+            lblAssignDepartmentStudentQ.Location = new Point(590, 446);
             lblAssignDepartmentStudentQ.Name = "lblAssignDepartmentStudentQ";
-            lblAssignDepartmentStudentQ.Size = new Size(352, 25);
+            lblAssignDepartmentStudentQ.Size = new Size(398, 31);
             lblAssignDepartmentStudentQ.TabIndex = 15;
             lblAssignDepartmentStudentQ.Text = "Assign Department for Student?";
             lblAssignDepartmentStudentQ.Click += label2_Click;
@@ -265,7 +267,7 @@
             lblStudentD.AutoSize = true;
             lblStudentD.BackColor = SystemColors.ButtonHighlight;
             lblStudentD.ForeColor = Color.Gray;
-            lblStudentD.Location = new Point(548, 79);
+            lblStudentD.Location = new Point(421, 74);
             lblStudentD.Name = "lblStudentD";
             lblStudentD.Size = new Size(167, 25);
             lblStudentD.TabIndex = 14;
@@ -275,9 +277,9 @@
             // comboStudentD
             // 
             comboStudentD.FormattingEnabled = true;
-            comboStudentD.Location = new Point(504, 132);
+            comboStudentD.Location = new Point(264, 135);
             comboStudentD.Name = "comboStudentD";
-            comboStudentD.Size = new Size(246, 33);
+            comboStudentD.Size = new Size(490, 33);
             comboStudentD.TabIndex = 13;
             comboStudentD.Visible = false;
             // 
@@ -286,7 +288,7 @@
             lblInstructorD.AutoSize = true;
             lblInstructorD.BackColor = SystemColors.ButtonHighlight;
             lblInstructorD.ForeColor = Color.Gray;
-            lblInstructorD.Location = new Point(543, 79);
+            lblInstructorD.Location = new Point(421, 74);
             lblInstructorD.Name = "lblInstructorD";
             lblInstructorD.Size = new Size(184, 25);
             lblInstructorD.TabIndex = 12;
@@ -295,9 +297,9 @@
             // comboInstructorDep
             // 
             comboInstructorDep.FormattingEnabled = true;
-            comboInstructorDep.Location = new Point(504, 132);
+            comboInstructorDep.Location = new Point(264, 135);
             comboInstructorDep.Name = "comboInstructorDep";
-            comboInstructorDep.Size = new Size(246, 33);
+            comboInstructorDep.Size = new Size(490, 33);
             comboInstructorDep.TabIndex = 11;
             // 
             // btnAssignDepartment
@@ -305,7 +307,7 @@
             btnAssignDepartment.BackColor = Color.FromArgb(186, 32, 38);
             btnAssignDepartment.FlatStyle = FlatStyle.Flat;
             btnAssignDepartment.ForeColor = Color.White;
-            btnAssignDepartment.Location = new Point(355, 226);
+            btnAssignDepartment.Location = new Point(392, 361);
             btnAssignDepartment.Name = "btnAssignDepartment";
             btnAssignDepartment.Size = new Size(236, 40);
             btnAssignDepartment.TabIndex = 10;
@@ -318,7 +320,7 @@
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ButtonHighlight;
             label4.ForeColor = Color.Gray;
-            label4.Location = new Point(206, 79);
+            label4.Location = new Point(411, 233);
             label4.Name = "label4";
             label4.Size = new Size(217, 25);
             label4.TabIndex = 9;
@@ -327,9 +329,9 @@
             // comboDepartment
             // 
             comboDepartment.FormattingEnabled = true;
-            comboDepartment.Location = new Point(192, 132);
+            comboDepartment.Location = new Point(264, 286);
             comboDepartment.Name = "comboDepartment";
-            comboDepartment.Size = new Size(246, 33);
+            comboDepartment.Size = new Size(490, 33);
             comboDepartment.TabIndex = 8;
             // 
             // tabPage3
@@ -356,7 +358,7 @@
             tabPage3.Location = new Point(4, 34);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(993, 564);
+            tabPage3.Size = new Size(1037, 492);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Add Questions";
             tabPage3.UseVisualStyleBackColor = true;
@@ -365,9 +367,9 @@
             // 
             btn_AddQuestionSave.BackColor = Color.FromArgb(186, 32, 38);
             btn_AddQuestionSave.ForeColor = Color.White;
-            btn_AddQuestionSave.Location = new Point(719, 434);
+            btn_AddQuestionSave.Location = new Point(718, 385);
             btn_AddQuestionSave.Name = "btn_AddQuestionSave";
-            btn_AddQuestionSave.Size = new Size(228, 59);
+            btn_AddQuestionSave.Size = new Size(229, 50);
             btn_AddQuestionSave.TabIndex = 54;
             btn_AddQuestionSave.Text = "Save";
             btn_AddQuestionSave.UseVisualStyleBackColor = false;
@@ -379,7 +381,7 @@
             lb_Answer3.BackColor = SystemColors.ButtonHighlight;
             lb_Answer3.Font = new Font("Century Gothic", 13F);
             lb_Answer3.ForeColor = Color.Gray;
-            lb_Answer3.Location = new Point(733, 327);
+            lb_Answer3.Location = new Point(733, 278);
             lb_Answer3.Name = "lb_Answer3";
             lb_Answer3.Size = new Size(176, 25);
             lb_Answer3.TabIndex = 53;
@@ -391,7 +393,7 @@
             lb_Answer2.BackColor = SystemColors.ButtonHighlight;
             lb_Answer2.Font = new Font("Century Gothic", 13F);
             lb_Answer2.ForeColor = Color.Gray;
-            lb_Answer2.Location = new Point(409, 327);
+            lb_Answer2.Location = new Point(409, 278);
             lb_Answer2.Name = "lb_Answer2";
             lb_Answer2.Size = new Size(176, 25);
             lb_Answer2.TabIndex = 52;
@@ -403,7 +405,7 @@
             lb_Answer1.BackColor = SystemColors.ButtonHighlight;
             lb_Answer1.Font = new Font("Century Gothic", 13F);
             lb_Answer1.ForeColor = Color.Gray;
-            lb_Answer1.Location = new Point(99, 327);
+            lb_Answer1.Location = new Point(99, 278);
             lb_Answer1.Name = "lb_Answer1";
             lb_Answer1.Size = new Size(176, 25);
             lb_Answer1.TabIndex = 51;
@@ -411,21 +413,21 @@
             // 
             // txt_MCQ_Answer1
             // 
-            txt_MCQ_Answer1.Location = new Point(58, 368);
+            txt_MCQ_Answer1.Location = new Point(58, 319);
             txt_MCQ_Answer1.Name = "txt_MCQ_Answer1";
             txt_MCQ_Answer1.Size = new Size(252, 34);
             txt_MCQ_Answer1.TabIndex = 50;
             // 
             // txt_MCQ_Answer3
             // 
-            txt_MCQ_Answer3.Location = new Point(695, 368);
+            txt_MCQ_Answer3.Location = new Point(695, 319);
             txt_MCQ_Answer3.Name = "txt_MCQ_Answer3";
             txt_MCQ_Answer3.Size = new Size(252, 34);
             txt_MCQ_Answer3.TabIndex = 49;
             // 
             // txt_MCQ_Answer2
             // 
-            txt_MCQ_Answer2.Location = new Point(370, 368);
+            txt_MCQ_Answer2.Location = new Point(370, 319);
             txt_MCQ_Answer2.Name = "txt_MCQ_Answer2";
             txt_MCQ_Answer2.Size = new Size(252, 34);
             txt_MCQ_Answer2.TabIndex = 48;
@@ -436,7 +438,7 @@
             lb_ModelAnswer.BackColor = SystemColors.ButtonHighlight;
             lb_ModelAnswer.Font = new Font("Century Gothic", 13F);
             lb_ModelAnswer.ForeColor = Color.Gray;
-            lb_ModelAnswer.Location = new Point(75, 451);
+            lb_ModelAnswer.Location = new Point(75, 402);
             lb_ModelAnswer.Name = "lb_ModelAnswer";
             lb_ModelAnswer.Size = new Size(170, 25);
             lb_ModelAnswer.TabIndex = 47;
@@ -445,7 +447,7 @@
             // cmb_ModelAnswer
             // 
             cmb_ModelAnswer.FormattingEnabled = true;
-            cmb_ModelAnswer.Location = new Point(284, 451);
+            cmb_ModelAnswer.Location = new Point(284, 402);
             cmb_ModelAnswer.Name = "cmb_ModelAnswer";
             cmb_ModelAnswer.Size = new Size(363, 33);
             cmb_ModelAnswer.TabIndex = 46;
@@ -455,7 +457,7 @@
             Rh_QuestionText.BackColor = Color.White;
             Rh_QuestionText.Location = new Point(511, 84);
             Rh_QuestionText.Name = "Rh_QuestionText";
-            Rh_QuestionText.Size = new Size(457, 175);
+            Rh_QuestionText.Size = new Size(436, 148);
             Rh_QuestionText.TabIndex = 45;
             Rh_QuestionText.Text = "";
             // 
@@ -477,7 +479,7 @@
             lb_Mark.BackColor = SystemColors.ButtonHighlight;
             lb_Mark.Font = new Font("Century Gothic", 13F);
             lb_Mark.ForeColor = Color.Gray;
-            lb_Mark.Location = new Point(41, 275);
+            lb_Mark.Location = new Point(41, 207);
             lb_Mark.Name = "lb_Mark";
             lb_Mark.Size = new Size(168, 25);
             lb_Mark.TabIndex = 43;
@@ -485,7 +487,7 @@
             // 
             // numMark
             // 
-            numMark.Location = new Point(285, 268);
+            numMark.Location = new Point(297, 198);
             numMark.Name = "numMark";
             numMark.Size = new Size(150, 34);
             numMark.TabIndex = 42;
@@ -493,7 +495,7 @@
             // cmbComplexity
             // 
             cmbComplexity.FormattingEnabled = true;
-            cmbComplexity.Location = new Point(284, 197);
+            cmbComplexity.Location = new Point(296, 145);
             cmbComplexity.Name = "cmbComplexity";
             cmbComplexity.Size = new Size(151, 33);
             cmbComplexity.TabIndex = 41;
@@ -504,7 +506,7 @@
             lb_Complexity.BackColor = SystemColors.ButtonHighlight;
             lb_Complexity.Font = new Font("Century Gothic", 13F);
             lb_Complexity.ForeColor = Color.Gray;
-            lb_Complexity.Location = new Point(41, 200);
+            lb_Complexity.Location = new Point(41, 153);
             lb_Complexity.Name = "lb_Complexity";
             lb_Complexity.Size = new Size(237, 25);
             lb_Complexity.TabIndex = 40;
@@ -513,7 +515,7 @@
             // cmbType
             // 
             cmbType.FormattingEnabled = true;
-            cmbType.Location = new Point(284, 115);
+            cmbType.Location = new Point(295, 92);
             cmbType.Name = "cmbType";
             cmbType.Size = new Size(151, 33);
             cmbType.TabIndex = 39;
@@ -525,7 +527,7 @@
             lb_Type.BackColor = SystemColors.ButtonHighlight;
             lb_Type.Font = new Font("Century Gothic", 13F);
             lb_Type.ForeColor = Color.Gray;
-            lb_Type.Location = new Point(41, 118);
+            lb_Type.Location = new Point(41, 100);
             lb_Type.Name = "lb_Type";
             lb_Type.Size = new Size(165, 25);
             lb_Type.TabIndex = 38;
@@ -534,7 +536,7 @@
             // cmbCourses
             // 
             cmbCourses.FormattingEnabled = true;
-            cmbCourses.Location = new Point(284, 39);
+            cmbCourses.Location = new Point(295, 39);
             cmbCourses.Name = "cmbCourses";
             cmbCourses.Size = new Size(151, 33);
             cmbCourses.TabIndex = 37;
@@ -567,7 +569,7 @@
             tabPage4.Location = new Point(4, 34);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(993, 564);
+            tabPage4.Size = new Size(1037, 492);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Generate Exam";
             tabPage4.UseVisualStyleBackColor = true;
@@ -576,7 +578,7 @@
             // 
             btn_generateExam.BackColor = Color.FromArgb(186, 32, 38);
             btn_generateExam.ForeColor = Color.White;
-            btn_generateExam.Location = new Point(36, 420);
+            btn_generateExam.Location = new Point(36, 399);
             btn_generateExam.Name = "btn_generateExam";
             btn_generateExam.Size = new Size(228, 59);
             btn_generateExam.TabIndex = 42;
@@ -587,7 +589,7 @@
             // lb_date
             // 
             lb_date.AutoSize = true;
-            lb_date.Location = new Point(36, 300);
+            lb_date.Location = new Point(36, 251);
             lb_date.Name = "lb_date";
             lb_date.Size = new Size(219, 25);
             lb_date.TabIndex = 41;
@@ -596,7 +598,7 @@
             // lb_Duration
             // 
             lb_Duration.AutoSize = true;
-            lb_Duration.Location = new Point(36, 229);
+            lb_Duration.Location = new Point(36, 203);
             lb_Duration.Name = "lb_Duration";
             lb_Duration.Size = new Size(342, 25);
             lb_Duration.TabIndex = 40;
@@ -604,20 +606,22 @@
             // 
             // numeric_Duration
             // 
-            numeric_Duration.Location = new Point(715, 220);
+            numeric_Duration.Location = new Point(715, 194);
+            numeric_Duration.Maximum = new decimal(new int[] { 1800, 0, 0, 0 });
             numeric_Duration.Name = "numeric_Duration";
             numeric_Duration.Size = new Size(203, 34);
             numeric_Duration.TabIndex = 39;
             // 
             // DateTimeForExam
             // 
-            DateTimeForExam.Location = new Point(656, 272);
+            DateTimeForExam.Location = new Point(656, 251);
             DateTimeForExam.Name = "DateTimeForExam";
             DateTimeForExam.TabIndex = 38;
             // 
             // numeric_MCQ_Questions
             // 
-            numeric_MCQ_Questions.Location = new Point(715, 160);
+            numeric_MCQ_Questions.Location = new Point(715, 140);
+            numeric_MCQ_Questions.Maximum = new decimal(new int[] { 7, 0, 0, 0 });
             numeric_MCQ_Questions.Name = "numeric_MCQ_Questions";
             numeric_MCQ_Questions.Size = new Size(203, 34);
             numeric_MCQ_Questions.TabIndex = 37;
@@ -625,7 +629,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(36, 162);
+            label3.Location = new Point(36, 149);
             label3.Name = "label3";
             label3.Size = new Size(588, 25);
             label3.TabIndex = 36;
@@ -633,7 +637,8 @@
             // 
             // numeric_TFQuestions
             // 
-            numeric_TFQuestions.Location = new Point(715, 93);
+            numeric_TFQuestions.Location = new Point(715, 84);
+            numeric_TFQuestions.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             numeric_TFQuestions.Name = "numeric_TFQuestions";
             numeric_TFQuestions.Size = new Size(203, 34);
             numeric_TFQuestions.TabIndex = 35;
@@ -641,7 +646,7 @@
             // lb_numOfTFQuestions
             // 
             lb_numOfTFQuestions.AutoSize = true;
-            lb_numOfTFQuestions.Location = new Point(36, 102);
+            lb_numOfTFQuestions.Location = new Point(36, 93);
             lb_numOfTFQuestions.Name = "lb_numOfTFQuestions";
             lb_numOfTFQuestions.Size = new Size(560, 25);
             lb_numOfTFQuestions.TabIndex = 34;
@@ -674,7 +679,7 @@
             tabPage5.Location = new Point(4, 34);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(993, 564);
+            tabPage5.Size = new Size(1037, 492);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Show Courses";
             tabPage5.UseVisualStyleBackColor = true;
@@ -690,7 +695,7 @@
             lstTopics.HoveredItemColor = Color.DimGray;
             lstTopics.IsDerivedStyle = true;
             lstTopics.ItemHeight = 30;
-            lstTopics.Location = new Point(475, 103);
+            lstTopics.Location = new Point(710, 73);
             lstTopics.MultiSelect = false;
             lstTopics.Name = "lstTopics";
             lstTopics.SelectedIndex = -1;
@@ -701,19 +706,20 @@
             lstTopics.SelectedValue = null;
             lstTopics.ShowBorder = false;
             lstTopics.ShowScrollBar = false;
-            lstTopics.Size = new Size(206, 98);
+            lstTopics.Size = new Size(206, 233);
             lstTopics.Style = MetroSet_UI.Enums.Style.Light;
             lstTopics.StyleManager = null;
             lstTopics.TabIndex = 30;
             lstTopics.ThemeAuthor = "Narwin";
             lstTopics.ThemeName = "MetroLite";
+            lstTopics.SelectedIndexChanged += lstTopics_SelectedIndexChanged;
             // 
             // btnNewCourse
             // 
             btnNewCourse.BackColor = Color.FromArgb(186, 32, 38);
             btnNewCourse.FlatStyle = FlatStyle.Flat;
             btnNewCourse.ForeColor = Color.White;
-            btnNewCourse.Location = new Point(475, 250);
+            btnNewCourse.Location = new Point(710, 386);
             btnNewCourse.Name = "btnNewCourse";
             btnNewCourse.Size = new Size(206, 42);
             btnNewCourse.TabIndex = 29;
@@ -726,7 +732,7 @@
             button1.BackColor = Color.FromArgb(186, 32, 38);
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(202, 250);
+            button1.Location = new Point(93, 386);
             button1.Name = "button1";
             button1.Size = new Size(200, 42);
             button1.TabIndex = 28;
@@ -738,7 +744,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(205, 103);
+            label2.Location = new Point(153, 103);
             label2.Name = "label2";
             label2.Size = new Size(160, 25);
             label2.TabIndex = 27;
@@ -747,9 +753,9 @@
             // comboCorsesesForTopics
             // 
             comboCorsesesForTopics.FormattingEnabled = true;
-            comboCorsesesForTopics.Location = new Point(205, 168);
+            comboCorsesesForTopics.Location = new Point(53, 168);
             comboCorsesesForTopics.Name = "comboCorsesesForTopics";
-            comboCorsesesForTopics.Size = new Size(197, 33);
+            comboCorsesesForTopics.Size = new Size(349, 33);
             comboCorsesesForTopics.TabIndex = 26;
             // 
             // tabPage6
@@ -761,7 +767,7 @@
             tabPage6.Location = new Point(4, 34);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(993, 564);
+            tabPage6.Size = new Size(1037, 492);
             tabPage6.TabIndex = 5;
             tabPage6.Text = "Students Grades";
             tabPage6.UseVisualStyleBackColor = true;
@@ -770,7 +776,7 @@
             // 
             btn_Search_Grades.BackColor = Color.FromArgb(186, 32, 38);
             btn_Search_Grades.ForeColor = Color.White;
-            btn_Search_Grades.Location = new Point(693, 493);
+            btn_Search_Grades.Location = new Point(779, 427);
             btn_Search_Grades.Name = "btn_Search_Grades";
             btn_Search_Grades.Size = new Size(228, 59);
             btn_Search_Grades.TabIndex = 30;
@@ -787,7 +793,7 @@
             grd_StudentsGrades.Name = "grd_StudentsGrades";
             grd_StudentsGrades.ReadOnly = true;
             grd_StudentsGrades.RowHeadersWidth = 51;
-            grd_StudentsGrades.Size = new Size(877, 400);
+            grd_StudentsGrades.Size = new Size(963, 321);
             grd_StudentsGrades.TabIndex = 29;
             // 
             // cmb_Course_Grades
@@ -818,7 +824,7 @@
             tabPage7.Location = new Point(4, 34);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(993, 564);
+            tabPage7.Size = new Size(1037, 492);
             tabPage7.TabIndex = 6;
             tabPage7.Text = "Add Department";
             tabPage7.UseVisualStyleBackColor = true;
@@ -827,7 +833,7 @@
             // 
             btn_Save_Dept.BackColor = Color.FromArgb(186, 32, 38);
             btn_Save_Dept.ForeColor = Color.White;
-            btn_Save_Dept.Location = new Point(321, 258);
+            btn_Save_Dept.Location = new Point(379, 287);
             btn_Save_Dept.Name = "btn_Save_Dept";
             btn_Save_Dept.Size = new Size(228, 59);
             btn_Save_Dept.TabIndex = 52;
@@ -882,7 +888,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(916, 7);
+            ctrlBox.Location = new Point(979, 7);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -900,11 +906,26 @@
             ctrlBox.ThemeAuthor = "Narwin";
             ctrlBox.ThemeName = "MetroLite";
             // 
+            // btnSignOut
+            // 
+            btnSignOut.BackColor = Color.White;
+            btnSignOut.FlatAppearance.BorderSize = 0;
+            btnSignOut.FlatStyle = FlatStyle.Flat;
+            btnSignOut.ForeColor = Color.FromArgb(186, 32, 38);
+            btnSignOut.Location = new Point(15, 24);
+            btnSignOut.Name = "btnSignOut";
+            btnSignOut.Size = new Size(200, 40);
+            btnSignOut.TabIndex = 23;
+            btnSignOut.Text = "Sign Out?";
+            btnSignOut.UseVisualStyleBackColor = false;
+            btnSignOut.Click += btnSignOut_Click;
+            // 
             // FormHomePageInstractor
             // 
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1031, 657);
+            ClientSize = new Size(1094, 646);
+            Controls.Add(btnSignOut);
             Controls.Add(ctrlBox);
             Controls.Add(lblAssignCourseStudentD);
             Font = new Font("Century Gothic", 13F);
@@ -1008,5 +1029,6 @@
         private Label lb_DeptName;
         private TextBox txt_DeptName;
         private Button btn_Save_Dept;
+        private Button btnSignOut;
     }
 }

@@ -49,11 +49,11 @@ namespace OnlineExaminationSystem
 
         private void LoadExamQuestions()
         {
-            int CrsID = context.Exams?.FirstOrDefault(e => e.Id == 3)?.CId ?? 0;
+            int CrsID = context.Exams?.FirstOrDefault(e => e.Id == Helper.ExamId)?.CId ?? 0;
             CourseName.Text = context.Courses.FirstOrDefault(c => c.Id == CrsID)?.Name;
 
-            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == 3)?.Duration * 60 - 80 ?? 180)).ToString(@"hh\:mm\:ss");
-            var exam = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == 1);
+            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == Helper.ExamId)?.Duration * 60 - 80 ?? 180)).ToString(@"hh\:mm\:ss");
+            var exam = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == Helper.ExamId);
 
             int totalMarks = exam.QIds.Sum(q => q.Mark);
             Marks.Text = totalMarks.ToString() + " Marks";
@@ -140,11 +140,18 @@ namespace OnlineExaminationSystem
             string fullName = studentFname + " " + studentLName;
 
             var Result = context.Database.ExecuteSqlRaw("EXEC GetStudentExamAnswers {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10} , {11}",
-                3, fullName, StudentAnswers[0], StudentAnswers[1], StudentAnswers[2],
+                Helper.ExamId, fullName, StudentAnswers[0], StudentAnswers[1], StudentAnswers[2],
                 StudentAnswers[3], StudentAnswers[4], StudentAnswers[5], StudentAnswers[6],
                 StudentAnswers[7], StudentAnswers[8], StudentAnswers[9]);
 
+            context.StudentExams.FirstOrDefault(s => s.StId == student_Id && s.EId == Helper.ExamId).IsTaken = 1;
             context.SaveChanges();
+
+            ///
+          
+            int numRowsAffected = context.Database.ExecuteSql($"Exec [ExamCorrection] {Helper.StudentId},{Helper.ExamId}");
+
+            ///
             // MessageBox.Show(Result.ToString());
             if (examDurationInSeconds < 0)
             {
@@ -204,6 +211,7 @@ namespace OnlineExaminationSystem
             else
             {
                 SaveStudentAnswers();
+                examTimer.Stop();
             }
         }
         private void BackBtn_Click_1(object sender, EventArgs e)

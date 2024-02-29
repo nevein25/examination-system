@@ -23,14 +23,14 @@ namespace OnlineExaminationSystem
             List<Course> courses = _context.Courses.ToList();
             var courseGrades = _context.Database.SqlQuery<StudentCourseGrades>($"GetStudentGradesInAllCourses {Helper.StudentId}").ToList();
 
-           // lstGrade.Items.AddRange(courseGrades.Select( st => st.FinalGrade.ToString())); 
-           // lstCourses.Items.AddRange(courseGrades.Where( st => st.CourseID == courses.Where(c => c.Id == st.CourseID).Select( c=> c.Name).FirstOrDefault()));
+            // lstGrade.Items.AddRange(courseGrades.Select( st => st.FinalGrade.ToString())); 
+            // lstCourses.Items.AddRange(courseGrades.Where( st => st.CourseID == courses.Where(c => c.Id == st.CourseID).Select( c=> c.Name).FirstOrDefault()));
             lstCourses.Items.AddRange(courseGrades.Join(courses, sg => sg.CourseID, c => c.Id,
                                                          (fg, c) => $"{c.Name}: {fg.FinalGrade}")
                                                          .ToArray());
         }
 
-        private void InitilizeLists()   
+        private void InitilizeLists()
         {
             lstCourses.BackColor = Color.WhiteSmoke;
             lstCourses.Font = new Font("Century Gothic", 13F);
@@ -43,5 +43,16 @@ namespace OnlineExaminationSystem
             //lstGrade.SelectedItemBackColor = Color.FromArgb(186, 32, 38);
         }
 
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            using (FormStudentHome formStudentHome = new FormStudentHome())
+            {
+                formStudentHome.StartPosition = FormStartPosition.CenterScreen;
+
+                Helper.HideFormSmoothly(this);
+
+                formStudentHome.ShowDialog();
+            }
+        }
     }
 }

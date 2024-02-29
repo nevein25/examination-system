@@ -55,7 +55,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(803, 9);
+            ctrlBox.Location = new Point(1024, 9);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -77,9 +77,9 @@
             // 
             CrsName.Font = new Font("Century Gothic", 15F);
             CrsName.IsDerivedStyle = true;
-            CrsName.Location = new Point(61, 81);
+            CrsName.Location = new Point(24, 82);
             CrsName.Name = "CrsName";
-            CrsName.Size = new Size(107, 28);
+            CrsName.Size = new Size(196, 28);
             CrsName.Style = MetroSet_UI.Enums.Style.Light;
             CrsName.StyleManager = null;
             CrsName.TabIndex = 36;
@@ -91,7 +91,7 @@
             // 
             CourseName.Font = new Font("Century Gothic", 15F);
             CourseName.IsDerivedStyle = true;
-            CourseName.Location = new Point(183, 81);
+            CourseName.Location = new Point(207, 82);
             CourseName.Name = "CourseName";
             CourseName.Size = new Size(90, 29);
             CourseName.Style = MetroSet_UI.Enums.Style.Light;
@@ -105,7 +105,7 @@
             // 
             metroSetLabel4.Font = new Font("Century Gothic", 15F);
             metroSetLabel4.IsDerivedStyle = true;
-            metroSetLabel4.Location = new Point(627, 81);
+            metroSetLabel4.Location = new Point(746, 81);
             metroSetLabel4.Name = "metroSetLabel4";
             metroSetLabel4.Size = new Size(98, 37);
             metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
@@ -114,13 +114,12 @@
             metroSetLabel4.Text = "Marks:";
             metroSetLabel4.ThemeAuthor = "Narwin";
             metroSetLabel4.ThemeName = "MetroLite";
-
             // 
             // Marks
             // 
             Marks.Font = new Font("Century Gothic", 15F);
             Marks.IsDerivedStyle = true;
-            Marks.Location = new Point(748, 81);
+            Marks.Location = new Point(833, 81);
             Marks.Name = "Marks";
             Marks.Size = new Size(98, 27);
             Marks.Style = MetroSet_UI.Enums.Style.Light;
@@ -136,7 +135,7 @@
             QuestionNumber.IsDerivedStyle = true;
             QuestionNumber.Location = new Point(77, 199);
             QuestionNumber.Name = "QuestionNumber";
-            QuestionNumber.Size = new Size(49, 35);
+            QuestionNumber.Size = new Size(78, 35);
             QuestionNumber.Style = MetroSet_UI.Enums.Style.Light;
             QuestionNumber.StyleManager = null;
             QuestionNumber.TabIndex = 42;
@@ -148,9 +147,9 @@
             // 
             QuesText.Font = new Font("Century Gothic", 15F);
             QuesText.IsDerivedStyle = true;
-            QuesText.Location = new Point(122, 199);
+            QuesText.Location = new Point(151, 199);
             QuesText.Name = "QuesText";
-            QuesText.Size = new Size(677, 47);
+            QuesText.Size = new Size(956, 47);
             QuesText.Style = MetroSet_UI.Enums.Style.Light;
             QuesText.StyleManager = null;
             QuesText.TabIndex = 43;
@@ -162,7 +161,7 @@
             // 
             time.Font = new Font("Century Gothic", 15F);
             time.IsDerivedStyle = true;
-            time.Location = new Point(327, 81);
+            time.Location = new Point(415, 81);
             time.Name = "time";
             time.Size = new Size(143, 27);
             time.Style = MetroSet_UI.Enums.Style.Light;
@@ -176,7 +175,7 @@
             // 
             drt.Font = new Font("Century Gothic", 15F);
             drt.IsDerivedStyle = true;
-            drt.Location = new Point(487, 81);
+            drt.Location = new Point(539, 83);
             drt.Name = "drt";
             drt.Size = new Size(116, 25);
             drt.Style = MetroSet_UI.Enums.Style.Light;
@@ -205,7 +204,7 @@
             NextBtn.FlatStyle = FlatStyle.Flat;
             NextBtn.Font = new Font("Century Gothic", 15F);
             NextBtn.ForeColor = Color.White;
-            NextBtn.Location = new Point(493, 390);
+            NextBtn.Location = new Point(726, 390);
             NextBtn.Name = "NextBtn";
             NextBtn.Size = new Size(131, 53);
             NextBtn.TabIndex = 54;
@@ -233,7 +232,7 @@
             // 
             Ch1.AutoSize = true;
             Ch1.BackColor = Color.White;
-            Ch1.Location = new Point(77, 303);
+            Ch1.Location = new Point(108, 303);
             Ch1.Name = "Ch1";
             Ch1.Size = new Size(169, 29);
             Ch1.TabIndex = 56;
@@ -245,7 +244,7 @@
             // 
             Ch2.AutoSize = true;
             Ch2.BackColor = Color.White;
-            Ch2.Location = new Point(366, 303);
+            Ch2.Location = new Point(485, 303);
             Ch2.Name = "Ch2";
             Ch2.Size = new Size(169, 29);
             Ch2.TabIndex = 57;
@@ -258,7 +257,7 @@
             Ch3.AutoSize = true;
             Ch3.BackColor = Color.White;
             Ch3.ForeColor = Color.Gray;
-            Ch3.Location = new Point(630, 303);
+            Ch3.Location = new Point(862, 303);
             Ch3.Name = "Ch3";
             Ch3.Size = new Size(169, 29);
             Ch3.TabIndex = 58;
@@ -271,7 +270,7 @@
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(918, 500);
+            ClientSize = new Size(1139, 500);
             Controls.Add(Ch3);
             Controls.Add(Ch2);
             Controls.Add(Ch1);

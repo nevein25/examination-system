@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Security.Cryptography;
+using Microsoft.Identity.Client.NativeInterop;
 
 
 namespace OnlineExaminationSystem.Helpers
@@ -8,6 +9,10 @@ namespace OnlineExaminationSystem.Helpers
     {
         public static int StudentId = 0;
         public static int InstructorId = 0;
+        public static int ExamId = 0;
+        public static Form FormStudentHome;
+
+
 
         // For encrypting password
         public static string Encrypt(string password)
@@ -21,6 +26,13 @@ namespace OnlineExaminationSystem.Helpers
             }
         }
 
+        public static void SignOut()
+        {
+            //StudentId = 0;
+            //InstructorId = 0;
+            Application.Restart();
+        }
+
         // Hiding form in appealing way
         public static async void HideFormSmoothly(Form form)
         {
@@ -30,7 +42,7 @@ namespace OnlineExaminationSystem.Helpers
                 await Task.Delay(50);
             }
 
-           form.Hide();         
+            form.Hide();
         }
 
         // Showing form in appealing way

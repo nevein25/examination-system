@@ -30,7 +30,6 @@
         {
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
             lstCourses = new MetroSet_UI.Controls.MetroSetListBox();
-            label1 = new Label();
             btn_back = new Button();
             SuspendLayout();
             // 
@@ -42,7 +41,7 @@
             ctrlBox.CloseNormalForeColor = Color.Gray;
             ctrlBox.DisabledForeColor = Color.DimGray;
             ctrlBox.IsDerivedStyle = true;
-            ctrlBox.Location = new Point(243, 15);
+            ctrlBox.Location = new Point(325, 15);
             ctrlBox.MaximizeBox = true;
             ctrlBox.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             ctrlBox.MaximizeHoverForeColor = Color.Gray;
@@ -71,7 +70,7 @@
             lstCourses.HoveredItemColor = Color.DimGray;
             lstCourses.IsDerivedStyle = true;
             lstCourses.ItemHeight = 30;
-            lstCourses.Location = new Point(54, 132);
+            lstCourses.Location = new Point(68, 124);
             lstCourses.MultiSelect = false;
             lstCourses.Name = "lstCourses";
             lstCourses.SelectedIndex = -1;
@@ -82,43 +81,32 @@
             lstCourses.SelectedValue = null;
             lstCourses.ShowBorder = false;
             lstCourses.ShowScrollBar = false;
-            lstCourses.Size = new Size(206, 98);
+            lstCourses.Size = new Size(292, 190);
             lstCourses.Style = MetroSet_UI.Enums.Style.Light;
             lstCourses.StyleManager = null;
             lstCourses.TabIndex = 30;
             lstCourses.ThemeAuthor = "Narwin";
             lstCourses.ThemeName = "MetroLite";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ButtonHighlight;
-            label1.Font = new Font("Century Gothic", 13F);
-            label1.ForeColor = Color.Gray;
-            label1.Location = new Point(129, 97);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 21);
-            label1.TabIndex = 35;
-            label1.Text = "Course";
-            // 
             // btn_back
             // 
             btn_back.BackColor = Color.FromArgb(37, 37, 37);
+            btn_back.FlatStyle = FlatStyle.Flat;
             btn_back.ForeColor = Color.White;
-            btn_back.Location = new Point(97, 242);
+            btn_back.Location = new Point(15, 351);
             btn_back.Name = "btn_back";
             btn_back.Size = new Size(125, 39);
             btn_back.TabIndex = 36;
             btn_back.Text = "Back";
             btn_back.UseVisualStyleBackColor = false;
+            btn_back.Click += btn_back_Click;
             // 
             // FormStudentOwnGrade
             // 
-            AutoScaleDimensions = new SizeF(10F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(358, 318);
+            ClientSize = new Size(440, 405);
             Controls.Add(btn_back);
-            Controls.Add(label1);
             Controls.Add(lstCourses);
             Controls.Add(ctrlBox);
             Name = "FormStudentOwnGrade";
@@ -127,13 +115,11 @@
             Text = "My Grades";
             Load += FormStudentOwnGrade_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
         private MetroSet_UI.Controls.MetroSetListBox lstCourses;
-        private Label label1;
         private Button btn_back;
     }
 }

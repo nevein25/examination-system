@@ -73,7 +73,7 @@ namespace OnlineExaminationSystem
                         ///
 
                         MessageBox.Show("Course added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CloseAddCorseTopicForm();     
+                        CloseAddCorseTopicForm();
                     }
 
                 }

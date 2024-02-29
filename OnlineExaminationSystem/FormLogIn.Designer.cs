@@ -63,7 +63,7 @@
             txtEmail.Anchor = AnchorStyles.Right;
             txtEmail.Location = new Point(52, 138);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(324, 29);
+            txtEmail.Size = new Size(324, 34);
             txtEmail.TabIndex = 0;
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
@@ -73,7 +73,7 @@
             txtPassword.Location = new Point(52, 261);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(324, 29);
+            txtPassword.Size = new Size(324, 34);
             txtPassword.TabIndex = 1;
             txtPassword.TextChanged += txtPassword_TextChanged;
             // 
@@ -109,9 +109,9 @@
             lblGoSignUp.BackColor = SystemColors.ButtonHighlight;
             lblGoSignUp.Font = new Font("Century Gothic", 11F);
             lblGoSignUp.ForeColor = Color.Gray;
-            lblGoSignUp.Location = new Point(73, 409);
+            lblGoSignUp.Location = new Point(36, 409);
             lblGoSignUp.Name = "lblGoSignUp";
-            lblGoSignUp.Size = new Size(278, 20);
+            lblGoSignUp.Size = new Size(352, 22);
             lblGoSignUp.TabIndex = 3;
             lblGoSignUp.Text = "Don't have an account yet?  Sign Up";
             lblGoSignUp.Click += lblGoSignUp_Click;
@@ -124,7 +124,7 @@
             Email.ForeColor = Color.Gray;
             Email.Location = new Point(52, 97);
             Email.Name = "Email";
-            Email.Size = new Size(55, 21);
+            Email.Size = new Size(71, 25);
             Email.TabIndex = 19;
             Email.Text = "Email";
             // 
@@ -136,7 +136,7 @@
             label4.ForeColor = Color.Gray;
             label4.Location = new Point(52, 223);
             label4.Name = "label4";
-            label4.Size = new Size(90, 21);
+            label4.Size = new Size(114, 25);
             label4.TabIndex = 18;
             label4.Text = "Password";
             // 
@@ -148,7 +148,7 @@
             lblReqEmail.ForeColor = Color.FromArgb(186, 32, 38);
             lblReqEmail.Location = new Point(52, 175);
             lblReqEmail.Name = "lblReqEmail";
-            lblReqEmail.Size = new Size(138, 19);
+            lblReqEmail.Size = new Size(166, 21);
             lblReqEmail.TabIndex = 22;
             lblReqEmail.Text = "This field is required";
             lblReqEmail.Visible = false;
@@ -161,14 +161,14 @@
             lblReqPassword.ForeColor = Color.FromArgb(186, 32, 38);
             lblReqPassword.Location = new Point(52, 298);
             lblReqPassword.Name = "lblReqPassword";
-            lblReqPassword.Size = new Size(138, 19);
+            lblReqPassword.Size = new Size(166, 21);
             lblReqPassword.TabIndex = 23;
             lblReqPassword.Text = "This field is required";
             lblReqPassword.Visible = false;
             // 
             // FormLogIn
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(441, 476);
             Controls.Add(lblReqPassword);
