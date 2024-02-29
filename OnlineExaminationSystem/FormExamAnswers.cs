@@ -28,18 +28,37 @@ namespace OnlineExaminationSystem
         private System.Windows.Forms.Timer examTimer;
         private int examDurationInSeconds;
         int answerCount = 0;
+        int CrsID;
+        DateOnly examDate;
+        int currentExamID = 0;
         public FormExamAnswers(int _studentID)
         {
             InitializeComponent();
             this.student_Id = _studentID;
+            
             //  this.formStudentHome = _formStudentHome;// Assign the reference passed from outside
         }
 
         private void FormExamAnswers_Load_1(object sender, EventArgs e)
         {
+            
             context = new OnlineExaminationSystemContext();
+            //var examIDs = context.StudentExams.Include(e => e.EIdNavigation).Include(s => s.St).Where(s => s.StId == this.student_Id).Select(s => s.EId).ToList();
+
+            //for (int i = 0; i < examIDs.Count; i++)
+            //{
+            //    examDate = (DateOnly)(context.Exams
+            //                               .Where(e => e.Id == examIDs[i])
+            //                               .Select(e => e.Date)
+            //                               .FirstOrDefault());
+            //    if (examDate == DateOnly.FromDateTime(DateTime.Now))
+            //    {
+            //        currentExamID = examIDs[i];
+
+            //    }
+            //}
             examTimer = new System.Windows.Forms.Timer();
-            examDurationInSeconds = context.Exams.FirstOrDefault(e => e.Id == 3)?.Duration * 60 - 80 ?? 3;
+            examDurationInSeconds = context.Exams.FirstOrDefault(e => e.Id == Helper.examId)?.Duration * 60 - 60 ?? 15 * 60;
             examTimer.Interval = 1000; // 1 second
             examTimer.Tick += new EventHandler(examTimer_Tick);
             examTimer.Start();
@@ -49,11 +68,11 @@ namespace OnlineExaminationSystem
 
         private void LoadExamQuestions()
         {
-            int CrsID = context.Exams?.FirstOrDefault(e => e.Id == 3)?.CId ?? 0;
+           
+            CrsID = context.Exams?.FirstOrDefault(e => e.Id == Helper.examId)?.CId ?? 0;
             CourseName.Text = context.Courses.FirstOrDefault(c => c.Id == CrsID)?.Name;
-
-            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == 3)?.Duration * 60 - 80 ?? 180)).ToString(@"hh\:mm\:ss");
-            var exam = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == 1);
+            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == Helper.examId)?.Duration * 60 - 60 ?? 15 * 60)).ToString(@"hh\:mm\:ss");
+            var exam = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == Helper.examId);
 
             int totalMarks = exam.QIds.Sum(q => q.Mark);
             Marks.Text = totalMarks.ToString() + " Marks";
@@ -140,10 +159,10 @@ namespace OnlineExaminationSystem
             string fullName = studentFname + " " + studentLName;
 
             var Result = context.Database.ExecuteSqlRaw("EXEC GetStudentExamAnswers {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10} , {11}",
-                3, fullName, StudentAnswers[0], StudentAnswers[1], StudentAnswers[2],
+                currentExamID, fullName, StudentAnswers[0], StudentAnswers[1], StudentAnswers[2],
                 StudentAnswers[3], StudentAnswers[4], StudentAnswers[5], StudentAnswers[6],
                 StudentAnswers[7], StudentAnswers[8], StudentAnswers[9]);
-
+            context.StudentExams.FirstOrDefault(s => s.StId == student_Id && s.EId == Helper.examId).IsTaken = 1;
             context.SaveChanges();
             // MessageBox.Show(Result.ToString());
             if (examDurationInSeconds < 0)
@@ -157,7 +176,8 @@ namespace OnlineExaminationSystem
 
             }
             this.Close();
-
+            //FormStudentHome fs = new FormStudentHome();
+            //fs.Show();
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -204,16 +224,330 @@ namespace OnlineExaminationSystem
             else
             {
                 SaveStudentAnswers();
+                examTimer.Stop();
+
             }
         }
         private void BackBtn_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+           // this.Hide();
+
+            Helper.HideFormSmoothly(this);
+            Helper.ShowFormSmoothly(Helper.FormHomeStudent);
+            
+
+
+            // FormStudentHome.GetForm().Show();
         }
 
-
+      
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//using MetroSet_UI.Forms;
+//using Microsoft.EntityFrameworkCore;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//using Microsoft.Extensions.Caching.Memory;
+//using OnlineExaminationSystem.Context;
+//using OnlineExaminationSystem.Entities;
+//using OnlineExaminationSystem.Helpers;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Net.Http;
+//using System.Windows.Forms;
+
+//namespace OnlineExaminationSystem
+//{
+//    public partial class FormExamAnswers : MetroSetForm
+//    {
+//        FormStudentHome formStudentHome;
+//        private int count = 0;
+//        private int student_Id;
+//        private List<Question> questionsInExam = new List<Question>();
+//        private List<string> StudentAnswers = new List<string>();
+//        private List<bool> IsChecked = new List<bool>();
+//        private List<Question> randomizedQuestions = new List<Question>();
+//        private Question currentQuestion;
+//        private OnlineExaminationSystemContext context;
+//        private static Dictionary<int, List<Question>> studentQuestionMap = new Dictionary<int, List<Question>>();
+//        private System.Windows.Forms.Timer examTimer;
+//        private int examDurationInSeconds;
+//        int answerCount = 0;
+//        private Form previousForm;
+//        public FormExamAnswers(int _studentID, Form previousForm)
+//        {
+//            InitializeComponent();
+//            this.student_Id = _studentID;
+//            this.previousForm = previousForm;
+//            //  this.formStudentHome = _formStudentHome;// Assign the reference passed from outside
+//        }
+
+//        private void FormExamAnswers_Load_1(object sender, EventArgs e)
+//        {
+//            context = new OnlineExaminationSystemContext();
+//            examTimer = new System.Windows.Forms.Timer();
+//            examDurationInSeconds = context.Exams.FirstOrDefault(e => e.Id == 1)?.Duration * 60 - 60 ?? 15 * 60;
+//            examTimer.Interval = 1000; // 1 second
+//            examTimer.Tick += new EventHandler(examTimer_Tick);
+//            examTimer.Start();
+
+//            LoadExamQuestions();
+//        }
+
+//        private void LoadExamQuestions()
+//        {
+//            int CrsID = context.Exams?.FirstOrDefault(e => e.Id == 1)?.CId ?? 0;
+//            CourseName.Text = context.Courses.FirstOrDefault(c => c.Id == CrsID)?.Name;
+
+//            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == 1)?.Duration * 60 ?? 15 * 60 - 60)).ToString(@"hh\:mm\:ss");
+//            var exam = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == 1);
+
+//            int totalMarks = exam.QIds.Sum(q => q.Mark);
+//            Marks.Text = totalMarks.ToString() + " Marks";
+//            questionsInExam = exam.QIds.ToList();
+
+//            if (studentQuestionMap.ContainsKey(student_Id))
+//            {
+//                randomizedQuestions = studentQuestionMap[student_Id];
+//            }
+//            else
+//            {
+//                randomizedQuestions = questionsInExam.OrderBy(q => Guid.NewGuid()).ToList();
+//                studentQuestionMap[student_Id] = randomizedQuestions;
+//            }
+
+//            for (int i = 0; i < randomizedQuestions.Count; i++)
+//            {
+//                StudentAnswers.Add(" ");
+//                IsChecked.Add(false);
+//            }
+
+//            LoadQuestionAndAnswers();
+//        }
+
+//        private void examTimer_Tick(object sender, EventArgs e)
+//        {
+//            TimeSpan remainingTime = TimeSpan.FromSeconds(examDurationInSeconds);
+//            drt.Text = remainingTime.ToString(@"hh\:mm\:ss");
+//            examDurationInSeconds--;
+
+//            if (examDurationInSeconds < 0)
+//            {
+//                drt.Text = remainingTime.ToString(@"hh\:mm\:ss");
+//                if (Ch1.Checked) StudentAnswers[answerCount] = Ch1.Text;
+//                else if (Ch2.Checked) StudentAnswers[answerCount] = Ch2.Text;
+//                else if (Ch3.Checked) StudentAnswers[answerCount] = Ch3.Text;
+
+//                examTimer.Stop();
+//                SaveStudentAnswers();
+//            }
+//        }
+
+//        private void LoadQuestionAndAnswers()
+//        {
+//            currentQuestion = randomizedQuestions[count];
+//            for (int i = 0; i < questionsInExam.Count; i++)
+//            {
+//                if (currentQuestion.QuestionText == questionsInExam[i].QuestionText)
+//                {
+//                    answerCount = i;
+//                }
+//            }
+//            int Qnum = count + 1;
+//            QuestionNumber.Text = "Q" + Qnum + ".";
+//            QuesText.Text = currentQuestion.QuestionText.ToString();
+//            var answersInQuestion = currentQuestion.QuestionAnswers.ToList();
+
+//            PrevBtn.Enabled = count != 0;
+//            NextBtn.Text = count == questionsInExam.Count - 1 ? "Submit" : "Next";
+
+//            if (currentQuestion.Type == "MCQ")
+//            {
+//                Ch1.Text = answersInQuestion[0].AnswerText;
+//                Ch2.Text = answersInQuestion[1].AnswerText;
+//                Ch3.Text = answersInQuestion[2].AnswerText;
+//                Ch2.Visible = true;
+//            }
+//            else if (currentQuestion.Type == "TF")
+//            {
+//                Ch1.Text = answersInQuestion[0].AnswerText;
+//                Ch2.Visible = false;
+//                Ch3.Text = answersInQuestion[1].AnswerText;
+//            }
+
+//            Ch1.Checked = IsChecked[count] && Ch1.Text == StudentAnswers[answerCount];
+//            Ch2.Checked = IsChecked[count] && Ch2.Text == StudentAnswers[answerCount];
+//            Ch3.Checked = IsChecked[count] && Ch3.Text == StudentAnswers[answerCount];
+//        }
+
+//        private void SaveStudentAnswers()
+//        {
+//            string studentFname = context.People.FirstOrDefault(s => s.Id == student_Id)?.Fname;
+//            string studentLName = context.People.FirstOrDefault(s => s.Id == student_Id)?.Lname;
+//            string fullName = studentFname + " " + studentLName;
+
+//            var Result = context.Database.ExecuteSqlRaw("EXEC GetStudentExamAnswers {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10} , {11}",
+//                1, fullName, StudentAnswers[0], StudentAnswers[1], StudentAnswers[2],
+//                StudentAnswers[3], StudentAnswers[4], StudentAnswers[5], StudentAnswers[6],
+//                StudentAnswers[7], StudentAnswers[8], StudentAnswers[9]);
+
+//            context.SaveChanges();
+//            // MessageBox.Show(Result.ToString());
+//            if (examDurationInSeconds < 0)
+//            {
+//                MessageBox.Show("Time's up! Your exam has ended.");
+
+//            }
+//            else
+//            {
+//                MessageBox.Show("Your Exam Submited Sucessfully");
+
+//            }
+//            this.Close();
+//            //Helper.HideFormSmoothly(this);
+//            // Helper.ShowFormSmoothly(previousForm);
+
+//        }
+
+//        private void PrevBtn_Click_2(object sender, EventArgs e)
+//        {
+//            if (count > 0)
+//            {
+
+//                if (Ch1.Checked) StudentAnswers[answerCount] = Ch1.Text;
+//                else if (Ch2.Checked) StudentAnswers[answerCount] = Ch2.Text;
+//                else if (Ch3.Checked) StudentAnswers[answerCount] = Ch3.Text;
+
+
+//                IsChecked[count] = true;
+
+//                count--;
+//                LoadQuestionAndAnswers();
+//            }
+//        }
+
+//        private void NextBtn_Click_2(object sender, EventArgs e)
+//        {
+//            if (Ch1.Checked) StudentAnswers[answerCount] = Ch1.Text;
+//            else if (Ch2.Checked) StudentAnswers[answerCount] = Ch2.Text;
+//            else if (Ch3.Checked) StudentAnswers[answerCount] = Ch3.Text;
+
+//            IsChecked[count] = true;
+
+//            if (count < questionsInExam.Count - 1)
+//            {
+//                count++;
+//                LoadQuestionAndAnswers();
+//            }
+//            else
+//            {
+//                SaveStudentAnswers();
+//                examTimer.Stop();
+
+//            }
+//        }
+//        private void BackBtn_Click_1(object sender, EventArgs e)
+//        {
+//            Helper.HideFormSmoothly(this);
+//            Helper.ShowFormSmoothly(previousForm);
+//            //previousForm.ShowDialog();
+//        }
+
+//        private void FormExamAnswers_FormClosing(object sender, FormClosingEventArgs e)
+//        {
+//            e.Cancel = true; 
+//            //MessageBox.Show("Please use the back button to return to the Home Screen.");
+//        }
+
+//        private void FormExamAnswers_FormClosed(object sender, FormClosedEventArgs e)
+//        {
+//            this.Dispose();
+//        }
+//    }
+//}
 
 
 

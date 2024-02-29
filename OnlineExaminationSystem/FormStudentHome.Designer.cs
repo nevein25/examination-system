@@ -72,6 +72,7 @@
             SmallLineColor1 = Color.FromArgb(186, 32, 38);
             SmallLineColor2 = Color.FromArgb(186, 32, 38);
             Text = "ITI";
+            Load += FormStudentHome_Load;
             ResumeLayout(false);
         }
 

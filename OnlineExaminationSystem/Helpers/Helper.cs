@@ -8,6 +8,8 @@ namespace OnlineExaminationSystem.Helpers
     {
         public static int StudentId = 0;
         public static int InstructorId = 0;
+        public static int examId = -1;
+        public static Form FormHomeStudent;
 
         // For encrypting password
         public static string Encrypt(string password)
