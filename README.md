@@ -1,4 +1,4 @@
-# examination-system
+# Examination system
 
 ## Description
 
