@@ -1,7 +1,5 @@
-"# examination-system" 
+#examination-system
 
-## Palette
+## Description
 
-- https://imagecolorpicker.com/en/user/shared-palette?id=f070795b-5277-4be9-9577-5e0a10aeed0e
-
-- ["252525","ddd0d0","ba2026","dc9494","978c8c","6f6f6f","c43037","d07476","c44f54"]
+This project is an Examination System designed for educational institutions, particularly suited for the Information Technology Institute (ITI). This app provides platform for creating, administering, and grading exams. Developed as a Windows Forms application and integrated with a SQL database, it offers a user-friendly interface for both students and instructors.
