@@ -31,6 +31,7 @@
             showGradesBtn = new Button();
             TakeExamBtn = new Button();
             ctrlBox = new MetroSet_UI.Controls.MetroSetControlBox();
+            btnSignOut = new Button();
             SuspendLayout();
             // 
             // showGradesBtn
@@ -87,12 +88,27 @@
             ctrlBox.ThemeAuthor = "Narwin";
             ctrlBox.ThemeName = "MetroLite";
             // 
+            // btnSignOut
+            // 
+            btnSignOut.BackColor = Color.White;
+            btnSignOut.FlatAppearance.BorderSize = 0;
+            btnSignOut.FlatStyle = FlatStyle.Flat;
+            btnSignOut.ForeColor = Color.FromArgb(186, 32, 38);
+            btnSignOut.Location = new Point(283, 309);
+            btnSignOut.Name = "btnSignOut";
+            btnSignOut.Size = new Size(169, 40);
+            btnSignOut.TabIndex = 57;
+            btnSignOut.Text = "Sign Out?";
+            btnSignOut.UseVisualStyleBackColor = false;
+            btnSignOut.Click += btnSignOut_Click;
+            // 
             // FormStudentHome
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderColor = Color.FromArgb(186, 32, 38);
             ClientSize = new Size(458, 353);
+            Controls.Add(btnSignOut);
             Controls.Add(ctrlBox);
             Controls.Add(TakeExamBtn);
             Controls.Add(showGradesBtn);
@@ -110,5 +126,6 @@
         private Button showGradesBtn;
         private Button TakeExamBtn;
         private MetroSet_UI.Controls.MetroSetControlBox ctrlBox;
+        private Button btnSignOut;
     }
 }

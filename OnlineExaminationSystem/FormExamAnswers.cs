@@ -39,7 +39,7 @@ namespace OnlineExaminationSystem
         {
             context = new OnlineExaminationSystemContext();
             examTimer = new System.Windows.Forms.Timer();
-            examDurationInSeconds = context.Exams.FirstOrDefault(e => e.Id == 3)?.Duration * 60 - 80 ?? 3;
+            examDurationInSeconds = context.Exams.FirstOrDefault(e => e.Id == Helper.ExamId)?.Duration * 60  ?? 3;
             examTimer.Interval = 1000; // 1 second
             examTimer.Tick += new EventHandler(examTimer_Tick);
             examTimer.Start();
@@ -52,7 +52,7 @@ namespace OnlineExaminationSystem
             int CrsID = context.Exams?.FirstOrDefault(e => e.Id == Helper.ExamId)?.CId ?? 0;
             CourseName.Text = context.Courses.FirstOrDefault(c => c.Id == CrsID)?.Name;
 
-            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == Helper.ExamId)?.Duration * 60 - 80 ?? 180)).ToString(@"hh\:mm\:ss");
+            drt.Text = TimeSpan.FromSeconds((double)(context.Exams.FirstOrDefault(e => e.Id == Helper.ExamId)?.Duration * 60 ?? 180)).ToString(@"hh\:mm\:ss");
             var exam = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == Helper.ExamId);
 
             int totalMarks = exam.QIds.Sum(q => q.Mark);
@@ -148,22 +148,24 @@ namespace OnlineExaminationSystem
             context.SaveChanges();
 
             ///
-          
-            int numRowsAffected = context.Database.ExecuteSql($"Exec [ExamCorrection] {Helper.StudentId},{Helper.ExamId}");
 
+            int numRowsAffected = context.Database.ExecuteSql($"Exec [ExamCorrection] {Helper.StudentId},{Helper.ExamId}");
+            var studentGrade = context.StudentExams.Where(se => se.StId == Helper.StudentId && se.EId == Helper.ExamId).Select(se => se.ExamGrade).FirstOrDefault();
             ///
-            // MessageBox.Show(Result.ToString());
+            var exams = context.Exams.Include(e => e.QIds).ThenInclude(q => q.QuestionAnswers).FirstOrDefault(e => e.Id == Helper.ExamId);
+
+            int examMarks = exams.QIds.Sum(q => q.Mark);
             if (examDurationInSeconds < 0)
             {
-                MessageBox.Show("Time's up! Your exam has ended.");
+                MessageBox.Show($"Time's up! Your exam has ended.\nYour grade is {studentGrade} / {examMarks}");
 
             }
             else
             {
-                MessageBox.Show("Your Exam Submited Sucessfully");
+                MessageBox.Show($"Your Exam Submited Sucessfully.\nYour grade is {studentGrade} / {examMarks}");
 
             }
-            this.Close();
+            this.Hide();
 
         }
 
@@ -219,7 +221,10 @@ namespace OnlineExaminationSystem
             this.Hide();
         }
 
-
+        private void FormExamAnswers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
 }
 

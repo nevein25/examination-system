@@ -29,13 +29,13 @@ namespace OnlineExaminationSystem
         {
 
 
-            using (FormCourseTopics formCourseTopics = new FormCourseTopics())
+            using (FormHomePageInstractor formHomrPageInstructor = new FormHomePageInstractor())
             {
-                formCourseTopics.StartPosition = FormStartPosition.CenterScreen;
+                formHomrPageInstructor.StartPosition = FormStartPosition.CenterScreen;
 
                 Helper.HideFormSmoothly(this);
 
-                formCourseTopics.ShowDialog();
+                formHomrPageInstructor.ShowDialog();
             }
         }
         private void btnLogIn_Click(object sender, EventArgs e)

@@ -241,10 +241,10 @@
             tabPage2.Controls.Add(btnAssignDepartment);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(comboDepartment);
-            tabPage2.Location = new Point(4, 34);
+            tabPage2.Location = new Point(4, 35);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1037, 492);
+            tabPage2.Size = new Size(1037, 491);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Assign Department";
             tabPage2.UseVisualStyleBackColor = true;
@@ -609,12 +609,12 @@
             numeric_Duration.Location = new Point(715, 194);
             numeric_Duration.Maximum = new decimal(new int[] { 1800, 0, 0, 0 });
             numeric_Duration.Name = "numeric_Duration";
-            numeric_Duration.Size = new Size(203, 34);
+            numeric_Duration.Size = new Size(216, 34);
             numeric_Duration.TabIndex = 39;
             // 
             // DateTimeForExam
             // 
-            DateTimeForExam.Location = new Point(656, 251);
+            DateTimeForExam.Location = new Point(669, 251);
             DateTimeForExam.Name = "DateTimeForExam";
             DateTimeForExam.TabIndex = 38;
             // 
@@ -623,7 +623,7 @@
             numeric_MCQ_Questions.Location = new Point(715, 140);
             numeric_MCQ_Questions.Maximum = new decimal(new int[] { 7, 0, 0, 0 });
             numeric_MCQ_Questions.Name = "numeric_MCQ_Questions";
-            numeric_MCQ_Questions.Size = new Size(203, 34);
+            numeric_MCQ_Questions.Size = new Size(216, 34);
             numeric_MCQ_Questions.TabIndex = 37;
             // 
             // label3
@@ -640,7 +640,7 @@
             numeric_TFQuestions.Location = new Point(715, 84);
             numeric_TFQuestions.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             numeric_TFQuestions.Name = "numeric_TFQuestions";
-            numeric_TFQuestions.Size = new Size(203, 34);
+            numeric_TFQuestions.Size = new Size(216, 34);
             numeric_TFQuestions.TabIndex = 35;
             // 
             // lb_numOfTFQuestions
@@ -654,11 +654,13 @@
             // 
             // cmb_Courses
             // 
+            cmb_Courses.Font = new Font("Century Gothic", 11F);
             cmb_Courses.FormattingEnabled = true;
             cmb_Courses.Location = new Point(715, 33);
             cmb_Courses.Name = "cmb_Courses";
-            cmb_Courses.Size = new Size(203, 33);
+            cmb_Courses.Size = new Size(216, 29);
             cmb_Courses.TabIndex = 33;
+            cmb_Courses.Text = "You have no courses";
             // 
             // lbCourses
             // 
@@ -676,10 +678,10 @@
             tabPage5.Controls.Add(button1);
             tabPage5.Controls.Add(label2);
             tabPage5.Controls.Add(comboCorsesesForTopics);
-            tabPage5.Location = new Point(4, 34);
+            tabPage5.Location = new Point(4, 35);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(1037, 492);
+            tabPage5.Size = new Size(1037, 491);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Show Courses";
             tabPage5.UseVisualStyleBackColor = true;
@@ -764,10 +766,10 @@
             tabPage6.Controls.Add(grd_StudentsGrades);
             tabPage6.Controls.Add(cmb_Course_Grades);
             tabPage6.Controls.Add(label5);
-            tabPage6.Location = new Point(4, 34);
+            tabPage6.Location = new Point(4, 35);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(1037, 492);
+            tabPage6.Size = new Size(1037, 491);
             tabPage6.TabIndex = 5;
             tabPage6.Text = "Students Grades";
             tabPage6.UseVisualStyleBackColor = true;
@@ -821,10 +823,10 @@
             tabPage7.Controls.Add(label6);
             tabPage7.Controls.Add(lb_DeptName);
             tabPage7.Controls.Add(txt_DeptName);
-            tabPage7.Location = new Point(4, 34);
+            tabPage7.Location = new Point(4, 35);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1037, 492);
+            tabPage7.Size = new Size(1037, 491);
             tabPage7.TabIndex = 6;
             tabPage7.Text = "Add Department";
             tabPage7.UseVisualStyleBackColor = true;
@@ -912,7 +914,7 @@
             btnSignOut.FlatAppearance.BorderSize = 0;
             btnSignOut.FlatStyle = FlatStyle.Flat;
             btnSignOut.ForeColor = Color.FromArgb(186, 32, 38);
-            btnSignOut.Location = new Point(15, 24);
+            btnSignOut.Location = new Point(19, 24);
             btnSignOut.Name = "btnSignOut";
             btnSignOut.Size = new Size(200, 40);
             btnSignOut.TabIndex = 23;

@@ -79,7 +79,7 @@
             CrsName.IsDerivedStyle = true;
             CrsName.Location = new Point(24, 82);
             CrsName.Name = "CrsName";
-            CrsName.Size = new Size(196, 28);
+            CrsName.Size = new Size(192, 28);
             CrsName.Style = MetroSet_UI.Enums.Style.Light;
             CrsName.StyleManager = null;
             CrsName.TabIndex = 36;
@@ -91,9 +91,9 @@
             // 
             CourseName.Font = new Font("Century Gothic", 15F);
             CourseName.IsDerivedStyle = true;
-            CourseName.Location = new Point(207, 82);
+            CourseName.Location = new Point(228, 82);
             CourseName.Name = "CourseName";
-            CourseName.Size = new Size(90, 29);
+            CourseName.Size = new Size(142, 29);
             CourseName.Style = MetroSet_UI.Enums.Style.Light;
             CourseName.StyleManager = null;
             CourseName.TabIndex = 37;
@@ -105,7 +105,7 @@
             // 
             metroSetLabel4.Font = new Font("Century Gothic", 15F);
             metroSetLabel4.IsDerivedStyle = true;
-            metroSetLabel4.Location = new Point(746, 81);
+            metroSetLabel4.Location = new Point(859, 84);
             metroSetLabel4.Name = "metroSetLabel4";
             metroSetLabel4.Size = new Size(98, 37);
             metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
@@ -119,7 +119,7 @@
             // 
             Marks.Font = new Font("Century Gothic", 15F);
             Marks.IsDerivedStyle = true;
-            Marks.Location = new Point(833, 81);
+            Marks.Location = new Point(963, 84);
             Marks.Name = "Marks";
             Marks.Size = new Size(98, 27);
             Marks.Style = MetroSet_UI.Enums.Style.Light;
@@ -161,7 +161,7 @@
             // 
             time.Font = new Font("Century Gothic", 15F);
             time.IsDerivedStyle = true;
-            time.Location = new Point(415, 81);
+            time.Location = new Point(464, 82);
             time.Name = "time";
             time.Size = new Size(143, 27);
             time.Style = MetroSet_UI.Enums.Style.Light;
@@ -175,9 +175,9 @@
             // 
             drt.Font = new Font("Century Gothic", 15F);
             drt.IsDerivedStyle = true;
-            drt.Location = new Point(539, 83);
+            drt.Location = new Point(601, 86);
             drt.Name = "drt";
-            drt.Size = new Size(116, 25);
+            drt.Size = new Size(143, 27);
             drt.Style = MetroSet_UI.Enums.Style.Light;
             drt.StyleManager = null;
             drt.TabIndex = 51;
@@ -190,7 +190,7 @@
             PrevBtn.FlatStyle = FlatStyle.Flat;
             PrevBtn.Font = new Font("Century Gothic", 15F);
             PrevBtn.ForeColor = Color.White;
-            PrevBtn.Location = new Point(192, 390);
+            PrevBtn.Location = new Point(216, 412);
             PrevBtn.Name = "PrevBtn";
             PrevBtn.Size = new Size(131, 53);
             PrevBtn.TabIndex = 53;
@@ -204,7 +204,7 @@
             NextBtn.FlatStyle = FlatStyle.Flat;
             NextBtn.Font = new Font("Century Gothic", 15F);
             NextBtn.ForeColor = Color.White;
-            NextBtn.Location = new Point(726, 390);
+            NextBtn.Location = new Point(795, 412);
             NextBtn.Name = "NextBtn";
             NextBtn.Size = new Size(131, 53);
             NextBtn.TabIndex = 54;
@@ -232,9 +232,10 @@
             // 
             Ch1.AutoSize = true;
             Ch1.BackColor = Color.White;
+            Ch1.Font = new Font("Century Gothic", 15F);
             Ch1.Location = new Point(108, 303);
             Ch1.Name = "Ch1";
-            Ch1.Size = new Size(169, 29);
+            Ch1.Size = new Size(189, 35);
             Ch1.TabIndex = 56;
             Ch1.TabStop = true;
             Ch1.Text = "radioButton1";
@@ -244,9 +245,10 @@
             // 
             Ch2.AutoSize = true;
             Ch2.BackColor = Color.White;
+            Ch2.Font = new Font("Century Gothic", 15F);
             Ch2.Location = new Point(485, 303);
             Ch2.Name = "Ch2";
-            Ch2.Size = new Size(169, 29);
+            Ch2.Size = new Size(189, 35);
             Ch2.TabIndex = 57;
             Ch2.TabStop = true;
             Ch2.Text = "radioButton1";
@@ -256,10 +258,11 @@
             // 
             Ch3.AutoSize = true;
             Ch3.BackColor = Color.White;
+            Ch3.Font = new Font("Century Gothic", 15F);
             Ch3.ForeColor = Color.Gray;
             Ch3.Location = new Point(862, 303);
             Ch3.Name = "Ch3";
-            Ch3.Size = new Size(169, 29);
+            Ch3.Size = new Size(189, 35);
             Ch3.TabIndex = 58;
             Ch3.TabStop = true;
             Ch3.Text = "radioButton1";
@@ -291,6 +294,7 @@
             Padding = new Padding(12, 74, 12, 13);
             SmallLineColor1 = Color.Transparent;
             SmallLineColor2 = Color.White;
+            FormClosing += FormExamAnswers_FormClosing;
             Load += FormExamAnswers_Load_1;
             ResumeLayout(false);
             PerformLayout();
