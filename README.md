@@ -6,18 +6,23 @@ This project is an Examination System designed for educational institutions, par
 
 ## Screenshots
 
-### Sigup 
+<h1 align="center">Sigup</h1>
+
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/signup.png)
 
-### Login
+<h2 align="center">Login</h2>
+
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/login.png)
 
 
-### Take Exam 
+<h3 align="center">Take Exam</h3>
+
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/exam.png)
 
 
-### Add Question
+<h4 align="center">Add Question</h4>
+
+
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/addQuestion.png)
 
 
