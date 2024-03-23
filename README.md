@@ -6,4 +6,5 @@ This project is an Examination System designed for educational institutions, par
 
 ## ScreenShots
 
-![Project Screenshot](https://example.com/images/screenshot.png)
+
+![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/login.png)
