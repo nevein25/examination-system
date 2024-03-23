@@ -31,22 +31,22 @@
             lblAssignCourseStudentD = new TabControl();
             tabPage1 = new TabPage();
             lblAssignCourseStudentQ = new Label();
-            lblStudentC = new Label();
             comboStudentC = new ComboBox();
-            lblInstructorC = new Label();
             comboInstructorC = new ComboBox();
             btnAssignCourse = new Button();
             label1 = new Label();
             comboCourses = new ComboBox();
+            lblInstructorC = new Label();
+            lblStudentC = new Label();
             tabPage2 = new TabPage();
             lblAssignDepartmentStudentQ = new Label();
-            lblStudentD = new Label();
             comboStudentD = new ComboBox();
-            lblInstructorD = new Label();
             comboInstructorDep = new ComboBox();
             btnAssignDepartment = new Button();
             label4 = new Label();
             comboDepartment = new ComboBox();
+            lblInstructorD = new Label();
+            lblStudentD = new Label();
             tabPage3 = new TabPage();
             btn_AddQuestionSave = new Button();
             lb_Answer3 = new Label();
@@ -131,13 +131,13 @@
             // tabPage1
             // 
             tabPage1.Controls.Add(lblAssignCourseStudentQ);
-            tabPage1.Controls.Add(lblStudentC);
             tabPage1.Controls.Add(comboStudentC);
-            tabPage1.Controls.Add(lblInstructorC);
             tabPage1.Controls.Add(comboInstructorC);
             tabPage1.Controls.Add(btnAssignCourse);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(comboCourses);
+            tabPage1.Controls.Add(lblInstructorC);
+            tabPage1.Controls.Add(lblStudentC);
             tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -159,18 +159,6 @@
             lblAssignCourseStudentQ.Text = "Assign Course for Student?";
             lblAssignCourseStudentQ.Click += lblAssignCourse_Click;
             // 
-            // lblStudentC
-            // 
-            lblStudentC.AutoSize = true;
-            lblStudentC.BackColor = SystemColors.ButtonHighlight;
-            lblStudentC.ForeColor = Color.Gray;
-            lblStudentC.Location = new Point(413, 84);
-            lblStudentC.Name = "lblStudentC";
-            lblStudentC.Size = new Size(167, 25);
-            lblStudentC.TabIndex = 9;
-            lblStudentC.Text = "Select Student";
-            lblStudentC.Visible = false;
-            // 
             // comboStudentC
             // 
             comboStudentC.FormattingEnabled = true;
@@ -180,23 +168,12 @@
             comboStudentC.TabIndex = 8;
             comboStudentC.Visible = false;
             // 
-            // lblInstructorC
-            // 
-            lblInstructorC.AutoSize = true;
-            lblInstructorC.BackColor = SystemColors.ButtonHighlight;
-            lblInstructorC.ForeColor = Color.Gray;
-            lblInstructorC.Location = new Point(413, 84);
-            lblInstructorC.Name = "lblInstructorC";
-            lblInstructorC.Size = new Size(184, 25);
-            lblInstructorC.TabIndex = 7;
-            lblInstructorC.Text = "Select Instructor";
-            // 
             // comboInstructorC
             // 
             comboInstructorC.FormattingEnabled = true;
-            comboInstructorC.Location = new Point(266, 137);
+            comboInstructorC.Location = new Point(256, 137);
             comboInstructorC.Name = "comboInstructorC";
-            comboInstructorC.Size = new Size(469, 33);
+            comboInstructorC.Size = new Size(479, 33);
             comboInstructorC.TabIndex = 6;
             // 
             // btnAssignCourse
@@ -231,20 +208,45 @@
             comboCourses.Size = new Size(479, 33);
             comboCourses.TabIndex = 3;
             // 
+            // lblInstructorC
+            // 
+            lblInstructorC.AutoSize = true;
+            lblInstructorC.BackColor = SystemColors.ButtonHighlight;
+            lblInstructorC.Font = new Font("Century Gothic", 13F, FontStyle.Bold);
+            lblInstructorC.ForeColor = SystemColors.ActiveCaptionText;
+            lblInstructorC.Location = new Point(359, 84);
+            lblInstructorC.Name = "lblInstructorC";
+            lblInstructorC.Size = new Size(305, 26);
+            lblInstructorC.TabIndex = 7;
+            lblInstructorC.Text = "Assign Course for  Instructor";
+            // 
+            // lblStudentC
+            // 
+            lblStudentC.AutoSize = true;
+            lblStudentC.BackColor = SystemColors.ButtonHighlight;
+            lblStudentC.Font = new Font("Century Gothic", 13F, FontStyle.Bold);
+            lblStudentC.ForeColor = Color.Black;
+            lblStudentC.Location = new Point(359, 84);
+            lblStudentC.Name = "lblStudentC";
+            lblStudentC.Size = new Size(281, 26);
+            lblStudentC.TabIndex = 9;
+            lblStudentC.Text = "Assign Course for Student";
+            lblStudentC.Visible = false;
+            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(lblAssignDepartmentStudentQ);
-            tabPage2.Controls.Add(lblStudentD);
             tabPage2.Controls.Add(comboStudentD);
-            tabPage2.Controls.Add(lblInstructorD);
             tabPage2.Controls.Add(comboInstructorDep);
             tabPage2.Controls.Add(btnAssignDepartment);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(comboDepartment);
-            tabPage2.Location = new Point(4, 35);
+            tabPage2.Controls.Add(lblInstructorD);
+            tabPage2.Controls.Add(lblStudentD);
+            tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1037, 491);
+            tabPage2.Size = new Size(1037, 492);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Assign Department";
             tabPage2.UseVisualStyleBackColor = true;
@@ -262,18 +264,6 @@
             lblAssignDepartmentStudentQ.Text = "Assign Department for Student?";
             lblAssignDepartmentStudentQ.Click += label2_Click;
             // 
-            // lblStudentD
-            // 
-            lblStudentD.AutoSize = true;
-            lblStudentD.BackColor = SystemColors.ButtonHighlight;
-            lblStudentD.ForeColor = Color.Gray;
-            lblStudentD.Location = new Point(421, 74);
-            lblStudentD.Name = "lblStudentD";
-            lblStudentD.Size = new Size(167, 25);
-            lblStudentD.TabIndex = 14;
-            lblStudentD.Text = "Select Student";
-            lblStudentD.Visible = false;
-            // 
             // comboStudentD
             // 
             comboStudentD.FormattingEnabled = true;
@@ -282,17 +272,6 @@
             comboStudentD.Size = new Size(490, 33);
             comboStudentD.TabIndex = 13;
             comboStudentD.Visible = false;
-            // 
-            // lblInstructorD
-            // 
-            lblInstructorD.AutoSize = true;
-            lblInstructorD.BackColor = SystemColors.ButtonHighlight;
-            lblInstructorD.ForeColor = Color.Gray;
-            lblInstructorD.Location = new Point(421, 74);
-            lblInstructorD.Name = "lblInstructorD";
-            lblInstructorD.Size = new Size(184, 25);
-            lblInstructorD.TabIndex = 12;
-            lblInstructorD.Text = "Select Instructor";
             // 
             // comboInstructorDep
             // 
@@ -333,6 +312,31 @@
             comboDepartment.Name = "comboDepartment";
             comboDepartment.Size = new Size(490, 33);
             comboDepartment.TabIndex = 8;
+            // 
+            // lblInstructorD
+            // 
+            lblInstructorD.AutoSize = true;
+            lblInstructorD.BackColor = SystemColors.ButtonHighlight;
+            lblInstructorD.Font = new Font("Century Gothic", 13F, FontStyle.Bold);
+            lblInstructorD.ForeColor = Color.Black;
+            lblInstructorD.Location = new Point(353, 84);
+            lblInstructorD.Name = "lblInstructorD";
+            lblInstructorD.Size = new Size(352, 26);
+            lblInstructorD.TabIndex = 12;
+            lblInstructorD.Text = "Assign Department for Instructor";
+            // 
+            // lblStudentD
+            // 
+            lblStudentD.AutoSize = true;
+            lblStudentD.BackColor = SystemColors.ButtonHighlight;
+            lblStudentD.Font = new Font("Century Gothic", 13F, FontStyle.Bold);
+            lblStudentD.ForeColor = Color.Black;
+            lblStudentD.Location = new Point(353, 84);
+            lblStudentD.Name = "lblStudentD";
+            lblStudentD.Size = new Size(334, 26);
+            lblStudentD.TabIndex = 14;
+            lblStudentD.Text = "Assign Department for Student";
+            lblStudentD.Visible = false;
             // 
             // tabPage3
             // 
@@ -566,10 +570,10 @@
             tabPage4.Controls.Add(lb_numOfTFQuestions);
             tabPage4.Controls.Add(cmb_Courses);
             tabPage4.Controls.Add(lbCourses);
-            tabPage4.Location = new Point(4, 34);
+            tabPage4.Location = new Point(4, 35);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1037, 492);
+            tabPage4.Size = new Size(1037, 491);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Generate Exam";
             tabPage4.UseVisualStyleBackColor = true;

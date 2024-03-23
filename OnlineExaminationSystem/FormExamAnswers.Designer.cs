@@ -294,6 +294,7 @@
             Padding = new Padding(12, 74, 12, 13);
             SmallLineColor1 = Color.Transparent;
             SmallLineColor2 = Color.White;
+            StartPosition = FormStartPosition.CenterScreen;
             FormClosing += FormExamAnswers_FormClosing;
             Load += FormExamAnswers_Load_1;
             ResumeLayout(false);

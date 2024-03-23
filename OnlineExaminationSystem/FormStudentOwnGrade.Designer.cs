@@ -112,6 +112,7 @@
             Name = "FormStudentOwnGrade";
             SmallLineColor1 = Color.FromArgb(186, 32, 38);
             SmallLineColor2 = Color.FromArgb(186, 32, 38);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "My Grades";
             Load += FormStudentOwnGrade_Load;
             ResumeLayout(false);
