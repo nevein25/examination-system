@@ -10,21 +10,18 @@ This project is an Examination System designed for educational institutions, par
 
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/signup.png)
 
-<h2 align="center">Login</h2>
+<h1 align="center">Login</h1>
 
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/login.png)
 
-
-<h3 align="center">Take Exam</h3>
+<h1 align="center">Take Exam</h1>
 
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/exam.png)
 
-
-<h4 align="center">Add Question</h4>
-
+<h1 align="center">Add Question</h1>
 
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/addQuestion.png)
 
+<h1 align="center">Generate Exam </h1>
 
-### Generate Exam 
 ![Project Screenshot](https://github.com/nevein25/examination-system/blob/main/OnlineExaminationSystem/Images/ScreenShots/GenerateExam.png)
